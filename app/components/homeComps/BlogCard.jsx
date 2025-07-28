@@ -10,7 +10,7 @@ export default function BlogCard() {
       <div className="flex flex-row flex-wrap gap-2 px-[5%] justify-evenly">
         {cardData.map((item, index) => {
           return (
-            <Fragment key={index}>
+
             <div
                   key={index}
                   className="w-[300px] max-lg:w-[45%] max-md:w-full  group  flex flex-col items-center justify-between pb-4  cursor-pointer rounded-[20px] overflow-hidden border border-[#08090c]  transition-colors duration-300 ease-in-out hover:border-[#0a49eb] text-white  "
@@ -53,7 +53,6 @@ export default function BlogCard() {
                     </div>
                   </div>
                 </div>
-            </Fragment>
           );
         })}
       </div>

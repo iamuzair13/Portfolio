@@ -202,7 +202,7 @@ export const solutionDropdown = [
           <h3>{technologyContent[0].cms.title}</h3>
           {technologyContent[0].cms.items.map((item, index) => {
             return (
-              <div className="flex flex-row items-center gap-2 group ">
+              <div key={index} className="flex flex-row items-center gap-2 group ">
                 <span className="w-[15px] h-[15px] cursor-pointer group-hover:text-blue-600">
                   {item.icon}
                 </span>
@@ -220,7 +220,7 @@ export const solutionDropdown = [
           <h3>{technologyContent[1].framework.title}</h3>
           {technologyContent[1].framework.items.map((item, index) => {
             return (
-              <div className="flex flex-row items-center gap-2 group">
+              <div key={index} className="flex flex-row items-center gap-2 group">
                 <span className="w-[15px] h-[15px] cursor-pointer group-hover:text-blue-600">
                   {item.icon}
                 </span>
