@@ -15,39 +15,25 @@ import { motion } from "framer-motion";
 
 import { Fragment, useEffect, useState } from "react";
 import ServiceCard from "@/app/components/homeComps/ServiceCard";
-import { Logos } from "../../components/homeComps/logos";
+import { Logos } from "../../mock/logos";
 import { Card } from "@/components/ui/card";
 import Experts from "@/app/components/homeComps/Experts";
-import { backgrounds } from "@/app/components/homeComps/Backgrounds";
+import { backgrounds } from "@/app/mock/Backgrounds";
 import Industries from "@/app/components/homeComps/industries";
-import { teamData } from "@/app/components/homeComps/TeamCard";
+import { teamData } from "@/app/mock/TeamCard";
 import {
   FaRegArrowAltCircleLeft,
   FaRegArrowAltCircleRight,
 } from "react-icons/fa";
 import BlogCard from "@/app/components/homeComps/BlogCard";
-import Blog from "../blog/page";
-import MouseTrace from "./robot";
-import RobotFace from "./robot";
-import AnimatedRobo from "./animated-robo";
-import RobotEye from "./robotEyes";
-import SampleAnimation from "./sampleAnimation";
-import RobotFaceBack from "../../components/homeComps/robotFronBack";
-import Image from "next/image";
 import HeroSection from "@/app/components/homeComps/Hero";
-import Testimages from "@/app/components/homeComps/test";
 
 export default function Hero() {
-  // state for logo switch
-  let [bgIndex, setBgIndex] = useState(0);
-
-  // experts
-  const [experts, setExperts] = useState("the composable stack.");
-
+  
   // Teams
   const [teamIndex, setTeamIndex] = useState(0);
   // backgrounds
-  const bg = backgrounds;
+ 
 
   const [animateMobile, setAnimateMobile] = useState("");
   useEffect(() => {

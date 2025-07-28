@@ -14,9 +14,9 @@ import { NavigationMenuContent } from "@radix-ui/react-navigation-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import Capabilities from "./capabilities/capabilities";
-import Solutions from "./solutions/solutions";
-import Company from "./company/company";
+import Capabilities from "./capabilities";
+import Solutions from "./solutions";
+import Company from "./company";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import WSButton from "@/app/UI/WSButton/WSButton";
 

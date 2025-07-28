@@ -55,7 +55,6 @@ const expertData = [
 
 export default function Experts() {
   const [expertIndex, setExpertIndex] = useState(0);
-  const defValue = "the Composable Stack";
 
   return (
     <Fragment>

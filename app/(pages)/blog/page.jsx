@@ -1,15 +1,13 @@
 "use client";
 
-import BlogCard from "@/app/components/homeComps/BlogCard";
 import { Fragment, useState } from "react";
-import { cardData } from "@/app/components/homeComps/BlogCard";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import Image from "next/image";
 import WSButton from "@/app/UI/WSButton/WSButton";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
-import BlogFilter from "@/app/components/homeComps/sampleBlog";
+import { cardData } from "@/app/mock/BlogCard";
 
 export default function Blog() {
   // create an array unique values to filter the post
@@ -241,7 +239,7 @@ export default function Blog() {
 
       <section className="  flex flex-row max-lg:flex-col items-start py-10 px-[5%]  justify-evenly bg-black   ">
         <div className="flex w-full flex-col md:flex-row gap-8">
-          {/* ✅ Filters */}
+          {/*  Filters */}
           <div className="w-1/4 space-y-2">
             <h2 className="text-lg font-semibold text-white">Filters</h2>
             {filterOptions.map((filter) => (
@@ -260,7 +258,7 @@ export default function Blog() {
             ))}
           </div>
 
-          {/* ✅ Filtered Posts */}
+          {/*  Filtered Posts */}
           <div className="flex w-3/4 border-none   flex-row flex-wrap gap-1 justify-start">
             {filteredPosts.map((card, index) => (
               <div
