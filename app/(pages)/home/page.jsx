@@ -27,13 +27,12 @@ import {
 } from "react-icons/fa";
 import BlogCard from "@/app/components/homeComps/BlogCard";
 import HeroSection from "@/app/components/homeComps/Hero";
+import Image from "next/image";
 
 export default function Hero() {
-  
   // Teams
   const [teamIndex, setTeamIndex] = useState(0);
   // backgrounds
- 
 
   const [animateMobile, setAnimateMobile] = useState("");
   useEffect(() => {
@@ -51,14 +50,29 @@ export default function Hero() {
   return (
     <Fragment>
       {/* hero */}
-{/* bg-[url('/images/heroBg/laser-bg.jpg')] */}
+      {/* bg-[url('/images/heroBg/laser-bg.jpg')] */}
       <section
-        className={` bg-[url('/images/heroBg/laser-bg.jpg')] overflow-hidden  bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center p-10 px-[5%] lg:px-12  py-10`}
+        className={`relative overflow-hidden bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center p-10 px-[5%] lg:px-12 py-10`}
       >
-        <HeroSection />
+        {/* Background Image */}
+        <Image
+          className="w-full h-full object-cover"
+          src={"/images/heroBg/night-bg.jpg"}
+          fill={true}
+          alt="Starry Background"
+        />
+
+        {/* Light Black Overlay */}
+        <div className="absolute inset-0 bg-black/70 z-0"></div>
+
+        {/* Content */}
+     
+          <HeroSection />
+      
       </section>
+
       {/* <Testimages/> */}
-          {/* Services */}
+      {/* Services */}
       <section className="  flex flex-col items-center justify-center  bg-black ">
         <div className="container  flex justify-center max-lg:p-4 lg:pt-[110px]">
           <div className="upper text-center lg:w-[72%]  space-y-8">

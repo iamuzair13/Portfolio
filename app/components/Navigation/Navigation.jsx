@@ -36,9 +36,9 @@ export default function Navigation() {
         <div className="flex items-center  max-lg:px-2 w-auto max-w-[300px]  pt-4 ">
           <Avatar className="rounded-none w-[250px] flex items-start justify-end ">
             <AvatarImage
-              src="/Logos/final-logo-2ND-WHITE.png"
+              src="/Logos/ProgrammersSQUAD-final-logo-3rd.png"
               alt="Logo"
-              className="w-full h-full object-cover invert  brightness-0 " 
+              className="w-full h-full object-cover " 
             />
           </Avatar>
         </div>
