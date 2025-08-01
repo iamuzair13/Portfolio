@@ -30,27 +30,32 @@ export default function Navigation() {
   }
 
   return (
-    <nav className="w-full sticky px-[5%] top-0 z-50 bg-black bg-cover bg-end bg-no-repeat  text-white">
-      <div className="container mx-auto my-0 flex items-center  justify-between min-h-[100px]   py-8">
+    <nav className="w-full sticky overflow-hidden px-[5%] top-0 z-50 bg-black bg-cover bg-end bg-no-repeat  text-white">
+      <div className="container mx-auto my-4 flex items-center  justify-between   lg:py-4 xl:py-8">
         {/* Logo */}
-        <div className="flex items-center  max-lg:px-2 w-auto max-w-[300px]  pt-4 ">
-          <Avatar className="rounded-none w-[250px] flex items-start justify-end ">
+        <div className="pt-3">
+          <Avatar
+            className="
+      rounded-none flex items-center justify-center
+      w-[120px] sm:w-[160px] md:w-[200px] lg:w-[220px] xl:w-[200px]
+    "
+          >
             <AvatarImage
               src="/Logos/ProgrammersSQUAD-final-logo-3rd.png"
               alt="Logo"
-              className="w-full h-full object-cover " 
+              className="w-full h-full object-cover"
             />
           </Avatar>
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex flex-1 justify-center">
+        <div className="hidden lg:flex flex-1  justify-center">
           <NavigationMenu>
-            <NavigationMenuList className=" flex flex-row items-center gap-12 ">
+            <NavigationMenuList className=" flex flex-row items-center xl:gap-12 lg:gap-8 ">
               <NavigationMenuItem className={"group"}>
                 <NavigationMenuTrigger
                   className={
-                    "group-hover:text-gray-400 text-sm font-semibold bg-transparent hover:bg-transparent  text-[14px]	"
+                    "group-hover:text-gray-400 text-sm font-semibold bg-transparent hover:bg-transparent lg:text-[10px] xl:text-[14px]	"
                   }
                 >
                   Capabilities
@@ -63,7 +68,7 @@ export default function Navigation() {
               <NavigationMenuItem className={"group"}>
                 <NavigationMenuTrigger
                   className={
-                    "group-hover:text-gray-400 text-sm font-semibold	bg-transparent hover:bg-transparent   text-[14px]"
+                    "group-hover:text-gray-400 text-sm font-semibold	bg-transparent hover:bg-transparent lg:text-[10px] xl:text-[14px]"
                   }
                 >
                   Solutions
@@ -76,7 +81,7 @@ export default function Navigation() {
               <NavigationMenuItem className={"group"}>
                 <NavigationMenuLink
                   className={
-                    "group-hover:text-gray-400 text-sm font-semibold   text-[14px]	"
+                    "group-hover:text-gray-400 text-sm font-semibold lg:text-[10px] xl:text-[14px]	"
                   }
                   asChild
                 >
@@ -87,7 +92,7 @@ export default function Navigation() {
               <NavigationMenuItem className={"group"}>
                 <NavigationMenuLink
                   className={
-                    "group-hover:text-gray-400 text-sm font-semibold	   text-[14px]"
+                    "group-hover:text-gray-400 text-sm font-semibold	lg:text-[10px] xl:text-[14px]"
                   }
                   asChild
                 >
@@ -98,7 +103,7 @@ export default function Navigation() {
               <NavigationMenuItem className={"group"}>
                 <NavigationMenuTrigger
                   className={
-                    "group-hover:text-gray-400 text-sm font-semibold	bg-transparent hover:bg-transparent   text-[14px]"
+                    "group-hover:text-gray-400 text-sm font-semibold	bg-transparent hover:bg-transparent  lg:text-[10px] xl:text-[14px]"
                   }
                 >
                   Company

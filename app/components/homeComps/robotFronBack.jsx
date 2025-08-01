@@ -40,30 +40,37 @@ export default function RobotFace() {
   const rotateXNormal = useTransform(mouseY, [-1000, 1000], [60, -60]);
   const rotateYNormal = useTransform(mouseX, [-1000, 1000], [-90, 90]);
   const xTranslateNormal = useTransform(translateX, [-1000, 1000], [-15, 15]);
-  const backxTranslateNormal = useTransform(translateX, [-1000, 1000], [40, -40]);
+  const backxTranslateNormal = useTransform(
+    translateX,
+    [-1000, 1000],
+    [40, -40]
+  );
   const yTranslateInverted = useTransform(translateY, [-1000, 1000], [-10, 10]);
 
   return (
     <motion.div
       ref={containerRef}
-      className="relative w-full flex flex-col justify-center items-center bg-transparent overflow-hidden"
-      style={{ y: parallaxY }} // ✅ Scroll parallax applied
-      // animate={{
-      //   y: [0, -20, 0], // Floating animation
-      // }}
-      // transition={{
-      //   duration: 4,
-      //   repeat: Infinity,
-      //   ease: "easeInOut",
-      // }}
+      className="relative w-full flex flex-col  justify-center items-center bg-transparent overflow-hidden"
+      // style={{ y: parallaxY }} // ✅ Scroll parallax applied
+      animate={{
+        y: [0, -20, 0], // Floating animation
+      }}
+      transition={{
+        duration: 4,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
     >
       {/* Face wrapper */}
-      <div className="flex justify-end items-start">
+      <div className="flex justify-end items-start pt-10">
         {/* Robot Face */}
         <motion.img
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, ease: "easeIn" }}
           src="/images/robot/uzair-robotry5.png"
           alt="Robot Face"
-          className="absolute w-53 mt-[-5] mr-[-103] brightness-70 z-[5] max-lg:w-20"
+          className="absolute xl:w-53 xl:mt-[-30] lg:mt-[-25] xl:mr-[-103] lg:mr-[-78] brightness-80 z-[-5] lg:w-40"
           style={{
             rotateX: rotateXNormal,
             rotateY: rotateYNormal,
@@ -73,9 +80,12 @@ export default function RobotFace() {
 
         {/* Robot Eyes */}
         <motion.img
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, ease: "easeIn" }}
           src="/images/robot/uzair-robot77.png"
           alt="Robot Eyes"
-          className="absolute w-53 mt-[-30] mr-[-103] brightness-70 z-[10] max-lg:w-[20px]"
+          className="absolute xl:w-53 xl:mt-[-55] lg:mt-[-45] xl:mr-[-103] lg:mr-[-78] brightness-80 z-[10] lg:w-40"
           style={{
             rotateX: rotateXNormal,
             rotateY: rotateYNormal,
@@ -86,9 +96,12 @@ export default function RobotFace() {
         />
 
         <motion.img
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, ease: "easeIn" }}
           src="/images/robot/uzair-robotiiiiiiiiiiii.png"
           alt="Robot Shadow"
-          className="absolute w-53 h-30 mt-[-9] mr-[-109] brightness-[0.2] max-lg:w-[20px]"
+          className="absolute max-xl:hidden xl:w-53 lg:w-40 lg:mt-[-46] lg:mr-[-85] xl:h-30 xl:mt-[-35] xl:mr-[-109] brightness-[0.3] lg:w-[20px] z-[-10]"
           style={{
             rotateZ: 180,
             rotateX: rotateXNormal,
@@ -101,13 +114,55 @@ export default function RobotFace() {
       </div>
 
       {/* Robot Body */}
-      <Image
-        alt="robot"
-        src={"/images/robot/robot--3.png"}
-        width={400}
-        height={400}
-        className="w-[500px]  brightness-80 transform scale-x-[-1]"
-      />
+      <div className="relative pb-40 flex flex-col justify-between  items-center">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, ease: "easeIn" }}
+        >
+          <Image
+            alt="robot"
+            src={"/images/robot/ChatGPT Image Aug 1, 2025, 12_32_24 PM.png"}
+            width={400}
+            height={400}
+            className="xl:w-[500px] lg:w-[350px]  brightness-80 transform  scale-x-[-1]"
+          />
+        </motion.div>
+        <motion.div
+          className="absolute bottom-[-40]"
+          animate={{
+            translateY: [-20, 0, -20],
+          }}
+          transition={{
+            duration: 4,
+            ease: "easeInOut",
+            repeat: Infinity,
+          }}
+        >
+          <motion.div
+            animate={{
+              opacity: [1, 0.7, 0.5, 0.7, 1],
+            }}
+            transition={{
+              duration: 4,
+              ease: "easeInOut",
+              repeat: Infinity,
+            }}
+            className=" absolute rotate-x-70 border-10 shadow-[inset_0_0_80px_30px_#2563eb] border-blue-800 xl:w-[300px] lg:w-[200px] lg:h-[200px] xl:h-[300px] rounded-full"
+          ></motion.div>
+          <motion.div
+            animate={{
+              opacity: [1, 0.7, 0.5, 0.7, 1],
+            }}
+            transition={{
+              duration: 4,
+              ease: "easeInOut",
+              repeat: Infinity,
+            }}
+            className=" border-10 shadow-[0_0_60px_30px_#2563eb] border-blue-800 xl:w-[300px] lg:w-[200px] lg:h-[200px] rotate-x-70 xl:h-[300px] rounded-full"
+          ></motion.div>
+        </motion.div>
+      </div>
     </motion.div>
   );
 }

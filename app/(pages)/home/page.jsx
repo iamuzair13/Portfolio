@@ -52,7 +52,7 @@ export default function Hero() {
       {/* hero */}
       {/* bg-[url('/images/heroBg/laser-bg.jpg')] */}
       <section
-        className={`relative overflow-hidden bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center p-10 px-[5%] lg:px-12 py-10`}
+        className={`relative overflow-hidden max-md:h-[80vh]  bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center p-10 px-[5%] lg:px-12 py-10`}
       >
         {/* Background Image */}
         <Image
@@ -68,6 +68,8 @@ export default function Hero() {
         {/* Content */}
      
           <HeroSection />
+              
+
       
       </section>
 
