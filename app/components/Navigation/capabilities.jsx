@@ -11,7 +11,7 @@ export default function Capabilities() {
         <div className="w-40  ">
           <h4 className="font-semibold">{capabilities[0].Design.title}</h4>
           {capabilities[0].Design.items.map((item, index) => (
-            <div className="flex flex-row  mt-2 justify-between group ">
+            <div key={index} className="flex flex-row  mt-2 justify-between group ">
               <div className="flex flex-row gap-2 align-center group-hover:text-blue-600">
                 {item.icon}
 

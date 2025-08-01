@@ -30,8 +30,8 @@ export default function Navigation() {
   }
 
   return (
-    <nav className="w-full sticky overflow-hidden px-[5%] top-0 z-50 bg-black bg-cover bg-end bg-no-repeat  text-white">
-      <div className="container mx-auto my-4 flex items-center  justify-between   lg:py-4 xl:py-8">
+    <nav className="w-full sticky  px-[5%] top-0 z-50 bg-black bg-cover bg-end bg-no-repeat  text-white">
+      <div className="container mx-auto  flex items-center  justify-between   lg:py-4 xl:py-8">
         {/* Logo */}
         <div className="pt-3">
           <Avatar
@@ -55,7 +55,7 @@ export default function Navigation() {
               <NavigationMenuItem className={"group"}>
                 <NavigationMenuTrigger
                   className={
-                    "group-hover:text-gray-400 text-sm font-semibold bg-transparent hover:bg-transparent lg:text-[10px] xl:text-[14px]	"
+                    "group-hover:text-gray-400 text-sm font-semibold bg-transparent hover:bg-transparent lg:text-[10px] xl:text-[14px]	z-[100]"
                   }
                 >
                   Capabilities

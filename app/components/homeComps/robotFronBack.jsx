@@ -50,7 +50,7 @@ export default function RobotFace() {
   return (
     <motion.div
       ref={containerRef}
-      className="relative w-full flex flex-col  justify-center items-center bg-transparent overflow-hidden"
+      className="relative w-full max-lg:w-[200px] max-lg:h-[420px] flex flex-col  justify-center items-center bg-transparent overflow-hidden"
       // style={{ y: parallaxY }} // ✅ Scroll parallax applied
       animate={{
         y: [0, -20, 0], // Floating animation
@@ -62,7 +62,7 @@ export default function RobotFace() {
       }}
     >
       {/* Face wrapper */}
-      <div className="flex justify-end items-start pt-10">
+      <div className="flex justify-end max-lg:justify-center items-start  max-lg:items-center pt-10">
         {/* Robot Face */}
         <motion.img
           initial={{ opacity: 0 }}
@@ -70,7 +70,7 @@ export default function RobotFace() {
           transition={{ duration: 1, ease: "easeIn" }}
           src="/images/robot/uzair-robotry5.png"
           alt="Robot Face"
-          className="absolute xl:w-53 xl:mt-[-30] lg:mt-[-25] xl:mr-[-103] lg:mr-[-78] brightness-80 z-[-5] lg:w-40"
+          className="absolute max-lg:-mt-[-60px] xl:w-53 xl:mt-[-30] lg:mt-[-25] xl:mr-[-103] lg:mr-[-78] brightness-80 z-[-5] lg:w-40 max-lg:w-20"
           style={{
             rotateX: rotateXNormal,
             rotateY: rotateYNormal,
@@ -85,7 +85,7 @@ export default function RobotFace() {
           transition={{ duration: 1, ease: "easeIn" }}
           src="/images/robot/uzair-robot77.png"
           alt="Robot Eyes"
-          className="absolute xl:w-53 xl:mt-[-55] lg:mt-[-45] xl:mr-[-103] lg:mr-[-78] brightness-80 z-[10] lg:w-40"
+          className="absolute xl:w-53 max-lg:-mt-[-45px] xl:mt-[-55] lg:mt-[-45] xl:mr-[-103] lg:mr-[-78] brightness-80 z-[10] lg:w-40  max-lg:w-20"
           style={{
             rotateX: rotateXNormal,
             rotateY: rotateYNormal,
@@ -114,7 +114,7 @@ export default function RobotFace() {
       </div>
 
       {/* Robot Body */}
-      <div className="relative pb-40 flex flex-col justify-between  items-center">
+      <div className="relative lg:pb-40 flex flex-col justify-between  items-center">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -125,11 +125,11 @@ export default function RobotFace() {
             src={"/images/robot/ChatGPT Image Aug 1, 2025, 12_32_24 PM.png"}
             width={400}
             height={400}
-            className="xl:w-[500px] lg:w-[350px]  brightness-80 transform  scale-x-[-1]"
+            className="xl:w-[500px] lg:w-[350px] max-lg:w-[250px]  brightness-80 transform  scale-x-[-1]"
           />
         </motion.div>
         <motion.div
-          className="absolute bottom-[-40]"
+          className="absolute lg:bottom-[-40] max-lg:bottom-[-40]"
           animate={{
             translateY: [-20, 0, -20],
           }}
@@ -148,7 +148,7 @@ export default function RobotFace() {
               ease: "easeInOut",
               repeat: Infinity,
             }}
-            className=" absolute rotate-x-70 border-10 shadow-[inset_0_0_80px_30px_#2563eb] border-blue-800 xl:w-[300px] lg:w-[200px] lg:h-[200px] xl:h-[300px] rounded-full"
+            className=" absolute rotate-x-70 max-lg:rotate-x-70 border-10 max-lg:border-2 shadow-[inset_0_0_80px_30px_#2563eb] max-lg:shadow-[inset_0_0_30px_4px_#2563eb] border-blue-800 max-lg:w-[100px] max-lg:h-[50px] xl:w-[300px] lg:w-[200px]  lg:h-[200px] xl:h-[300px] rounded-full"
           ></motion.div>
           <motion.div
             animate={{
@@ -159,7 +159,7 @@ export default function RobotFace() {
               ease: "easeInOut",
               repeat: Infinity,
             }}
-            className=" border-10 shadow-[0_0_60px_30px_#2563eb] border-blue-800 xl:w-[300px] lg:w-[200px] lg:h-[200px] rotate-x-70 xl:h-[300px] rounded-full"
+            className=" border-10 max-lg:border-2 shadow-[0_0_60px_30px_#2563eb] border-blue-800 xl:w-[300px] lg:w-[200px] lg:h-[200px] max-lg:w-[100px] max-lg:h-[50px] max-lg:shadow-[0_0_20px_4px_#2563eb] rotate-x-70 max-lg:rotate-x-70 xl:h-[300px]  rounded-full"
           ></motion.div>
         </motion.div>
       </div>
