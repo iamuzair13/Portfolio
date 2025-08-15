@@ -40,7 +40,7 @@ export default function Sales() {
   return (
     <Fragment>
       <section className="  flex flex-row max-lg:flex-col items-center    px-[5%] justify-start  text-black bg-white  items-start ">
-        <Breadcrumb />
+        {/* <Breadcrumb /> */}
       </section>
 
       <section className="  flex flex-row gap-10 max-lg:flex-col  items-center lg:pt-[50px] px-[5%] justify-center  bg-white  items-center">
