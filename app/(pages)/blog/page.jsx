@@ -5,9 +5,10 @@ import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import Image from "next/image";
 import WSButton from "@/app/UI/WSButton/WSButton";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Plus, PlusIcon } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
 import { cardData } from "@/app/mock/BlogCard";
+import Link from "next/link";
 
 export default function Blog() {
   // create an array unique values to filter the post
@@ -32,9 +33,10 @@ export default function Blog() {
       ? cardData
       : cardData.filter((post) => selectedFilters.includes(post.filterby));
 
-  const mongourl = 'mongodb+srv://chuzair600:cSgj7dRAW0j2F3HK@webstacks.stwfju0.mongodb.net/?retryWrites=true&w=majority&appName=webstacks'
+  const mongourl =
+    "mongodb+srv://chuzair600:cSgj7dRAW0j2F3HK@webstacks.stwfju0.mongodb.net/?retryWrites=true&w=majority&appName=webstacks";
 
-      return (
+  return (
     <Fragment>
       <section className="  flex flex-col max-md:flex-col items-center py-10 max-md:pt-[70px] px-[5%] justify-evenly bg-black   ">
         <div className="md:left md:w-[70%]">
@@ -48,6 +50,10 @@ export default function Blog() {
             and developers.
           </h4>
         </div>
+        <Button className="w-[250px] cursor-pointer text-base bg-[#0f3bbe] flex items-center gap-2 lg:text-[14px]  max-lg:p-6">
+          <Link  href="/publish">Publish Blog</Link>
+          <PlusIcon className="w-5 h-5 max-lg:w-2 max-lg:h-2 text-white" />
+        </Button>
       </section>
 
       {/* Featured Articles */}

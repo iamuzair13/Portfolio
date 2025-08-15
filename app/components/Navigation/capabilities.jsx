@@ -7,7 +7,7 @@ import { Fragment } from "react";
 export default function Capabilities() {
   return (
     <Fragment>
-      <div className="flex flex-row max-md:flex-col max-md:overflow-y-auto max-md:h-100 max-md:px-2">
+      <div className="flex flex-row max-lg:flex-col  max-lg:overflow-y-auto  max-lg:px-2">
         <div className="w-40  ">
           <h4 className="font-semibold">{capabilities[0].Design.title}</h4>
           {capabilities[0].Design.items.map((item, index) => (

@@ -30,42 +30,40 @@ export default function Navigation() {
   }
 
   return (
-    <nav className="w-full sticky  px-[5%] top-0 z-50 bg-black bg-cover bg-end bg-no-repeat  text-white">
-      <div className="container mx-auto  flex items-center  justify-between   lg:py-4 xl:py-8">
+    <nav className="w-full   sticky flex flex-row justify-center pr-[5%] pl-[4%] top-0 z-50 bg-black bg-cover bg-end bg-no-repeat  text-white">
+      <div className="container  flex items-center flex-row justify-between  ">
         {/* Logo */}
-        <div className="pt-3">
+        <div className="w-[20%] max-lg:w-[50%] ">
           <Avatar
-            className="
-      rounded-none flex items-center justify-center
-      w-[120px] sm:w-[160px] md:w-[200px] lg:w-[220px] xl:w-[200px]
-    "
+            className=" w-full h-24   rounded-none"
           >
             <AvatarImage
-              src="/Logos/ProgrammersSQUAD-final-logo-3rd.png"
+              src="/Logos/123.png"
               alt="Logo"
-              className="w-full h-full object-cover"
+              className="object-cover"
             />
           </Avatar>
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex flex-1  justify-center">
+        <div className="hidden lg:flex flex-1 w-[80%] justify-center">
           <NavigationMenu>
-            <NavigationMenuList className=" flex flex-row items-center xl:gap-12 lg:gap-8 ">
+            <NavigationMenuList className="  flex flex-row w-full  justify-between items-center xl:gap-15 lg:gap-8 ">
               <NavigationMenuItem className={"group"}>
                 <NavigationMenuTrigger
                   className={
-                    "group-hover:text-gray-400 text-sm font-semibold bg-transparent hover:bg-transparent lg:text-[10px] xl:text-[14px]	z-[100]"
+                    "group-hover:text-gray-400 text-sm bg-transparent hover:bg-transparent lg:text-[14px] xl:text-[14px]	z-[100]"
                   }
                 >
-                  Capabilities
+                  Services
                 </NavigationMenuTrigger>
+
                 <NavigationMenuContent className="min-w-[20rem] w-[40rem] bg-white shadow p-4 flex gap-8">
                   <Capabilities />
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
-              <NavigationMenuItem className={"group"}>
+              {/* <NavigationMenuItem className={"group"}>
                 <NavigationMenuTrigger
                   className={
                     "group-hover:text-gray-400 text-sm font-semibold	bg-transparent hover:bg-transparent lg:text-[10px] xl:text-[14px]"
@@ -76,9 +74,9 @@ export default function Navigation() {
                 <NavigationMenuContent className="min-w-[20rem] w-[40rem] bg-white shadow p-4">
                   <Solutions />
                 </NavigationMenuContent>
-              </NavigationMenuItem>
+              </NavigationMenuItem> */}
 
-              <NavigationMenuItem className={"group"}>
+              {/* <NavigationMenuItem className={"group"}>
                 <NavigationMenuLink
                   className={
                     "group-hover:text-gray-400 text-sm font-semibold lg:text-[10px] xl:text-[14px]	"
@@ -87,46 +85,69 @@ export default function Navigation() {
                 >
                   <Link href="#">Client Stories</Link>
                 </NavigationMenuLink>
-              </NavigationMenuItem>
+              </NavigationMenuItem> */}
 
               <NavigationMenuItem className={"group"}>
                 <NavigationMenuLink
                   className={
-                    "group-hover:text-gray-400 text-sm font-semibold	lg:text-[10px] xl:text-[14px]"
+                    "group-hover:text-gray-400 text-sm 	lg:text-[14px] xl:text-[14px]"
                   }
                   asChild
                 >
-                  <Link href="#">Blog</Link>
+                  <Link href="/blog">Blog</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
 
-              <NavigationMenuItem className={"group"}>
+              {/* <NavigationMenuItem className={"group"}>
                 <NavigationMenuTrigger
                   className={
-                    "group-hover:text-gray-400 text-sm font-semibold	bg-transparent hover:bg-transparent  lg:text-[10px] xl:text-[14px]"
+                    "group-hover:text-gray-400 text-sm 	bg-transparent hover:bg-transparent  lg:text-[14px] xl:text-[14px]"
                   }
                 >
-                  Company
+                  About
                 </NavigationMenuTrigger>
                 <NavigationMenuContent className="min-w-[20rem] w-[40rem] bg-white shadow p-4">
                   <Company />
                 </NavigationMenuContent>
+              </NavigationMenuItem> */}
+
+               <NavigationMenuItem className={"group"}>
+                <NavigationMenuLink
+                  className={
+                    "group-hover:text-gray-400 text-sm 	lg:text-[14px] xl:text-[14px]"
+                  }
+                  asChild
+                >
+                  <Link href="/blog">About</Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+               <NavigationMenuItem className={"group"}>
+                <NavigationMenuLink
+                  className={
+                    "group-hover:text-gray-400 text-sm 	lg:text-[14px] xl:text-[14px]"
+                  }
+                  asChild
+                >
+                  <Link href="/blog">Contact</Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
         </div>
 
         {/* Desktop Button */}
-        <div className="hidden lg:block">
-          <WSButton
-            value="Book Intro Call"
-            icon={
-              <ChevronRight className="absolute inset-0 transition-opacity duration-200 opacity-100 group-hover:opacity-0" />
-            }
-            hovericon={
-              <ArrowRight className="absolute inset-0 transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
-            }
-          />
+        <div className="hidden lg:block sm:w-[160px] md:w-[200px] flex flex-row justify-center w-[20%] ">
+          <Link href={"/contact"}>
+            <WSButton
+              value="Book Intro Call"
+              icon={
+                <ChevronRight className="absolute inset-0 transition-opacity duration-200 opacity-100 group-hover:opacity-0" />
+              }
+              hovericon={
+                <ArrowRight className="absolute inset-0 transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
+              }
+            />
+          </Link>
         </div>
 
         {/* Mobile Menu */}
@@ -149,33 +170,37 @@ export default function Navigation() {
                         value="capabilities"
                         className="w-full flex items-center justify-between px-4 py-2 hover:bg-gray-100 rounded-md border-none shadow-none"
                       >
-                        <span onClick={handleShowTabs}>Capabilities</span>
+                        <span onClick={handleShowTabs}>Services</span>
                         <ChevronRight className="w-4 h-4" />
                       </TabsTrigger>
 
-                      <TabsTrigger
+                      {/* <TabsTrigger
                         value="solutions"
                         className="w-full flex items-center justify-between px-4 py-2 hover:bg-gray-100 rounded-md border-none shadow-none"
                       >
                         <span onClick={handleShowTabs}>Solutions</span>
                         <ChevronRight className="w-4 h-4" />
-                      </TabsTrigger>
+                      </TabsTrigger> */}
+
+                      
 
                       <div className="w-full flex items-center justify-between px-4 py-2 hover:bg-gray-100 rounded-md cursor-pointer">
-                        <span>Client Stories</span>
+                        <span>Blog</span>
                       </div>
-
                       <div className="w-full flex items-center justify-between px-4 py-2 hover:bg-gray-100 rounded-md cursor-pointer">
-                        <span>Blogs</span>
+                        <span>About</span>
+                      </div>
+                      <div className="w-full flex items-center justify-between px-4 py-2 hover:bg-gray-100 rounded-md cursor-pointer">
+                        <span>Contact</span>
                       </div>
 
-                      <TabsTrigger
+                      {/* <TabsTrigger
                         value="company"
                         className="w-full flex items-center justify-between px-4 py-2 hover:bg-gray-100 rounded-md border-none shadow-none"
                       >
                         <span onClick={handleShowTabs}>Company</span>
                         <ChevronRight className="w-4 h-4" />
-                      </TabsTrigger>
+                      </TabsTrigger> */}
                     </div>
                   )}
                 </TabsList>

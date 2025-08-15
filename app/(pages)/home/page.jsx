@@ -28,6 +28,7 @@ import {
 import BlogCard from "@/app/components/homeComps/BlogCard";
 import HeroSection from "@/app/components/homeComps/Hero";
 import Image from "next/image";
+import RobotSection from "@/app/components/homeComps/TurnRobot";
 
 export default function Hero() {
   // Teams
@@ -63,14 +64,11 @@ export default function Hero() {
         />
 
         {/* Light Black Overlay */}
-        <div className="absolute inset-0 bg-black/90 z-0"></div>
+        <div className="absolute inset-0 bg-black/60 z-0"></div>
 
         {/* Content */}
      
           <HeroSection />
-              
-
-      
       </section>
 
       {/* <Testimages/> */}
@@ -87,7 +85,10 @@ export default function Hero() {
               audiences, generate pipeline, and accelerate growth.
             </p>
           </div>
-          <div className="lower"></div>
+          <div className="lower">
+
+            {/* <RobotSection/> */}
+          </div>
         </div>
 
         <div className="w-full lg:pt-[200px]">
@@ -180,8 +181,8 @@ export default function Hero() {
                 <div className="hidden lg:flex h-[320px] w-full rounded-xl shadow-md px-5 justify-center items-center border border-blue-600 ">
                   <Avatar className="rounded-none w-[300px] text-center items-center">
                     <AvatarImage
-                      className="w-full invert brightness-0"
-                      src="/Logos/ProgrammersSQUAD-final-logo.svg"
+                      className="w-full"
+                      src="/Logos/98.png"
                       alt="Logo"
                     />
                   </Avatar>

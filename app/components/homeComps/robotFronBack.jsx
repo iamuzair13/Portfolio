@@ -37,15 +37,15 @@ export default function RobotFace() {
   }, []);
 
   // Rotations and translations based on mouse
-  const rotateXNormal = useTransform(mouseY, [-1000, 1000], [60, -60]);
-  const rotateYNormal = useTransform(mouseX, [-1000, 1000], [-90, 90]);
-  const xTranslateNormal = useTransform(translateX, [-1000, 1000], [-15, 15]);
+  const rotateXNormal = useTransform(mouseY, [-2000, 2000], [60, -60]);
+  const rotateYNormal = useTransform(mouseX, [-2000, 2000], [-40, 40]);
+  const xTranslateNormal = useTransform(translateX, [-2000, 2000], [-15, 15]);
   const backxTranslateNormal = useTransform(
     translateX,
-    [-1000, 1000],
+    [-2000, 2000],
     [40, -40]
   );
-  const yTranslateInverted = useTransform(translateY, [-1000, 1000], [-10, 10]);
+  const yTranslateInverted = useTransform(translateY, [-2000, 2000], [-10, 10]);
 
   return (
     <motion.div
@@ -65,9 +65,9 @@ export default function RobotFace() {
       <div className="flex justify-end max-lg:justify-center items-start  max-lg:items-center pt-10">
         {/* Robot Face */}
         <motion.img
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, ease: "easeIn" }}
+          initial={{ translateY: 300 }}
+          animate={{ translateY: 0 }}
+          transition={{ duration: 1, ease: "easeIn",  }}
           src="/images/robot/uzair-robotry5.png"
           alt="Robot Face"
           className="absolute max-lg:-mt-[-60px] xl:w-53 xl:mt-[-30] lg:mt-[-25] xl:mr-[-103] lg:mr-[-78] brightness-80 z-[-5] lg:w-40 max-lg:w-20"
@@ -80,9 +80,9 @@ export default function RobotFace() {
 
         {/* Robot Eyes */}
         <motion.img
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, ease: "easeIn" }}
+          initial={{ translateY: 300 }}
+          animate={{ translateY: 0 }}
+          transition={{ duration: 1, ease: "easeIn",  }}
           src="/images/robot/uzair-robot77.png"
           alt="Robot Eyes"
           className="absolute xl:w-53 max-lg:-mt-[-45px] xl:mt-[-55] lg:mt-[-45] xl:mr-[-103] lg:mr-[-78] brightness-80 z-[10] lg:w-40  max-lg:w-20"
@@ -96,9 +96,9 @@ export default function RobotFace() {
         />
 
         <motion.img
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, ease: "easeIn" }}
+          initial={{ translateY: 300 }}
+          animate={{ translateY: 0 }}
+          transition={{ duration: 1, ease: "easeIn" ,}}
           src="/images/robot/uzair-robotiiiiiiiiiiii.png"
           alt="Robot Shadow"
           className="absolute max-xl:hidden xl:w-53 lg:w-40 lg:mt-[-46] lg:mr-[-85] xl:h-30 xl:mt-[-35] xl:mr-[-109] brightness-[0.3] lg:w-[20px] z-[-10]"
@@ -116,9 +116,9 @@ export default function RobotFace() {
       {/* Robot Body */}
       <div className="relative lg:pb-40 flex flex-col justify-between  items-center">
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, ease: "easeIn" }}
+          initial={{ translateY: 300 }}
+          animate={{ translateY: 0 }}
+          transition={{ duration: 1, ease: "easeIn" , }}
         >
           <Image
             alt="robot"
@@ -148,7 +148,7 @@ export default function RobotFace() {
               ease: "easeInOut",
               repeat: Infinity,
             }}
-            className=" absolute rotate-x-70 max-lg:rotate-x-70 border-10 max-lg:border-2 shadow-[inset_0_0_80px_30px_#2563eb] max-lg:shadow-[inset_0_0_30px_4px_#2563eb] border-blue-800 max-lg:w-[100px] max-lg:h-[50px] xl:w-[300px] lg:w-[200px]  lg:h-[200px] xl:h-[300px] rounded-full"
+            className=" absolute rotate-x-80 max-lg:rotate-x-80 border-8 max-lg:border-2 shadow-[inset_0_0_80px_30px_#2563eb] max-lg:shadow-[inset_0_0_30px_4px_#2563eb] border-blue-800 max-lg:w-[100px] max-lg:h-[50px] xl:w-[300px] lg:w-[200px]  lg:h-[200px] xl:h-[300px] rounded-full"
           ></motion.div>
           <motion.div
             animate={{
@@ -159,7 +159,7 @@ export default function RobotFace() {
               ease: "easeInOut",
               repeat: Infinity,
             }}
-            className=" border-10 max-lg:border-2 shadow-[0_0_60px_30px_#2563eb] border-blue-800 xl:w-[300px] lg:w-[200px] lg:h-[200px] max-lg:w-[100px] max-lg:h-[50px] max-lg:shadow-[0_0_20px_4px_#2563eb] rotate-x-70 max-lg:rotate-x-70 xl:h-[300px]  rounded-full"
+            className=" border-8 max-lg:border-2 shadow-[0_0_60px_30px_#2563eb] border-blue-800 xl:w-[300px] lg:w-[200px] lg:h-[200px] max-lg:w-[100px] max-lg:h-[50px] max-lg:shadow-[0_0_20px_4px_#2563eb] rotate-x-80 max-lg:rotate-x-80 xl:h-[300px]  rounded-full"
           ></motion.div>
         </motion.div>
       </div>

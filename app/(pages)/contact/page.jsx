@@ -1,4 +1,3 @@
-import Breadcrumb from "@/app/components/BreadCrumb";
 import { Fragment } from "react";
 import { LuRocket } from "react-icons/lu";
 import { IoBagOutline, IoBookOutline } from "react-icons/io5";
@@ -33,13 +32,13 @@ export default function Contact() {
   return (
     <Fragment>
       <section className=" sticky flex flex-row bg-gray-200  items-center  px-[5%] justify-start text-white bg-black  items-start ">
-        <Breadcrumb />
+
       </section>
 
       {/* Get in touch */}
       <section className="  flex flex-row max-lg:flex-col items-center lg:h-[30vh] max-lg:h-[100vh] lg:pt-[50px] px-[5%] justify-evenly text-white bg-black  lg:items-start ">
         <div className="breadCrum w-1/4 ">
-          <h4 className="text-[#0a49eb] text-[16px]">Contact</h4>
+          <h4 className="text-[#0a49eb]  text-[16px]">Contact</h4>
         </div>
         <div className="right lg:w-3/4 max-lg:text-center">
           <h2 className="text-[48px]  leading-[60px]">Get in touch</h2>

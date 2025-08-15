@@ -70,7 +70,7 @@ export default function Footer() {
               );
             })}
           </div>
-          <div className=" leading-[20px] ">
+          {/* <div className=" leading-[20px] ">
             <h4 className="font-[600] text-[16px]">
               {footerData[1].DESIGN.title}
             </h4>
@@ -83,8 +83,8 @@ export default function Footer() {
                 </div>
               );
             })}
-          </div>
-          <div className="leading-[20px] ">
+          </div> */}
+          {/* <div className="leading-[20px] ">
             <h4 className="font-[600] text-[16px]">
               {footerData[8].Resources.title}
             </h4>
@@ -97,7 +97,7 @@ export default function Footer() {
                 </div>
               );
             })}
-          </div>
+          </div> */}
         </div>
 
         <div className="w-[25%] space-y-10 flex flex-col max-md:flex-row gap-x-6 ">
@@ -115,7 +115,7 @@ export default function Footer() {
               );
             })}
           </div>
-          <div className="leading-[20px] ">
+          {/* <div className="leading-[20px] ">
             <h4 className="font-[600] text-[16px]">
               {footerData[3].Solutions.title}
             </h4>
@@ -128,8 +128,8 @@ export default function Footer() {
                 </div>
               );
             })}
-          </div>
-          <div className="leading-[20px] ">
+          </div> */}
+          {/* <div className="leading-[20px] ">
             <h4 className="font-[600] text-[16px]">
               {footerData[4].Industries.title}
             </h4>
@@ -142,7 +142,7 @@ export default function Footer() {
                 </div>
               );
             })}
-          </div>
+          </div> */}
         </div>
 
         <div className="w-[25%] space-y-10 flex flex-col max-md:flex-row gap-x-6 ">
@@ -177,7 +177,7 @@ export default function Footer() {
               );
             })}
           </div>
-          <div className="leading-[20px] ">
+          {/* <div className="leading-[20px] ">
             <h4 className="font-[600] text-[16px]">
               {footerData[7].Company.title}
             </h4>
@@ -190,8 +190,15 @@ export default function Footer() {
                 </div>
               );
             })}
-          </div>
+          </div> */}
         </div>
+      </section>
+
+      <section className="  flex flex-row flex-wrap max-md:flex-col   items-start pt-[70px]  justify-evenly  px-[5%] bg-black text-white  ">
+        <img
+        src={'/Logos/footer.png'}
+className="w-full flex flex-row justify-start"
+        />
       </section>
     </Fragment>
   );

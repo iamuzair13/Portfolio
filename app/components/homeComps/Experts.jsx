@@ -9,6 +9,8 @@ import {
   SiWebflow,
 } from "react-icons/si";
 import { IoLogoWordpress } from "react-icons/io5";
+import { motion } from "framer-motion";
+
 
 const expertData = [
   {
@@ -69,7 +71,15 @@ export default function Experts() {
                 <h2 className="text-[#9297a0] text-[36px] leading-[45px]">
                   We've got experts in
                 </h2>
-                <h4 className="text-[36px]">{item.text}</h4>
+                <motion.h4
+                initial={{translateY:12}}
+                animate={{
+                  translateY:0
+                }}
+                transition={{
+                  duration:0.2,
+                  ease:'easeIn'
+                }} className="text-[36px]">{item.text}</motion.h4>
               </div>
             </div>
           );

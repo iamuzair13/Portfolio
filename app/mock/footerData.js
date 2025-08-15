@@ -123,24 +123,7 @@ export const footerData = [
         {
           text: "HubSpot CMS",
         },
-        {
-          text: "Webflow",
-        },
-        {
-          text: "Wordpress",
-        },
-        {
-          text: "Gatsby",
-        },
-        {
-          text: "NextJS",
-        },
-        {
-          text: "Vercel",
-        },
-        {
-          text: "Netlify",
-        },
+       
       ],
     },
   },
