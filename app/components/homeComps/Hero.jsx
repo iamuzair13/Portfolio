@@ -2,12 +2,13 @@ import { Fragment } from "react";
 import RobotFaceBack from "../../components/homeComps/robotFronBack";
 import { motion } from "framer-motion";
 import RobotFaceTurn from "./TurnRobot";
+import Robot from "./TurnRobot";
 
 export default function HeroSection() {
   return (
     <Fragment>
       <div className="relative w-full  flex flex-col items-center  lg:items-start md:px-4">
-     <div className="text-center md:text-left  absolute  w-full flex flex-col justify-center items-center ">
+        <div className="text-center md:text-left  absolute  w-full flex flex-col justify-center items-center ">
           <div className="  lg: mr-8">
             <motion.h1
               initial={{ opacity: 0, translateY: -30 }}
@@ -15,8 +16,8 @@ export default function HeroSection() {
               transition={{ ease: "easeInOut", duration: 1 }}
               className="text-white text-3xl md:text-5xl font-[800]  tracking-wider drop-shadow-md"
             >
-              Premium <span className="text-blue-600"> AI </span> Agency
-               <span className="text-blue-500"></span>
+              Premium <span className="text-blue-800"> AI </span> Agency
+              <span className="text-blue-500"></span>
             </motion.h1>
 
             <motion.p
@@ -24,13 +25,11 @@ export default function HeroSection() {
               animate={{ opacity: 1, translateY: 0 }}
               transition={{ ease: "easeInOut", duration: 1 }}
               className="text-white text-[30px]  flex flex-row justify-between mt-[-8] tracking-wide "
-            >
-              
-            </motion.p>
+            ></motion.p>
           </div>
-        </div> 
+        </div>
 
-        <div className="relative flex mt-10 w-full flex-row justify-center ">
+        <div className="relative flex mt-10 w-full flex-row justify-center  ">
           <div className="w-[30%] max-md:p-0 max-md:pt-20 max-lg:w-full justify-between flex  max-lg:gap-2 max-lg:flex-row lg:felx-col max-lg:pt-20 max-lg:p-20 ">
             <motion.img
               initial={{ translateY: 0 }}
@@ -93,9 +92,55 @@ export default function HeroSection() {
               className="absolute  lg:top-[250]  lg:left-[120] max-lg:left-[50] max-lg:top-[230]   max-lg:w-[30px] max-md:h-[30px]   w-[60px] object-cover rounded-none  "
             />
           </div>
-          <div className="relative w-[40%] max-lg:w-[100%] z-[10] text-center  flex flex-row justify-center items-center ">
-            <RobotFaceBack />
-          </div>
+          <motion.div
+            
+          >
+            <motion.div 
+            className="relative  w-[100vw]  h-[80vh] max-lg:w-[100%] z-[10] text-center  flex flex-col  "
+            initial={{ translateY: 0 }}
+            animate={{ translateY: [50, 0, 50] }}
+            transition={{
+              duration: 6,
+              ease: "easeInOut",
+              repeat: Infinity,
+            }}
+           >
+              <Robot />
+            </motion.div>
+            {/* <motion.div 
+           
+            initial={{ translateY: 0 }}
+            animate={{ translateY: [-90, 0, -90] }}
+            transition={{
+              duration: 6,
+              ease: "easeInOut",
+              repeat: Infinity,
+            }}
+            className="flex flex-row justify-center   ">
+              <motion.div
+                animate={{
+                  opacity: [1, 0.7, 0.5, 0.7, 1],
+                }}
+                transition={{
+                  duration: 4,
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                }}
+                className=" absolute rotate-x-80 max-lg:rotate-x-80 border-8 max-lg:border-2 shadow-[inset_0_0_80px_30px_#2563eb] max-lg:shadow-[inset_0_0_30px_4px_#2563eb] border-blue-800 max-lg:w-[100px] max-lg:h-[50px] xl:w-[300px] lg:w-[200px]  lg:h-[200px] xl:h-[300px] rounded-full"
+              ></motion.div>
+              <motion.div
+                animate={{
+                  opacity: [1, 0.7, 0.5, 0.7, 1],
+                }}
+                transition={{
+                  duration: 4,
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                }}
+                className=" border-8 max-lg:border-2 shadow-[0_0_60px_30px_#2563eb] border-blue-800 xl:w-[300px] lg:w-[200px] lg:h-[200px] max-lg:w-[100px] max-lg:h-[50px] max-lg:shadow-[0_0_20px_4px_#2563eb] rotate-x-80 max-lg:rotate-x-80 xl:h-[300px]  rounded-full"
+              ></motion.div>
+            </motion.div> */}
+          </motion.div>
 
           <div className="w-[30%] max-lg:w-[80%] max-md:p-0  max-lg:w-full justify-between max-md:justify-evenly flex  max-lg:gap-2 max-lg:flex-row max-lg:flex-wrap lg:felx-col  max-lg:p-20 ">
             <motion.img

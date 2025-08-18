@@ -29,6 +29,7 @@ import BlogCard from "@/app/components/homeComps/BlogCard";
 import HeroSection from "@/app/components/homeComps/Hero";
 import Image from "next/image";
 import RobotSection from "@/app/components/homeComps/TurnRobot";
+import Robot from "@/app/components/homeComps/TurnRobot";
 
 export default function Hero() {
   // Teams
@@ -58,17 +59,20 @@ export default function Hero() {
         {/* Background Image */}
         <Image
           className="w-full h-full object-cover"
-          src={"/images/heroBg/night-bg.jpg"}
+          src={"/images/heroBg/bg3.jpg"}
           fill={true}
           alt="Starry Background"
         />
 
         {/* Light Black Overlay */}
-        <div className="absolute inset-0 bg-black/60 z-0"></div>
+        <div className="absolute inset-0 bg-black/40 z-0"></div>
 
         {/* Content */}
-     
-          <HeroSection />
+
+        <HeroSection />
+        {/* <main className="h-screen w-screen">
+          <Robot />
+        </main> */}
       </section>
 
       {/* <Testimages/> */}
@@ -85,10 +89,7 @@ export default function Hero() {
               audiences, generate pipeline, and accelerate growth.
             </p>
           </div>
-          <div className="lower">
-
-            {/* <RobotSection/> */}
-          </div>
+          <div className="lower">{/* <RobotSection/> */}</div>
         </div>
 
         <div className="w-full lg:pt-[200px]">
@@ -179,9 +180,9 @@ export default function Hero() {
 
                 {/* Logo Card */}
                 <div className="hidden lg:flex h-[320px] w-full rounded-xl shadow-md px-5 justify-center items-center border border-blue-600 ">
-                  <Avatar className="rounded-none w-[300px] text-center items-center">
+                  <Avatar className="rounded-none w-[650px] text-center items-center">
                     <AvatarImage
-                      className="w-full"
+                      className="w-[full]"
                       src="/Logos/98.png"
                       alt="Logo"
                     />
@@ -235,11 +236,12 @@ export default function Hero() {
         </div>
       </section>
       {/* Experts */}
-      <section className="  flex flex-row max-lg:flex-col items-center h-[30vh] max-lg:h-[100vh] px-[5%] justify-evenly bg-black   ">
+      <section className="  flex flex-row max-lg:flex-col items-center h-[30vh] max-lg:h-[50vh] px-[5%] justify-evenly bg-black   ">
         <Experts />
       </section>
       {/* industries */}
-      <section className="  flex flex-col max-lg:flex-col items-center h-[80vh] max-lg:h-[100vh] px-[5%] justify-evenly bg-black   ">
+
+      {/* <section className="  flex flex-col max-lg:flex-col items-center h-[80vh] max-lg:h-[100vh] px-[5%] justify-evenly bg-black   ">
         <div className="lg:left lg:w-[70%]">
           <h2 className="text-white text-[60px] text-center max-lg:text-[24px] lg:leading-[70px] ">
             Serving industries that demand speed and scale.
@@ -264,9 +266,11 @@ export default function Hero() {
       </section>
       <section className="  flex flex-col  max-lg:flex-col items-center h-[80vh] max-lg:h-[100vh] px-[5%] justify-evenly bg-black   ">
         <Industries />
-      </section>
+      </section> */}
+
+
       {/* Team */}
-      <section className="  flex flex-row  max-lg:flex-col items-center h-[80vh] max-lg:h-[100vh] px-[5%] justify-evenly bg-black  max-lg:pt-50 ">
+      <section className="  flex flex-row  max-lg:flex-col items-center h-[80vh] max-lg:h-[50vh] px-[5%] justify-evenly bg-black  max-lg:pt-50 ">
         {teamData.map((item, index) => {
           if (teamIndex === index) {
             return (
@@ -305,7 +309,7 @@ export default function Hero() {
           }
         })}
         ,
-        <div className="right lg:w-1/2   flex flex-row  justify-center flex-wrap    ">
+        <div className="right lg:w-1/2   flex flex-row  justify-center flex-wrap   ">
           {teamData.map((item, index) => {
             return (
               <div

@@ -9,6 +9,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagramSquare, FaLinkedin } from "react-icons/fa";
 import { CiGlobe } from "react-icons/ci";
 import { footerData } from "../mock/footerData";
+import Link from "next/link";
 
 export default function Footer() {
   const a = 1;
@@ -26,36 +27,38 @@ export default function Footer() {
           <h4 className="text-[#a5acc0] text-[20px] max-md:text-[16px]  pb-10">
             Talk with our experts to start your website transformation today.
           </h4>
-          <div>
+          <div className="cursor-pointer">
+            <Link href={'/contact/sales'} >
             <WSButton value="Book Intro Call" icon={<ArrowUpRight />} />
+          </Link>
           </div>
         </div>
       </section>
 
-      {/* get started */}
-      <section className="  flex flex-row max-md:flex-col   items-center max-md:pt-[70px]  justify-evenly  px-[5%] bg-black text-white  ">
-        <div className=" md:w-1/2 ">
-          <Avatar className={"rounded-none w-[150px] "}>
-            <AvatarImage
-              className=""
-              src="/Logos/webstacks-logo.svg"
-              alt="Logo"
-            />
-          </Avatar>
-          <h4>Your website is never done.</h4>
-        </div>
-        <div className="flex flex-row  w-1/2 justify-end">
-          <SlSocialFacebook className="hover:bg-[#010b17] w-10 h-10 hover:text-[#0969dd] p-2 rounded-[20px]" />
-          <FaXTwitter className="hover:bg-[#010b17] w-10 h-10 hover:text-[#0969dd] p-2 rounded-[20px]" />
-          <FaLinkedin className="hover:bg-[#010b17] w-10 h-10 hover:text-[#0969dd] p-2 rounded-[20px]" />
-          <FaInstagramSquare className="hover:bg-[#010b17] w-10 h-10 hover:text-[#0969dd] p-2 rounded-[20px]" />
-          <CiGlobe className="hover:bg-[#010b17] w-10 h-10 hover:text-[#0969dd] p-2 rounded-[20px]" />
-        </div>
-      </section>
-
       {/* list */}
-      <section className="  flex flex-row flex-wrap max-md:flex-col   items-start pt-[70px]  justify-evenly  px-[5%] bg-black text-white  ">
-        <div className="flex flex-col max-md:flex-row gap-x-6 w-[25%] space-y-10">
+      <section className="  flex flex-row flex-wrap max-md:flex-row   items-start pt-[70px]  justify-evenly max-lg:flex-row flex-wrap px-[5%] bg-black text-white  ">
+        <div className="flex flex-col justify-between lg:w-1/4 max-lg:w-full max-lg:pb-10  gap-18">
+          <div className=" space-y-4">
+            <Avatar className={"rounded-none w-[200px]  "}>
+              <AvatarImage
+                className="object-cover"
+                src="/Logos/123.png"
+                alt="Logo"
+              />
+            </Avatar>
+            <h4 className="w-50">
+              Specializing in premium web, mobile, and product development
+            </h4>
+          </div>
+          <div className="flex flex-row   justify-start">
+            <SlSocialFacebook className="hover:bg-[#010b17] w-10 h-10 hover:text-[#0969dd] p-2 rounded-[20px]" />
+            <FaXTwitter className="hover:bg-[#010b17] w-10 h-10 hover:text-[#0969dd] p-2 rounded-[20px]" />
+            <FaLinkedin className="hover:bg-[#010b17] w-10 h-10 hover:text-[#0969dd] p-2 rounded-[20px]" />
+            <FaInstagramSquare className="hover:bg-[#010b17] w-10 h-10 hover:text-[#0969dd] p-2 rounded-[20px]" />
+            <CiGlobe className="hover:bg-[#010b17] w-10 h-10 hover:text-[#0969dd] p-2 rounded-[20px]" />
+          </div>
+        </div>
+        <div className="flex flex-col max-lg:flex-row max-lg:justify-between gap-x-6 w-[25%] max-lg:w-1/2 space-y-10">
           <div className="leading-[20px]">
             <h4 className="font-[600] text-[16px]">
               {footerData[0].Development.title}
@@ -100,7 +103,7 @@ export default function Footer() {
           </div> */}
         </div>
 
-        <div className="w-[25%] space-y-10 flex flex-col max-md:flex-row gap-x-6 ">
+        {/* <div className="w-[25%] space-y-10 flex flex-col max-md:flex-row gap-x-6 ">
           <div className=" leading-[20px]">
             <h4 className="font-[600] text-[16px]">
               {footerData[2].SEO.title}
@@ -115,7 +118,7 @@ export default function Footer() {
               );
             })}
           </div>
-          {/* <div className="leading-[20px] ">
+          <div className="leading-[20px] ">
             <h4 className="font-[600] text-[16px]">
               {footerData[3].Solutions.title}
             </h4>
@@ -128,8 +131,8 @@ export default function Footer() {
                 </div>
               );
             })}
-          </div> */}
-          {/* <div className="leading-[20px] ">
+          </div> 
+           <div className="leading-[20px] ">
             <h4 className="font-[600] text-[16px]">
               {footerData[4].Industries.title}
             </h4>
@@ -142,10 +145,10 @@ export default function Footer() {
                 </div>
               );
             })}
-          </div> */}
-        </div>
+          </div> 
+        </div> */}
 
-        <div className="w-[25%] space-y-10 flex flex-col max-md:flex-row gap-x-6 ">
+        <div className="w-[25%] max-lg:w-1/2 space-y-10 flex flex-col max-md:flex-row gap-x-6 ">
           <div className=" leading-[20px]">
             <h4 className="font-[600] text-[16px]">
               {footerData[5].Technologies.title}
@@ -162,7 +165,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="w-[25%] space-y-10 flex flex-col max-md:flex-row gap-x-6 ">
+        <div className="w-[25%] max-lg:w-full space-y-10 flex flex-col max-md:flex-row gap-x-6 ">
           <div className=" leading-[20px]">
             <h4 className="font-[600] text-[16px]">
               {footerData[6].ClientStories.title}
@@ -194,11 +197,31 @@ export default function Footer() {
         </div>
       </section>
 
-      <section className="  flex flex-row flex-wrap max-md:flex-col   items-start pt-[70px]  justify-evenly  px-[5%] bg-black text-white  ">
+      <section className="  flex flex-row flex-wrap max-md:flex-col   items-start justify-end  px-[5%] bg-black text-white  ">
         <img
-        src={'/Logos/footer.png'}
-className="w-full flex flex-row justify-start"
+          src={"/Logos/e.png"}
+          className="w-full flex flex-row justify-start"
         />
+      </section>
+
+      <section className="  flex flex-row flex-wrap max-md:flex-col  border-t-1 items-start py-4  justify-between  px-[5%] bg-black text-white  ">
+        <div>
+          © <span id="year"></span> <strong>Programmers Squad</strong>. All
+          rights reserved.
+          <script>
+            document.getElementById('year').textContent = new
+            Date().getFullYear();
+          </script>
+        </div>
+
+        <div className="flex gap-4">
+          <Link href='/privacy'>
+            <p className="cursor-pointer">Privacy Policy</p>
+          </Link>
+          <Link href = '/terms'>
+            <p className="cursor-pointer">Terms and Conditions</p>
+          </Link>
+        </div>
       </section>
     </Fragment>
   );

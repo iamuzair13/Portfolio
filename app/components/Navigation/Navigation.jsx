@@ -34,15 +34,15 @@ export default function Navigation() {
       <div className="container  flex items-center flex-row justify-between  ">
         {/* Logo */}
         <div className="w-[20%] max-lg:w-[50%] ">
-          <Avatar
-            className=" w-full h-24   rounded-none"
-          >
-            <AvatarImage
-              src="/Logos/123.png"
-              alt="Logo"
-              className="object-cover"
-            />
-          </Avatar>
+          <Link href={"/"}>
+            <Avatar className=" w-full h-24   rounded-none">
+              <AvatarImage
+                src="/Logos/123.png"
+                alt="Logo"
+                className="object-cover"
+              />
+            </Avatar>
+          </Link>
         </div>
 
         {/* Desktop Navigation */}
@@ -58,7 +58,7 @@ export default function Navigation() {
                   Services
                 </NavigationMenuTrigger>
 
-                <NavigationMenuContent className="min-w-[20rem] w-[40rem] bg-white shadow p-4 flex gap-8">
+                <NavigationMenuContent className="min-w-[20rem] w-[50rem] bg-white shadow p-4 flex gap-8">
                   <Capabilities />
                 </NavigationMenuContent>
               </NavigationMenuItem>
@@ -111,7 +111,7 @@ export default function Navigation() {
                 </NavigationMenuContent>
               </NavigationMenuItem> */}
 
-               <NavigationMenuItem className={"group"}>
+              <NavigationMenuItem className={"group"}>
                 <NavigationMenuLink
                   className={
                     "group-hover:text-gray-400 text-sm 	lg:text-[14px] xl:text-[14px]"
@@ -121,14 +121,14 @@ export default function Navigation() {
                   <Link href="/blog">About</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
-               <NavigationMenuItem className={"group"}>
+              <NavigationMenuItem className={"group"}>
                 <NavigationMenuLink
                   className={
                     "group-hover:text-gray-400 text-sm 	lg:text-[14px] xl:text-[14px]"
                   }
                   asChild
                 >
-                  <Link href="/blog">Contact</Link>
+                  <Link href="/contact">Contact</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>
@@ -137,7 +137,7 @@ export default function Navigation() {
 
         {/* Desktop Button */}
         <div className="hidden lg:block sm:w-[160px] md:w-[200px] flex flex-row justify-center w-[20%] ">
-          <Link href={"/contact"}>
+          <Link href={"/contact/sales"}>
             <WSButton
               value="Book Intro Call"
               icon={
@@ -181,8 +181,6 @@ export default function Navigation() {
                         <span onClick={handleShowTabs}>Solutions</span>
                         <ChevronRight className="w-4 h-4" />
                       </TabsTrigger> */}
-
-                      
 
                       <div className="w-full flex items-center justify-between px-4 py-2 hover:bg-gray-100 rounded-md cursor-pointer">
                         <span>Blog</span>

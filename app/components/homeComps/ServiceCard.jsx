@@ -4,12 +4,10 @@ import { Fragment } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
 
-
-
 const cardData = [
   {
     title: "Design",
-    image:'/images/serviceCards/1.PNG',
+    image: "/images/serviceCards/web-design.jpg",
     text: " Designs that engage, inspire, and drive results.",
     button: (
       <Button className=" absolute w-15 h-15  right-[-5] bottom-[-5] bg-[#08090c] border-1 group-hover:border-[#0a49eb]  group-hover:bg-[#0a49eb]">
@@ -20,7 +18,7 @@ const cardData = [
   {
     title: "Development",
     text: " Modern builds that are fast, scalable, and future-proof.",
-     image:'/images/serviceCards/2.PNG',
+    image: "/images/serviceCards/webdev.jpg",
     button: (
       <Button className=" absolute w-15 h-15  right-[-5] bottom-[-5] bg-[#08090c] border-1 group-hover:border-[#0a49eb]  group-hover:bg-[#0a49eb]">
         <ArrowUpRight className=" w-5 h-5" />
@@ -28,18 +26,25 @@ const cardData = [
     ),
   },
   {
-    title: "CRO",
+    title: "E-Commerce",
     text: " Data-driven experiments that turn visitors into customers.",
-    image:'/images/serviceCards/4.PNG',
-
+    image: "/images/serviceCards/ecom.jpg",
+    button: (
+      <Button className=" absolute w-15 h-15  right-[-5] bottom-[-5] bg-[#08090c] border-1 group-hover:border-[#0a49eb]  group-hover:bg-[#0a49eb]">
+        <ArrowUpRight className=" w-5 h-5" />
+      </Button>
+    ),
   },
   {
     title: "SEO",
     text: "Optimized websites that rank higher and load faster.",
-    image:'/images/serviceCards/3.PNG',
-
+    image: "/images/serviceCards/seo.png",
+    button: (
+      <Button className=" absolute w-15 h-15  right-[-5] bottom-[-5] bg-[#08090c] border-1 group-hover:border-[#0a49eb]  group-hover:bg-[#0a49eb]">
+        <ArrowUpRight className=" w-5 h-5" />
+      </Button>
+    ),
   },
-
 ];
 
 export default function ServiceCard() {
@@ -61,7 +66,9 @@ export default function ServiceCard() {
                 <AvatarFallback>Card 1</AvatarFallback>
               </Avatar>
               <div className="p-6 space-y-2">
-                <h4 className="lg:text-[18px] max-lg:text-[14px]   font-[600]">{item.title}</h4>
+                <h4 className="lg:text-[18px] max-lg:text-[14px]   font-[600]">
+                  {item.title}
+                </h4>
                 <p className="lg:text-[16px] max-lg:text-[14px] w-full font-[400]  text-[#90acc0]">
                   {item.text}
                 </p>

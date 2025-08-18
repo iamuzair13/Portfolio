@@ -49,13 +49,13 @@ export const capabilities = [
             <Move className="w-[15px] h-[15px] text-gray-500 group-hover:text-blue-600" />
           ),
         },
-        {
-          name: "Branding",
-          link: "#",
-          icon: (
-            <BadgeCheck className="w-[15px] h-[15px] text-gray-500 group-hover:text-blue-600" />
-          ),
-        },
+        // {
+        //   name: "Branding",
+        //   link: "#",
+        //   icon: (
+        //     <BadgeCheck className="w-[15px] h-[15px] text-gray-500 group-hover:text-blue-600" />
+        //   ),
+        // },
       ],
     },
 
@@ -84,19 +84,13 @@ export const capabilities = [
           ),
         },
         {
-          name: "Technical QA",
+          name: "Open AI",
           link: "#",
           icon: (
             <Bug className="w-[15px] h-[15px] text-gray-500 group-hover:text-blue-600" />
           ),
         },
-        {
-          name: "CMS Implementation",
-          link: "#",
-          icon: (
-            <LayoutDashboard className="w-[15px] h-[15px] text-gray-500 group-hover:text-blue-600" />
-          ),
-        },
+       
       ],
     },
 
@@ -126,6 +120,39 @@ export const capabilities = [
         },
         {
           name: "Localization",
+          link: "#",
+          icon: (
+            <Globe className="w-[15px] h-[15px] text-gray-500 group-hover:text-blue-600 " />
+          ),
+        },
+      ],
+    },
+    eCommerce: {
+      title: "E-Commerce",
+      items: [
+        {
+          name: "Amazon",
+          link: "#",
+          icon: (
+            <Layers className="w-[15px] h-[15px] text-gray-500 group-hover:text-blue-600" />
+          ),
+        },
+        {
+          name: "Shopify",
+          link: "#",
+          icon: (
+            <FileText className="w-[15px] h-[15px] text-gray-500 group-hover:text-blue-600" />
+          ),
+        },
+        {
+          name: "Walmart",
+          link: "#",
+          icon: (
+            <Settings className="w-[15px] h-[15px] text-gray-500 group-hover:text-blue-600" />
+          ),
+        },
+        {
+          name: "TikTok",
           link: "#",
           icon: (
             <Globe className="w-[15px] h-[15px] text-gray-500 group-hover:text-blue-600 " />
