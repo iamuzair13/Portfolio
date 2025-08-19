@@ -3,6 +3,7 @@ import RobotFaceBack from "../../components/homeComps/robotFronBack";
 import { motion } from "framer-motion";
 import RobotFaceTurn from "./TurnRobot";
 import Robot from "./TurnRobot";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
@@ -31,17 +32,19 @@ export default function HeroSection() {
 
         <div className="relative flex mt-10 w-full flex-row justify-center  ">
           <div className="w-[30%] max-md:p-0 max-md:pt-20 max-lg:w-full justify-between flex  max-lg:gap-2 max-lg:flex-row lg:felx-col max-lg:pt-20 max-lg:p-20 ">
-            <motion.img
-              initial={{ translateY: 0 }}
-              animate={{ translateY: [-30, 0, -30] }}
-              transition={{
-                duration: 6,
-                ease: "easeInOut",
-                repeat: Infinity,
-              }}
-              src="/images/ourServices/Android.png"
-              className=" absolute  w-[60px] max-lg:w-[30px] max-md:h-[30px]  lg:left-[230] max-lg:left-[50] max-lg:top-[120] lg:top-[100] object-cover rounded-none  "
-            />
+              <motion.img
+                initial={{ translateY: 0 }}
+                animate={{ translateY: [-30, 0, -30] }}
+                transition={{
+                  duration: 6,
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                }}
+                src="/images/ourServices/Android.png"
+                alt="Android Service"
+                className="absolute cursor-pointer w-[60px] h-[60px] max-lg:w-[30px] max-lg:h-[30px] lg:left-[230px] max-lg:left-[50px] max-lg:top-[120px] lg:top-[100px] object-cover rounded-none"
+              />
+ 
 
             <motion.img
               initial={{ translateY: 0 }}
@@ -92,19 +95,17 @@ export default function HeroSection() {
               className="absolute  lg:top-[250]  lg:left-[120] max-lg:left-[50] max-lg:top-[230]   max-lg:w-[30px] max-md:h-[30px]   w-[60px] object-cover rounded-none  "
             />
           </div>
-          <motion.div
-            
-          >
-            <motion.div 
-            className="relative  w-[100vw]  h-[80vh] max-lg:w-[100%] z-[10] text-center  flex flex-col  "
-            initial={{ translateY: 0 }}
-            animate={{ translateY: [50, 0, 50] }}
-            transition={{
-              duration: 6,
-              ease: "easeInOut",
-              repeat: Infinity,
-            }}
-           >
+          <motion.div>
+            <motion.div
+              className="relative  w-[100vw]  h-[80vh] max-lg:w-[100%] z-[10] text-center  flex flex-col  "
+              initial={{ translateY: 0 }}
+              animate={{ translateY: [50, 0, 50] }}
+              transition={{
+                duration: 6,
+                ease: "easeInOut",
+                repeat: Infinity,
+              }}
+            >
               <Robot />
             </motion.div>
             {/* <motion.div 

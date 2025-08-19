@@ -28,8 +28,6 @@ import {
 import BlogCard from "@/app/components/homeComps/BlogCard";
 import HeroSection from "@/app/components/homeComps/Hero";
 import Image from "next/image";
-import RobotSection from "@/app/components/homeComps/TurnRobot";
-import Robot from "@/app/components/homeComps/TurnRobot";
 
 export default function Hero() {
   // Teams
@@ -89,7 +87,9 @@ export default function Hero() {
               audiences, generate pipeline, and accelerate growth.
             </p>
           </div>
-          <div className="lower">{/* <RobotSection/> */}</div>
+          <div className="lower">{/* <RobotSection/> */}
+
+          </div>
         </div>
 
         <div className="w-full lg:pt-[200px]">

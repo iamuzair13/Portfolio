@@ -15,13 +15,14 @@ import {
   FormLabel,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Textarea } from "@/components/ui/textarea";
-import WSButton from "../UI/WSButton/WSButton";
 import { Button } from "@/components/ui/button";
 
 export default function Form() {
+  const [loading, setLoading] = useState(false);
+
   const form = useForm({
     defaultValues: {
       BusinessEmail: "",
@@ -31,8 +32,36 @@ export default function Form() {
     },
   });
 
-  const onSubmit = (values) => {
-    console.log("Valus : ", values);
+  const onSubmit = async (values) => {
+    setLoading(true);
+    try {
+      const res = await fetch("../API/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          to: "uzair.works3@gmail.com", // 👈 your email where you receive contact form data
+          subject: "New Contact Form Submission",
+          message: `
+            <h2>New Project Inquiry</h2>
+            <p><strong>Email:</strong> ${values.BusinessEmail}</p>
+            <p><strong>Budget:</strong> ${values.budget}</p>
+            <p><strong>Project Details:</strong> ${values.projectDetails}</p>
+            <p><strong>Reference:</strong> ${values.referance}</p>
+          `,
+        }),
+      });
+
+
+      const data = await res.json();
+      console.log(data.msg)
+      console.log('Sending data', data);
+      
+      alert(data.msg);
+    } catch (err) {
+      console.error("Form submit error:", err);
+      alert("Something went wrong ❌");
+    }
+    setLoading(false);
   };
 
   return (
@@ -47,11 +76,12 @@ export default function Form() {
                 <FormItem>
                   <FormLabel>Your Business Email</FormLabel>
                   <FormControl>
-                    <Input placeholder="Your Email" {...field} className={"w-full lgmin-h-[60px]"} />
+                    <Input placeholder="Your Email" {...field} className="w-full lg:min-h-[60px]" />
                   </FormControl>
                 </FormItem>
               )}
             />
+
             <FormField
               control={form.control}
               name="budget"
@@ -60,7 +90,7 @@ export default function Form() {
                   <FormLabel>Select your budget</FormLabel>
                   <FormControl>
                     <Select onValueChange={field.onChange} value={field.value}>
-                      <SelectTrigger className={"w-full lg:min-h-[60px]"}>
+                      <SelectTrigger className="w-full lg:min-h-[60px]">
                         <SelectValue placeholder="Select your budget" />
                       </SelectTrigger>
                       <SelectContent>
@@ -73,17 +103,16 @@ export default function Form() {
                 </FormItem>
               )}
             />
+
             <FormField
               control={form.control}
               name="projectDetails"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>
-                    Tell us more about your website project.
-                  </FormLabel>
+                  <FormLabel>Tell us more about your website project.</FormLabel>
                   <FormControl>
                     <Textarea
-                    className="lg:min-h-[120px]"
+                      className="lg:min-h-[120px]"
                       placeholder="Describe your project..."
                       {...field}
                     />
@@ -91,6 +120,7 @@ export default function Form() {
                 </FormItem>
               )}
             />
+
             <FormField
               control={form.control}
               name="referance"
@@ -98,12 +128,19 @@ export default function Form() {
                 <FormItem>
                   <FormLabel>How did you hear about us?</FormLabel>
                   <FormControl>
-                    <Input placeholder="Your Email" {...field} className={"w-full lg:min-h-[60px]"} />
+                    <Input placeholder="Reference (Google, Friend, etc.)" {...field} className="w-full lg:min-h-[60px]" />
                   </FormControl>
                 </FormItem>
               )}
             />
-            <Button className={'w-full lg:min-h-[40px] cursor-pointer bg-[#0a48e7] hover:bg-[#0f3bbe]'}>Submit</Button>
+
+            <Button
+              type="submit"
+              disabled={loading}
+              className="w-full lg:min-h-[40px] cursor-pointer bg-[#0a48e7] hover:bg-[#0f3bbe]"
+            >
+              {loading ? "Sending..." : "Submit"}
+            </Button>
           </form>
         </ShadcnForm>
       </div>
