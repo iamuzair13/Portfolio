@@ -69,7 +69,7 @@ export default function Hero() {
       </video>
 
         {/* Light Black Overlay */}
-        <div className="absolute inset-0 bg-black/40 z-0"></div>
+        <div className="absolute inset-0 bg-black/60 z-0"></div>
 
         {/* Content */}
 

@@ -19,6 +19,9 @@ const poppins = Poppins({
 export const metadata = {
   title: "Programmers Squad",
   description: "Showcasing innovative web solutions and modern development projects by Programmers Squad.",
+   icons: {
+    icon: "./a.png", // You can also use .png or .svg
+  },
 };
 
 

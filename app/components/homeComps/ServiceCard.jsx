@@ -61,7 +61,7 @@ export default function ServiceCard() {
                 <AvatarImage
                   src={item.image}
                   alt="Service Card 1"
-                  className="w-full h-auto object-cover  rounded-[20px] "
+                  className="w-full h-auto object-cover "
                 />
                 <AvatarFallback>Card 1</AvatarFallback>
               </Avatar>

@@ -30,7 +30,7 @@ export default function Navigation() {
   }
 
   return (
-    <nav className="w-full   sticky flex flex-row justify-center pr-[5%] pl-[4%] top-0 z-50 bg-black bg-cover bg-end bg-no-repeat  text-white">
+    <nav className="w-full   sticky flex flex-row justify-center pr-[5%] pl-[4%] top-0 z-50 bg-black bg-cover bg-end bg-no-repeat text-white">
       <div className="container  flex items-center flex-row justify-between  ">
         {/* Logo */}
         <div className="w-[20%] max-lg:w-[50%] ">
