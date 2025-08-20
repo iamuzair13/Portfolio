@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 import { Poppins } from "next/font/google";
+import Preloader from "./components/Preloader";
 
 const poppins = Poppins({
   variable:'--font-poppins',
@@ -25,6 +26,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${poppins.className} antialiased`  } >
+        <Preloader/>
         <Navigation />
         {children}
         <SpeedInsights />

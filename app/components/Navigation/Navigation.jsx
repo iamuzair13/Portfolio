@@ -35,9 +35,9 @@ export default function Navigation() {
         {/* Logo */}
         <div className="w-[20%] max-lg:w-[50%] ">
           <Link href={"/"}>
-            <Avatar className=" w-full h-24   rounded-none">
+            <Avatar className=" w-full h-24 max-lg:h-16   rounded-none">
               <AvatarImage
-                src="/Logos/123.png"
+                src="/Logos/ProgrammersSQUAD-final-logof.png"
                 alt="Logo"
                 className="object-cover"
               />

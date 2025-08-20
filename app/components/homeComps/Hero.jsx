@@ -8,7 +8,7 @@ import Link from "next/link";
 export default function HeroSection() {
   return (
     <Fragment>
-      <div className="relative w-full  flex flex-col items-center  lg:items-start md:px-4">
+      <div className="relative w-full  flex flex-col items-center max-lg:pt-14  lg:items-start md:px-4">
         <div className="text-center md:text-left  absolute  w-full flex flex-col justify-center items-center ">
           <div className="  lg: mr-8">
             <motion.h1
@@ -17,7 +17,7 @@ export default function HeroSection() {
               transition={{ ease: "easeInOut", duration: 1 }}
               className="text-white text-3xl md:text-5xl font-[800]  tracking-wider drop-shadow-md"
             >
-              Premium <span className="text-blue-800"> AI </span> Agency
+              Premium <span className="text-[#0a49eb]"> AI </span> Agency
               <span className="text-blue-500"></span>
             </motion.h1>
 

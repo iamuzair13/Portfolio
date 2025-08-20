@@ -10,8 +10,8 @@ export async function POST(req) {
       host: "sandbox.smtp.mailtrap.io", // from Mailtrap dashboard
       port: 587,
       auth: {
-        user: process.env.MAILTRAP_USER, // set in .env.local
-        pass: process.env.MAILTRAP_PASS, // set in .env.local
+        user: process.env.MAILTRAP_USER, // set in .env.local for local, in Vercel env vars for live
+        pass: process.env.MAILTRAP_PASS, // set in .env.local for local, in Vercel env vars for live
       },
     });
 
@@ -22,7 +22,10 @@ export async function POST(req) {
       html: `<p>${message}</p>`,
     });
 
-    return NextResponse.json({ success: true, msg: "Email sent successfully ✅" });
+    return NextResponse.json({
+      success: true,
+      msg: "Email sent successfully ✅",
+    });
   } catch (error) {
     console.error("Mailtrap error:", error);
     return NextResponse.json(

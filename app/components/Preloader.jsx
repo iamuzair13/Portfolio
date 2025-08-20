@@ -7,19 +7,36 @@ export default function Preloader() {
 
   useEffect(() => {
     // Simulate loading or wait until page is ready
-    const timer = setTimeout(() => setLoading(false), 2000); // 2 seconds
+    const timer = setTimeout(() => setLoading(false), 10000); // 2 seconds
     return () => clearTimeout(timer);
   }, []);
 
+  
+  useEffect(() => {
+    if (loading) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [loading]);
   if (!loading) return null;
 
   return (
-    <motion.div
-    initial={{opacity:1}}
-    animate={{opacity:0}}
-    transition={{duration:0.5,ease:'easeOut'}}
-    className="fixed top-0 left-0 w-full h-full bg-black flex items-center justify-center z-50">
-      <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
-    </motion.div>
+    <div className="flex justify-center items-center h-screen bg-black">
+      <motion.img
+        src="/Logos/ProgrammersSQUAD-final-logof.png"
+        alt="Animated"
+        // initial={{ filter: "grayscale(100%)" }}   // start gray
+        // animate={{ filter: ["grayscale(0%)", "grayscale(100%)", "grayscale(0%)"] }}
+        initial={{ scale: 1, filter: "grayscale(0%)", }} // start gray
+        animate={{
+          scale: [1, 1.3, 1],
+          filter: ["grayscale(100%)", "grayscale(0%)", "grayscale(100%)"],
+          
+        }}
+        transition={{ duration: 3, ease: "easeInOut", repeat: Infinity }}
+        className="w-150 max-lg:w-60  rounded-xl shadow-lg"
+      />
+    </div>
   );
 }

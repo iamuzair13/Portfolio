@@ -45,6 +45,8 @@ export default function Hero() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  
+
   // const bg = '/images/Masonary/m-1.webp'
 
   return (
@@ -52,15 +54,19 @@ export default function Hero() {
       {/* hero */}
       {/* bg-[url('/images/heroBg/laser-bg.jpg')] */}
       <section
-        className={`relative overflow-hidden max-md:h-[80vh]  bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center p-10 px-[5%] lg:px-12 py-10`}
+        className={`relative overflow-hidden max-md:h-[80vh]  bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center p-10  px-[5%] lg:px-12 py-10`}
       >
         {/* Background Image */}
-        <Image
-          className="w-full h-full object-cover"
-          src={"/images/heroBg/bg3.jpg"}
-          fill={true}
-          alt="Starry Background"
-        />
+         <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute top-0 left-0 w-full h-full object-cover"
+      >
+        <source src="/videos/5818973-uhd_3840_2160_24fps.mp4" type="video/mp4" />
+      
+      </video>
 
         {/* Light Black Overlay */}
         <div className="absolute inset-0 bg-black/40 z-0"></div>
@@ -75,7 +81,7 @@ export default function Hero() {
 
       {/* <Testimages/> */}
       {/* Services */}
-      <section className="  flex flex-col items-center justify-center  bg-black ">
+      <section className="  flex flex-col items-center justify-center   bg-black ">
         <div className="container  flex justify-center max-lg:p-4 lg:pt-[110px]">
           <div className="upper text-center lg:w-[72%]  space-y-8">
             <h2 className="text-[60px]  max-lg:text-[24px] text-center font-bold leading-tight text-white">
@@ -183,7 +189,7 @@ export default function Hero() {
                   <Avatar className="rounded-none w-[650px] text-center items-center">
                     <AvatarImage
                       className="w-[full]"
-                      src="/Logos/98.png"
+                      src="/Logos/ProgrammersSQUAD-final-logof.png"
                       alt="Logo"
                     />
                   </Avatar>

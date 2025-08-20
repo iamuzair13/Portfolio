@@ -89,16 +89,24 @@ export default function Robot() {
   }, []);
 
   return (
-    <Canvas camera={{ position: [0, 2, 6], fov: 50 }}>
-      {/* 🔹 Lights */}
+    <Canvas
+      camera={{ position: [0, 2, 6], fov: 50 }}
+      style={{ touchAction: "none" }} // 👈 disable pointer blocking
+      onCreated={({ gl }) => {
+        gl.domElement.style.touchAction = "auto"; // 👈 allow scrolling
+      }}
+    >
       <ambientLight intensity={0.7} /> {/* Soft global light */}
       <directionalLight position={[2, 3, 5]} intensity={8} />{" "}
       {/* Main light source */}
       {/* Robot */}
       <RobotModel mouse={mouse} />
       {/* 🔹 Controls for debugging (disable zoom for fixed distance) */}
-      <OrbitControls enableZoom={false} enableRotate={false} enablePan={false}/>
-      
+      <OrbitControls
+        enableZoom={false}
+        enableRotate={false}
+        enablePan={false}
+      />
     </Canvas>
   );
 }

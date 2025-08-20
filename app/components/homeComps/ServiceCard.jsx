@@ -10,7 +10,7 @@ const cardData = [
     image: "/images/serviceCards/web-design.jpg",
     text: " Designs that engage, inspire, and drive results.",
     button: (
-      <Button className=" absolute w-15 h-15  right-[-5] bottom-[-5] bg-[#08090c] border-1 group-hover:border-[#0a49eb]  group-hover:bg-[#0a49eb]">
+      <Button className=" absolute w-15 h-15  right-[-5] bottom-[-5] bg-[#08090c] border border-gray-700 group-hover:border-[#0a49eb]  group-hover:bg-[#0a49eb] hover:bg-[#0a49eb] cursor-pointer">
         <ArrowUpRight className=" w-5 h-5" />
       </Button>
     ),
@@ -20,7 +20,7 @@ const cardData = [
     text: " Modern builds that are fast, scalable, and future-proof.",
     image: "/images/serviceCards/webdev.jpg",
     button: (
-      <Button className=" absolute w-15 h-15  right-[-5] bottom-[-5] bg-[#08090c] border-1 group-hover:border-[#0a49eb]  group-hover:bg-[#0a49eb]">
+      <Button className=" absolute w-15 h-15  right-[-5] bottom-[-5] bg-[#08090c] border border-gray-700 group-hover:border-[#0a49eb] hover:bg-[#0a49eb]  group-hover:bg-[#0a49eb] cursor-pointer">
         <ArrowUpRight className=" w-5 h-5" />
       </Button>
     ),
@@ -30,7 +30,7 @@ const cardData = [
     text: " Data-driven experiments that turn visitors into customers.",
     image: "/images/serviceCards/ecom.jpg",
     button: (
-      <Button className=" absolute w-15 h-15  right-[-5] bottom-[-5] bg-[#08090c] border-1 group-hover:border-[#0a49eb]  group-hover:bg-[#0a49eb]">
+      <Button className=" absolute w-15 h-15  right-[-5] bottom-[-5] bg-[#08090c] border border-gray-700 group-hover:border-[#0a49eb]  group-hover:bg-[#0a49eb] hover:bg-[#0a49eb] cursor-pointer">
         <ArrowUpRight className=" w-5 h-5" />
       </Button>
     ),
@@ -40,7 +40,7 @@ const cardData = [
     text: "Optimized websites that rank higher and load faster.",
     image: "/images/serviceCards/seo.png",
     button: (
-      <Button className=" absolute w-15 h-15  right-[-5] bottom-[-5] bg-[#08090c] border-1 group-hover:border-[#0a49eb]  group-hover:bg-[#0a49eb]">
+      <Button className=" absolute w-15 h-15  right-[-5] bottom-[-5] bg-[#08090c] border border-gray-700 group-hover:border-[#0a49eb]  group-hover:bg-[#0a49eb] hover:bg-[#0a49eb] cursor-pointer">
         <ArrowUpRight className=" w-5 h-5" />
       </Button>
     ),
@@ -55,7 +55,7 @@ export default function ServiceCard() {
           return (
             <div
               key={index}
-              className="w-[320px] max-md:w-[90vw] h-[380px] group relative flex flex-col items-center justify-between pb-[40px] cursor-pointer rounded-[20px] overflow-hidden border border-white transition-colors duration-300 ease-in-out hover:border-[#0a49eb] text-white "
+              className="w-[320px] max-md:w-[90vw] h-[380px] group relative flex flex-col items-center justify-between pb-[40px] cursor-pointer rounded-[20px] overflow-hidden border border-gray-700 transition-colors duration-300 ease-in-out hover:border-[#0a49eb] text-white "
             >
               <Avatar className=" w-full h-50 transition-transform duration-300 ease-in-out group-hover:scale-105 text-end rounded-none ">
                 <AvatarImage

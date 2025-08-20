@@ -28,9 +28,9 @@ export default function Footer() {
             Talk with our experts to start your website transformation today.
           </h4>
           <div className="cursor-pointer">
-            <Link href={'/contact/sales'} >
-            <WSButton value="Book Intro Call" icon={<ArrowUpRight />} />
-          </Link>
+            <Link href={"/contact/sales"}>
+              <WSButton value="Book Intro Call" icon={<ArrowUpRight />} />
+            </Link>
           </div>
         </div>
       </section>
@@ -42,7 +42,7 @@ export default function Footer() {
             <Avatar className={"rounded-none w-[200px]  "}>
               <AvatarImage
                 className="object-cover"
-                src="/Logos/123.png"
+                src="/Logos/ProgrammersSQUAD-final-logof.png"
                 alt="Logo"
               />
             </Avatar>
@@ -199,8 +199,8 @@ export default function Footer() {
 
       <section className="  flex flex-row flex-wrap max-md:flex-col   items-start justify-end  px-[5%] bg-black text-white  ">
         <img
-          src={"/Logos/e.png"}
-          className="w-full flex flex-row justify-start"
+          src={"/Logos/e (1).png"}
+          className="w-full flex flex-row justify-start "
         />
       </section>
 
@@ -215,10 +215,10 @@ export default function Footer() {
         </div>
 
         <div className="flex gap-4">
-          <Link href='/privacy'>
+          <Link href="/privacy">
             <p className="cursor-pointer">Privacy Policy</p>
           </Link>
-          <Link href = '/terms'>
+          <Link href="/terms">
             <p className="cursor-pointer">Terms and Conditions</p>
           </Link>
         </div>
