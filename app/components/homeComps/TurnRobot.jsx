@@ -5,15 +5,13 @@ import { OrbitControls, useGLTF } from "@react-three/drei";
 
 // 🔹 Robot Model Component
 function RobotModel({ mouse }) {
-  // Refs for each robot part
   const headRef = useRef();
   const upperRef = useRef();
   const lowerRef = useRef();
 
-  // Load GLTF files for each part
-  // ⚠️ Make sure paths are correct (relative to `/public` folder in Next.js)
+  // Load GLTF files
   const { scene: head } = useGLTF(
-    "images/3D-Model/Head/source/Hy3D_textured_00063_.glb"
+    "images/3D-Model/Head/source/compressed.glb"
   );
   const { scene: upper } = useGLTF(
     "images/3D-Model/Upper-body/source/Hy3D_textured_00074_.glb"
@@ -22,44 +20,24 @@ function RobotModel({ mouse }) {
     "images/3D-Model/lower-body/source/Hy3D_textured_00076_.glb"
   );
 
-  // 🔹 Animation loop (runs every frame)
+  // 🔹 Apply mouse values every frame
   useFrame(() => {
     if (headRef.current) {
-      // Rotate head with mouse movement
-      const baseY = Math.PI / 2; // try 0, Math.PI/2, or -Math.PI/2
+      const baseY = Math.PI / 2;
       const baseX = 0;
-      headRef.current.rotation.y = baseY + mouse.x * 0.5; // Left ↔ Right (yaw)
-      headRef.current.rotation.x = baseX + mouse.y * 0.2; // Up ↔ Down (pitch)
+      headRef.current.rotation.y = baseY + mouse.x * 0.5;
+      headRef.current.rotation.x = baseX + mouse.y * 0.2;
     }
 
-    // 👉 Example: slight torso rotation
     if (upperRef.current) {
-      upperRef.current.rotation.y = mouse.x * 0.2; // shoulders follow mouse a bit
+      upperRef.current.rotation.y = mouse.x * 0.2;
     }
   });
 
   return (
     <group>
-      {/* Lower Body (base) */}
-      {/* 🔧 Adjust scale & position to fit correctly */}
-      <primitive
-        object={lower}
-        ref={lowerRef}
-        scale={1.5}
-        position={[0, -1, 0]}
-      />
-
-      {/* Upper Body */}
-      {/* 🔧 Position it above lower body */}
-      <primitive
-        object={upper}
-        ref={upperRef}
-        scale={1.5}
-        position={[0, 1, 0]}
-      />
-
-      {/* Head */}
-      {/* 🔧 Position it above upper body */}
+      <primitive object={lower} ref={lowerRef} scale={1.5} position={[0, -1, 0]} />
+      <primitive object={upper} ref={upperRef} scale={1.5} position={[0, 1, 0]} />
       <primitive
         object={head}
         ref={headRef}
@@ -71,42 +49,87 @@ function RobotModel({ mouse }) {
   );
 }
 
-export default function Robot() {
-  // State to store mouse position (-1 to 1)
-  const [mouse, setMouse] = useState({ x: 0, y: 0 });
+// 🔹 Smoother Component (runs inside Canvas)
+function MouseSmoother({ targetMouse, setMouse }) {
+  useFrame(() => {
+    setMouse((prev) => {
+      const lerp = (a, b, t) => a + (b - a) * t;
+      return {
+        x: lerp(prev.x, targetMouse.current.x, 0.1), // smoothing factor
+        y: lerp(prev.y, targetMouse.current.y, 0.1),
+      };
+    });
+  });
+  return null;
+}
 
-  // 🔹 Mouse tracking
+export default function Robot() {
+  const [mouse, setMouse] = useState({ x: 0, y: 0 }); // smoothed value
+  const targetMouse = useRef({ x: 0, y: 0 }); // raw input
+
   useEffect(() => {
+    // 🔹 Desktop Mouse Control
     const handleMouseMove = (event) => {
-      // Normalize mouse position from -1 to 1
       const x = (event.clientX / window.innerWidth) * 2 - 1;
       const y = (event.clientY / window.innerHeight) * 2 - 1;
-      setMouse({ x, y });
+      targetMouse.current = { x, y };
+    };
+
+    // 🔹 Mobile Touch Control
+    let startX = 0;
+    let startY = 0;
+    const handleTouchStart = (e) => {
+      if (e.touches.length === 1) {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+      }
+    };
+
+    const handleTouchMove = (e) => {
+      if (e.touches.length === 1) {
+        const dx = e.touches[0].clientX - startX;
+        const dy = e.touches[0].clientY - startY;
+
+        const x = (dx / window.innerWidth) * 2;
+        const y = (dy / window.innerHeight) * 2;
+
+        targetMouse.current = { x, y };
+      }
+    };
+
+    const handleTouchEnd = () => {
+      targetMouse.current = { x: 0, y: 0 }; // ease back to center
     };
 
     window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    window.addEventListener("touchstart", handleTouchStart, { passive: true });
+    window.addEventListener("touchmove", handleTouchMove, { passive: true });
+    window.addEventListener("touchend", handleTouchEnd, { passive: true });
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchmove", handleTouchMove);
+      window.removeEventListener("touchend", handleTouchEnd);
+    };
   }, []);
 
   return (
     <Canvas
       camera={{ position: [0, 2, 6], fov: 50 }}
-      style={{ touchAction: "none" }} // 👈 disable pointer blocking
+      style={{ touchAction: "none" }}
       onCreated={({ gl }) => {
-        gl.domElement.style.touchAction = "auto"; // 👈 allow scrolling
+        gl.domElement.style.touchAction = "auto"; // 👈 allow scroll
       }}
     >
-      <ambientLight intensity={0.7} /> {/* Soft global light */}
-      <directionalLight position={[2, 3, 5]} intensity={8} />{" "}
-      {/* Main light source */}
-      {/* Robot */}
+      <ambientLight intensity={0.7} />
+      <directionalLight position={[2, 3, 5]} intensity={8} />
+      
+      {/* 🔹 Run smoother inside Canvas */}
+      <MouseSmoother targetMouse={targetMouse} setMouse={setMouse} />
+      
       <RobotModel mouse={mouse} />
-      {/* 🔹 Controls for debugging (disable zoom for fixed distance) */}
-      <OrbitControls
-        enableZoom={false}
-        enableRotate={false}
-        enablePan={false}
-      />
+      <OrbitControls enableZoom={false} enableRotate={false} enablePan={false} />
     </Canvas>
   );
 }

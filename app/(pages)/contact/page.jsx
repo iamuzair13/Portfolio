@@ -37,10 +37,8 @@ export default function Contact() {
 
       {/* Get in touch */}
       <section className="  flex flex-row max-lg:flex-col items-center lg:h-[30vh] max-lg:h-[100vh] lg:pt-[50px] px-[5%] justify-evenly text-white bg-black  lg:items-start ">
-        <div className="breadCrum w-1/4 ">
-          <h4 className="text-[#0a49eb]  text-[16px]">Contact</h4>
-        </div>
-        <div className="right lg:w-3/4 max-lg:text-center">
+        
+        <div className="right lg:w-3/4 text-center ">
           <h2 className="text-[48px]  leading-[60px]">Get in touch</h2>
           <h4 className="text-[#a5acc0] text-[24px] leading-[36px]">
             Want to get in touch? We'd love to hear from you. Here's how you can
@@ -72,7 +70,7 @@ export default function Contact() {
       </section>
 
       <section className="  flex flex-col max-lg:flex-col gap-6 items-center h-[100vh]  px-[5%] justify-center text-white bg-black  items-center">
-        <div className="right max-lg:items-center space-y-8 lg:w-3/4">
+        <div className=" text-center space-y-8">
           <h2 className="text-[48px] max-lg:text-[32px] max-lg:leading-[42px]  leading-[60px] max-lg:text-center">
             Find us in the Heart of San Diego.
           </h2>
@@ -84,8 +82,8 @@ export default function Contact() {
       </section>
 
       {/* Map */}
-      <section className="  flex flex-row max-lg:flex-col gap-6 items-center lg:h-[100vh]  px-[5%] justify-center text-white bg-black  items-center">
-        <div className="w-3/4">
+      <section className="  flex flex-row max-lg:flex-col gap-6 items-center lg:h-[100vh]  px-[5%] justify-between text-white bg-black ">
+        <div className="w-2/4">
           <MyMap />
         </div>
 

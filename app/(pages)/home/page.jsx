@@ -1,25 +1,17 @@
 "use client";
 
 import WSButton from "@/app/UI/WSButton/WSButton";
-import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import {
   ArrowRight,
-  ArrowUpRight,
   ChevronRight,
-  Circle,
-  Link,
 } from "lucide-react";
 
-import { motion } from "framer-motion";
 
 import { Fragment, useEffect, useState } from "react";
 import ServiceCard from "@/app/components/homeComps/ServiceCard";
-import { Logos } from "../../mock/logos";
-import { Card } from "@/components/ui/card";
 import Experts from "@/app/components/homeComps/Experts";
-import { backgrounds } from "@/app/mock/Backgrounds";
-import Industries from "@/app/components/homeComps/industries";
+
 import { teamData } from "@/app/mock/TeamCard";
 import {
   FaRegArrowAltCircleLeft,
@@ -27,7 +19,6 @@ import {
 } from "react-icons/fa";
 import BlogCard from "@/app/components/homeComps/BlogCard";
 import HeroSection from "@/app/components/homeComps/Hero";
-import Image from "next/image";
 
 export default function Hero() {
   // Teams
@@ -47,12 +38,10 @@ export default function Hero() {
 
   
 
-  // const bg = '/images/Masonary/m-1.webp'
 
   return (
     <Fragment>
-      {/* hero */}
-      {/* bg-[url('/images/heroBg/laser-bg.jpg')] */}
+      
       <section
         className={`relative overflow-hidden max-md:h-[80vh]  bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center p-10  px-[5%] lg:px-12 py-10`}
       >
@@ -71,15 +60,10 @@ export default function Hero() {
         {/* Light Black Overlay */}
         <div className="absolute inset-0 bg-black/60 z-0"></div>
 
-        {/* Content */}
-
         <HeroSection />
-        {/* <main className="h-screen w-screen">
-          <Robot />
-        </main> */}
+        
       </section>
 
-      {/* <Testimages/> */}
       {/* Services */}
       <section className="  flex flex-col items-center justify-center   bg-black ">
         <div className="container  flex justify-center max-lg:p-4 lg:pt-[110px]">
@@ -246,33 +230,6 @@ export default function Hero() {
         <Experts />
       </section>
       {/* industries */}
-
-      {/* <section className="  flex flex-col max-lg:flex-col items-center h-[80vh] max-lg:h-[100vh] px-[5%] justify-evenly bg-black   ">
-        <div className="lg:left lg:w-[70%]">
-          <h2 className="text-white text-[60px] text-center max-lg:text-[24px] lg:leading-[70px] ">
-            Serving industries that demand speed and scale.
-          </h2>
-        </div>
-        <div className="right flex flex-col max-lg:justify-center max-lg:text-center items-center ">
-          <h4 className="text-[#a5acc0] text-[20px] max-lg:text-[16px]  pb-10">
-            We specialize in industries where high performance matters most.
-          </h4>
-          <div>
-            <WSButton
-              value="View All Industries"
-              icon={
-                <ChevronRight className="absolute inset-0 transition-opacity duration-200 opacity-100 group-hover:opacity-0" />
-              }
-              hovericon={
-                <ArrowRight className="absolute inset-0 transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
-              }
-            />
-          </div>
-        </div>
-      </section>
-      <section className="  flex flex-col  max-lg:flex-col items-center h-[80vh] max-lg:h-[100vh] px-[5%] justify-evenly bg-black   ">
-        <Industries />
-      </section> */}
 
 
       {/* Team */}

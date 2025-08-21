@@ -63,30 +63,6 @@ export default function Navigation() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
-              {/* <NavigationMenuItem className={"group"}>
-                <NavigationMenuTrigger
-                  className={
-                    "group-hover:text-gray-400 text-sm font-semibold	bg-transparent hover:bg-transparent lg:text-[10px] xl:text-[14px]"
-                  }
-                >
-                  Solutions
-                </NavigationMenuTrigger>
-                <NavigationMenuContent className="min-w-[20rem] w-[40rem] bg-white shadow p-4">
-                  <Solutions />
-                </NavigationMenuContent>
-              </NavigationMenuItem> */}
-
-              {/* <NavigationMenuItem className={"group"}>
-                <NavigationMenuLink
-                  className={
-                    "group-hover:text-gray-400 text-sm font-semibold lg:text-[10px] xl:text-[14px]	"
-                  }
-                  asChild
-                >
-                  <Link href="#">Client Stories</Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem> */}
-
               <NavigationMenuItem className={"group"}>
                 <NavigationMenuLink
                   className={
@@ -97,19 +73,6 @@ export default function Navigation() {
                   <Link href="/blog">Blog</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
-
-              {/* <NavigationMenuItem className={"group"}>
-                <NavigationMenuTrigger
-                  className={
-                    "group-hover:text-gray-400 text-sm 	bg-transparent hover:bg-transparent  lg:text-[14px] xl:text-[14px]"
-                  }
-                >
-                  About
-                </NavigationMenuTrigger>
-                <NavigationMenuContent className="min-w-[20rem] w-[40rem] bg-white shadow p-4">
-                  <Company />
-                </NavigationMenuContent>
-              </NavigationMenuItem> */}
 
               <NavigationMenuItem className={"group"}>
                 <NavigationMenuLink
@@ -174,31 +137,15 @@ export default function Navigation() {
                         <ChevronRight className="w-4 h-4" />
                       </TabsTrigger>
 
-                      {/* <TabsTrigger
-                        value="solutions"
-                        className="w-full flex items-center justify-between px-4 py-2 hover:bg-gray-100 rounded-md border-none shadow-none"
-                      >
-                        <span onClick={handleShowTabs}>Solutions</span>
-                        <ChevronRight className="w-4 h-4" />
-                      </TabsTrigger> */}
-
                       <div className="w-full flex items-center justify-between px-4 py-2 hover:bg-gray-100 rounded-md cursor-pointer">
-                        <span>Blog</span>
+                        <Link href="/blog">Blog</Link>
                       </div>
                       <div className="w-full flex items-center justify-between px-4 py-2 hover:bg-gray-100 rounded-md cursor-pointer">
-                        <span>About</span>
+                        <Link href="/blog">About</Link>
                       </div>
                       <div className="w-full flex items-center justify-between px-4 py-2 hover:bg-gray-100 rounded-md cursor-pointer">
-                        <span>Contact</span>
+                        <Link href="/contact">Contact</Link>
                       </div>
-
-                      {/* <TabsTrigger
-                        value="company"
-                        className="w-full flex items-center justify-between px-4 py-2 hover:bg-gray-100 rounded-md border-none shadow-none"
-                      >
-                        <span onClick={handleShowTabs}>Company</span>
-                        <ChevronRight className="w-4 h-4" />
-                      </TabsTrigger> */}
                     </div>
                   )}
                 </TabsList>
@@ -226,11 +173,6 @@ export default function Navigation() {
                   </div>
                 )}
               </Tabs>
-              {/* <div className="md:hidder">
-                <Button className="bg-[#0a49eb] hover:bg-[#0f3bbe]">
-                  Book Intro Call
-                </Button>
-              </div> */}
             </SheetContent>
           </Sheet>
         </div>

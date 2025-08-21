@@ -57,5 +57,3 @@ const handleCheckboxChange = (filter) => {
   );
 }
 
-// user name : chuzair600
-// mongo pass : cSgj7dRAW0j2F3HK

@@ -1,7 +1,5 @@
 import { Fragment } from "react";
-import RobotFaceBack from "../../components/homeComps/robotFronBack";
 import { motion } from "framer-motion";
-import RobotFaceTurn from "./TurnRobot";
 import Robot from "./TurnRobot";
 import Link from "next/link";
 
@@ -98,7 +96,7 @@ export default function HeroSection() {
           <motion.div>
             <motion.div
               className="relative  w-[100vw]  h-[80vh] max-lg:w-[100%] z-[10] text-center  flex flex-col  "
-              initial={{ translateY: 0 }}
+              initial={{ translateY: 0, }}
               animate={{ translateY: [50, 0, 50] }}
               transition={{
                 duration: 6,
@@ -108,39 +106,6 @@ export default function HeroSection() {
             >
               <Robot />
             </motion.div>
-            {/* <motion.div 
-           
-            initial={{ translateY: 0 }}
-            animate={{ translateY: [-90, 0, -90] }}
-            transition={{
-              duration: 6,
-              ease: "easeInOut",
-              repeat: Infinity,
-            }}
-            className="flex flex-row justify-center   ">
-              <motion.div
-                animate={{
-                  opacity: [1, 0.7, 0.5, 0.7, 1],
-                }}
-                transition={{
-                  duration: 4,
-                  ease: "easeInOut",
-                  repeat: Infinity,
-                }}
-                className=" absolute rotate-x-80 max-lg:rotate-x-80 border-8 max-lg:border-2 shadow-[inset_0_0_80px_30px_#2563eb] max-lg:shadow-[inset_0_0_30px_4px_#2563eb] border-blue-800 max-lg:w-[100px] max-lg:h-[50px] xl:w-[300px] lg:w-[200px]  lg:h-[200px] xl:h-[300px] rounded-full"
-              ></motion.div>
-              <motion.div
-                animate={{
-                  opacity: [1, 0.7, 0.5, 0.7, 1],
-                }}
-                transition={{
-                  duration: 4,
-                  ease: "easeInOut",
-                  repeat: Infinity,
-                }}
-                className=" border-8 max-lg:border-2 shadow-[0_0_60px_30px_#2563eb] border-blue-800 xl:w-[300px] lg:w-[200px] lg:h-[200px] max-lg:w-[100px] max-lg:h-[50px] max-lg:shadow-[0_0_20px_4px_#2563eb] rotate-x-80 max-lg:rotate-x-80 xl:h-[300px]  rounded-full"
-              ></motion.div>
-            </motion.div> */}
           </motion.div>
 
           <div className="w-[30%] max-lg:w-[80%] max-md:p-0  max-lg:w-full justify-between max-md:justify-evenly flex  max-lg:gap-2 max-lg:flex-row max-lg:flex-wrap lg:felx-col  max-lg:p-20 ">
