@@ -7,7 +7,7 @@ import { ArrowUpRight } from "lucide-react";
 const cardData = [
   {
     title: "Design",
-    image: "/images/serviceCards/graphic-designing.png",
+    image: "/images/serviceCards/2020.png",
     text: " Designs that engage, inspire, and drive results.",
     button: (
       <Button className=" absolute w-15 h-15  right-[-5] bottom-[-5] bg-[#08090c] border border-gray-700 group-hover:border-[#0a49eb]  group-hover:bg-[#0a49eb] hover:bg-[#0a49eb] cursor-pointer">
@@ -18,7 +18,7 @@ const cardData = [
   {
     title: "Development",
     text: " Modern builds that are fast, scalable, and future-proof.",
-    image: "/images/serviceCards/webdev.jpg",
+    image: "/images/serviceCards/WEB-&-APPS.png",
     button: (
       <Button className=" absolute w-15 h-15  right-[-5] bottom-[-5] bg-[#08090c] border border-gray-700 group-hover:border-[#0a49eb] hover:bg-[#0a49eb]  group-hover:bg-[#0a49eb] cursor-pointer">
         <ArrowUpRight className=" w-5 h-5" />
@@ -28,7 +28,7 @@ const cardData = [
   {
     title: "E-Commerce",
     text: " Data-driven experiments that turn visitors into customers.",
-    image: "/images/serviceCards/121.png",
+    image: "/images/serviceCards/100.png",
     button: (
       <Button className=" absolute w-15 h-15  right-[-5] bottom-[-5] bg-[#08090c] border border-gray-700 group-hover:border-[#0a49eb]  group-hover:bg-[#0a49eb] hover:bg-[#0a49eb] cursor-pointer">
         <ArrowUpRight className=" w-5 h-5" />

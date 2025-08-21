@@ -2,11 +2,7 @@
 
 import WSButton from "@/app/UI/WSButton/WSButton";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
-import {
-  ArrowRight,
-  ChevronRight,
-} from "lucide-react";
-
+import { ArrowRight, ChevronRight } from "lucide-react";
 
 import { Fragment, useEffect, useState } from "react";
 import ServiceCard from "@/app/components/homeComps/ServiceCard";
@@ -19,6 +15,7 @@ import {
 } from "react-icons/fa";
 import BlogCard from "@/app/components/homeComps/BlogCard";
 import HeroSection from "@/app/components/homeComps/Hero";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   // Teams
@@ -36,33 +33,36 @@ export default function Hero() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  
-
-
   return (
     <Fragment>
-      
-      <section
-        className={`relative overflow-hidden max-md:h-[80vh]  bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center p-10  px-[5%] lg:px-12 py-10`}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 3.2, ease: "easeInOut" }}
       >
-        {/* Background Image */}
-         <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover"
-      >
-        <source src="/videos/5818973-uhd_3840_2160_24fps.mp4" type="video/mp4" />
-      
-      </video>
+        <section
+          className={`relative overflow-hidden max-md:h-[80vh]  bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center p-10  px-[5%] lg:px-12 py-10`}
+        >
+          {/* Background Image */}
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute top-0 left-0 w-full h-full object-cover"
+          >
+            <source
+              src="/videos/5818973-uhd_3840_2160_24fps.mp4"
+              type="video/mp4"
+            />
+          </video>
 
-        {/* Light Black Overlay */}
-        <div className="absolute inset-0 bg-black/60 z-0"></div>
+          {/* Light Black Overlay */}
+          <div className="absolute inset-0 bg-black/60 z-0"></div>
 
-        <HeroSection />
-        
-      </section>
+          <HeroSection />
+        </section>
+      </motion.div>
 
       {/* Services */}
       <section className="  flex flex-col items-center justify-center   bg-black ">
@@ -77,9 +77,7 @@ export default function Hero() {
               audiences, generate pipeline, and accelerate growth.
             </p>
           </div>
-          <div className="lower">{/* <RobotSection/> */}
-
-          </div>
+          <div className="lower">{/* <RobotSection/> */}</div>
         </div>
 
         <div className="w-full lg:pt-[200px]">
@@ -230,7 +228,6 @@ export default function Hero() {
         <Experts />
       </section>
       {/* industries */}
-
 
       {/* Team */}
       <section className="  flex flex-row  max-lg:flex-col items-center h-[80vh] max-lg:h-[50vh] px-[5%] justify-evenly bg-black  max-lg:pt-50 ">

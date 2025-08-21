@@ -7,7 +7,7 @@ export default function Preloader() {
 
   useEffect(() => {
     // Simulate loading or wait until page is ready
-    const timer = setTimeout(() => setLoading(false), 10000); // 2 seconds
+    const timer = setTimeout(() => setLoading(false), 3000); // 2 seconds
     return () => clearTimeout(timer);
   }, []);
 
@@ -38,7 +38,10 @@ export default function Preloader() {
         className="w-150 max-lg:w-60  rounded-xl shadow-lg"
       />
     </div> */}
-      <div className="flex justify-center gap-6 max-lg:gap-1 items-center max-lg:items-center h-[100vh] bg-black">
+      <motion.div className="flex justify-center gap-6 max-lg:gap-1 items-center max-lg:items-center h-[100vh] bg-black"
+         initial={{opacity:0}}
+      animate={{opacity:[1]}}
+      transition={{duration:0.3, ease:'easeInOut'}}>
         <motion.img
           src="/Logos/ji.png"
           alt="Animated"
@@ -54,7 +57,7 @@ export default function Preloader() {
 
         {/* <h2 className="text-[60px] max-lg:text-[20px] text-white">Programmers Squad</h2> */}
         <img src="/Logos/20.png" alt="" className="max-lg:w-60"/>
-      </div>
+      </motion.div>
     </>
   );
 }
