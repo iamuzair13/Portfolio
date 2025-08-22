@@ -1,5 +1,4 @@
 import {
-  BadgeCheck,
   Brush,
   Code,
   LayoutTemplate,
@@ -8,13 +7,14 @@ import {
   Link2,
   Database,
   Bug,
-  LayoutDashboard,
   Layers,
   FileText,
   Settings,
   Globe,
 
 } from "lucide-react";
+import { RiHandbagFill } from "react-icons/ri";
+import { SiAmazon, SiShopify, SiTiktok, SiWalmart } from "react-icons/si";
 
 export const capabilities = [
   {
@@ -25,37 +25,31 @@ export const capabilities = [
           name: "Web Design",
           link: "#",
           icon: (
-            <Monitor className="w-[15px] h-[15px] text-gray-500 group-hover:text-blue-600 group-hover:text-blue-600" />
+            <Monitor className="w-[15px] h-[15px] text-blue-500 " />
           ),
         },
         {
           name: "Design Systems",
           link: "#",
           icon: (
-            <LayoutTemplate className="w-[15px] h-[15px] text-gray-500 group-hover:text-blue-600 group-hover:text-blue-600" />
+            <LayoutTemplate className="w-[15px] h-[15px] text-blue-500 " />
           ),
         },
         {
           name: "Illustration Design",
           link: "#",
           icon: (
-            <Brush className="w-[15px] h-[15px] text-gray-500 group-hover:text-blue-600" />
+            <Brush className="w-[15px] h-[15px] text-blue-500 " />
           ),
         },
         {
           name: "Motion Design",
           link: "#",
           icon: (
-            <Move className="w-[15px] h-[15px] text-gray-500 group-hover:text-blue-600" />
+            <Move className="w-[15px] h-[15px] text-blue-500 " />
           ),
         },
-        // {
-        //   name: "Branding",
-        //   link: "#",
-        //   icon: (
-        //     <BadgeCheck className="w-[15px] h-[15px] text-gray-500 group-hover:text-blue-600" />
-        //   ),
-        // },
+        
       ],
     },
 
@@ -66,28 +60,28 @@ export const capabilities = [
           name: "Frontend Development",
           link: "#",
           icon: (
-            <Code className="w-[15px] h-[15px] text-gray-500 group-hover:text-blue-600" />
+            <Code className="w-[15px] h-[15px] text-blue-500 " />
           ),
         },
         {
           name: "System Integrations",
           link: "#",
           icon: (
-            <Link2 className="w-[15px] h-[15px] text-gray-500 group-hover:text-blue-600" />
+            <Link2 className="w-[15px] h-[15px] text-blue-500 " />
           ),
         },
         {
           name: "Backend Development",
           link: "#",
           icon: (
-            <Database className="w-[15px] h-[15px] text-gray-500 group-hover:text-blue-600" />
+            <Database className="w-[15px] h-[15px] text-blue-500 " />
           ),
         },
         {
-          name: "Open AI",
+          name: "OpenAI Integration",
           link: "#",
           icon: (
-            <Bug className="w-[15px] h-[15px] text-gray-500 group-hover:text-blue-600" />
+            <Bug className="w-[15px] h-[15px] text-blue-500 " />
           ),
         },
        
@@ -101,28 +95,28 @@ export const capabilities = [
           name: "Site Structure",
           link: "#",
           icon: (
-            <Layers className="w-[15px] h-[15px] text-gray-500 group-hover:text-blue-600" />
+            <Layers className="w-[15px] h-[15px] text-blue-500 " />
           ),
         },
         {
           name: "On-Page SEO",
           link: "#",
           icon: (
-            <FileText className="w-[15px] h-[15px] text-gray-500 group-hover:text-blue-600" />
+            <FileText className="w-[15px] h-[15px] text-blue-500 " />
           ),
         },
         {
           name: "Technical SEO",
           link: "#",
           icon: (
-            <Settings className="w-[15px] h-[15px] text-gray-500 group-hover:text-blue-600" />
+            <Settings className="w-[15px] h-[15px] text-blue-500 " />
           ),
         },
         {
           name: "Localization",
           link: "#",
           icon: (
-            <Globe className="w-[15px] h-[15px] text-gray-500 group-hover:text-blue-600 " />
+            <Globe className="w-[15px] h-[15px] text-blue-500 " />
           ),
         },
       ],
@@ -134,28 +128,29 @@ export const capabilities = [
           name: "Amazon",
           link: "#",
           icon: (
-            <Layers className="w-[15px] h-[15px] text-gray-500 group-hover:text-blue-600" />
+            <SiAmazon  className="w-[15px] h-[15px] text-blue-500 " />
           ),
         },
         {
           name: "Shopify",
           link: "#",
           icon: (
-            <FileText className="w-[15px] h-[15px] text-gray-500 group-hover:text-blue-600" />
+            <SiShopify  className="w-[15px] h-[15px] text-blue-500 " />
           ),
         },
         {
           name: "Walmart",
           link: "#",
           icon: (
-            <Settings className="w-[15px] h-[15px] text-gray-500 group-hover:text-blue-600" />
+            <RiHandbagFill   className="w-[15px] h-[15px] text-blue-500 " />
+            
           ),
         },
         {
           name: "TikTok",
           link: "#",
           icon: (
-            <Globe className="w-[15px] h-[15px] text-gray-500 group-hover:text-blue-600 " />
+            <SiTiktok  className="w-[15px] h-[15px] text-blue-500 " />
           ),
         },
       ],

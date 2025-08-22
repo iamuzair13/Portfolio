@@ -1,16 +1,17 @@
 import { Fragment, useState } from "react";
-import { RiGatsbyLine, RiNextjsLine, RiVercelFill } from "react-icons/ri";
-import {
-  SiDatocms,
-  SiNetlify,
-  SiPrismic,
-  SiSanity,
-  SiStoryblok,
-  SiWebflow,
-} from "react-icons/si";
-import { IoLogoWordpress } from "react-icons/io5";
+import {  RiNextjsLine,  } from "react-icons/ri";
+import { SiMongodb } from "react-icons/si";
 import { motion } from "framer-motion";
-
+import {
+  FaAmazon,
+  FaEtsy,
+  FaFigma,
+  FaNode,
+  FaReact,
+  FaShopify,
+} from "react-icons/fa6";
+import { TbBrandReactNative } from "react-icons/tb";
+import { DiIllustrator, DiPhotoshop } from "react-icons/di";
 
 const expertData = [
   {
@@ -18,40 +19,44 @@ const expertData = [
     text: "Next.Js",
   },
   {
-    icon: <RiGatsbyLine className="w-10 h-10" />,
-    text: "Gatsby.js",
+    icon: <FaReact className="w-10 h-10" />,
+    text: "React.js",
   },
   {
-    icon: <SiStoryblok className="w-10 h-10" />,
-    text: "StoryBlok",
+    icon: <FaNode className="w-10 h-10" />,
+    text: "Node.Js",
   },
   {
-    icon: <SiSanity className="w-10 h-10" />,
-    text: "Sanity",
+    icon: <TbBrandReactNative className="w-10 h-10" />,
+    text: "React Native",
   },
   {
-    icon: <IoLogoWordpress className="w-10 h-10" />,
-    text: "Wordpress",
+    icon: <SiMongodb className="w-10 h-10" />,
+    text: "MongoDB",
   },
   {
-    icon: <SiDatocms className="w-10 h-10" />,
-    text: "Dato",
+    icon: <DiPhotoshop className="w-10 h-10" />,
+    text: "Photoshop",
   },
   {
-    icon: <SiWebflow className="w-10 h-10" />,
-    text: "WebFlow",
+    icon: <DiIllustrator className="w-10 h-10" />,
+    text: "Illustrator",
   },
   {
-    icon: <SiNetlify className="w-10 h-10" />,
-    text: "Netlify",
+    icon: <FaFigma className="w-10 h-10" />,
+    text: "Figma",
   },
   {
-    icon: <RiVercelFill className="w-10 h-10" />,
-    text: "Vercel",
+    icon: <FaAmazon className="w-10 h-10" />,
+    text: "Amazon",
   },
   {
-    icon: <SiPrismic className="w-10 h-10" />,
-    text: "Prismic",
+    icon: <FaShopify className="w-10 h-10" />,
+    text: "Shopify",
+  },
+  {
+    icon: <FaEtsy className="w-10 h-10" />,
+    text: "Etsy",
   },
 ];
 
@@ -60,48 +65,54 @@ export default function Experts() {
 
   return (
     <Fragment>
-      {expertData.map((item, index) => {
-        if (expertIndex === index) {
-          return (
-            <div
-              key={index}
-              className="text-white  lg:w-[40%] max-lg:text-center"
-            >
-              <div>
-                <h2 className="text-[#9297a0] text-[36px] leading-[45px]">
-                  We've got experts in
-                </h2>
-                <motion.h4
-                initial={{translateY:12}}
-                animate={{
-                  translateY:0
-                }}
-                transition={{
-                  duration:0.2,
-                  ease:'easeIn'
-                }} className="text-[36px]">{item.text}</motion.h4>
-              </div>
-            </div>
-          );
-        }
-      })}
-      <div className="flex flex-row flex-wrap  justify-between ">
+      <div className="flex w-full justify-between max-lg:flex-col">
         {expertData.map((item, index) => {
-          return (
-            <div
-              key={index}
-              onMouseEnter={() => {
-                setExpertIndex(index);
-              }}
-              onMouseLeave={() => {
-                setExpertIndex(0);
-              }}
-              className="flex flex-row flex-wrap border border-transparent transition-colors duration-300 ease-in-out hover:border-[#1663ff] rounded-[10px] p-2 "
-            >
-              <h4 className="text-white ">{item.icon}</h4>
-            </div>
-          );
+          if (expertIndex === index) {
+            return (
+              <div
+                key={index}
+                className="text-white lg:w-[60%] max-lg:text-center"
+              >
+                <div className="">
+                  <h2 className="text-[#9297a0]  text-[45px] max-lg:text-[30px] leading-[45px]">
+                    We've got experts in
+                  </h2>
+                  <motion.h4
+                    initial={{ translateY: 12 }}
+                    animate={{
+                      translateY: 0,
+                    }}
+                    transition={{
+                      duration: 0.2,
+                      ease: "easeIn",
+                    }}
+                    className="text-[45px] max-lg:text-[30px]"
+                  >
+                    {item.text}
+                  </motion.h4>
+                </div>
+              </div>
+            );
+          }
         })}
+        <div className="flex flex-row flex-wrap w-[30%] max-lg:w-full justify-between ">
+          {expertData.map((item, index) => {
+            return (
+              <div
+                key={index}
+                onMouseEnter={() => {
+                  setExpertIndex(index);
+                }}
+                onMouseLeave={() => {
+                  setExpertIndex(0);
+                }}
+                className="flex flex-row flex-wrap border border-transparent transition-colors duration-300 ease-in-out hover:border-[#1663ff] rounded-[10px] p-2 cursor-pointer"
+              >
+                <h4 className="text-white ">{item.icon}</h4>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </Fragment>
   );

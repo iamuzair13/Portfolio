@@ -29,7 +29,7 @@ export default function Footer() {
           </h4>
           <div className="cursor-pointer">
             <Link href={"/contact/sales"}>
-              <WSButton value="Book Intro Call" icon={<ArrowUpRight />} />
+              <WSButton value="Book a 15-Min Call" icon={<ArrowUpRight />} />
             </Link>
           </div>
         </div>
@@ -73,80 +73,9 @@ export default function Footer() {
               );
             })}
           </div>
-          {/* <div className=" leading-[20px] ">
-            <h4 className="font-[600] text-[16px]">
-              {footerData[1].DESIGN.title}
-            </h4>
-            {footerData[1].DESIGN.items.map((item, index) => {
-              return (
-                <div key={index}>
-                  <p className="cursor-pointer leading-[40px] text-[14px]">
-                    {item.text}
-                  </p>
-                </div>
-              );
-            })}
-          </div> */}
-          {/* <div className="leading-[20px] ">
-            <h4 className="font-[600] text-[16px]">
-              {footerData[8].Resources.title}
-            </h4>
-            {footerData[8].Resources.items.map((item, index) => {
-              return (
-                <div key={index}>
-                  <p className="cursor-pointer leading-[40px] text-[14px]">
-                    {item.text}
-                  </p>
-                </div>
-              );
-            })}
-          </div> */}
+         
         </div>
 
-        {/* <div className="w-[25%] space-y-10 flex flex-col max-md:flex-row gap-x-6 ">
-          <div className=" leading-[20px]">
-            <h4 className="font-[600] text-[16px]">
-              {footerData[2].SEO.title}
-            </h4>
-            {footerData[2].SEO.items.map((item, index) => {
-              return (
-                <div key={index}>
-                  <p className="cursor-pointer leading-[40px] text-[14px]">
-                    {item.text}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-          <div className="leading-[20px] ">
-            <h4 className="font-[600] text-[16px]">
-              {footerData[3].Solutions.title}
-            </h4>
-            {footerData[3].Solutions.items.map((item, index) => {
-              return (
-                <div key={index}>
-                  <p className="cursor-pointer leading-[40px] text-[14px]">
-                    {item.text}
-                  </p>
-                </div>
-              );
-            })}
-          </div> 
-           <div className="leading-[20px] ">
-            <h4 className="font-[600] text-[16px]">
-              {footerData[4].Industries.title}
-            </h4>
-            {footerData[4].Industries.items.map((item, index) => {
-              return (
-                <div key={index}>
-                  <p className="cursor-pointer leading-[40px] text-[14px]">
-                    {item.text}
-                  </p>
-                </div>
-              );
-            })}
-          </div> 
-        </div> */}
 
         <div className="w-[25%] max-lg:w-1/2 space-y-10 flex flex-col max-md:flex-row gap-x-6 ">
           <div className=" leading-[20px]">
@@ -180,20 +109,7 @@ export default function Footer() {
               );
             })}
           </div>
-          {/* <div className="leading-[20px] ">
-            <h4 className="font-[600] text-[16px]">
-              {footerData[7].Company.title}
-            </h4>
-            {footerData[7].Company.items.map((item, index) => {
-              return (
-                <div key={index}>
-                  <p className="cursor-pointer leading-[40px] text-[14px]">
-                    {item.text}
-                  </p>
-                </div>
-              );
-            })}
-          </div> */}
+         
         </div>
       </section>
 
@@ -205,21 +121,16 @@ export default function Footer() {
       </section>
 
       <section className="  flex flex-row flex-wrap max-md:flex-col  border-t-1 items-start py-4  justify-between  px-[5%] bg-black text-white  ">
-        <div>
-          © <span id="year"></span> <strong>Programmers Squad</strong>. All
-          rights reserved.
-          <script>
-            document.getElementById('year').textContent = new
-            Date().getFullYear();
-          </script>
+        <div className="text-[12px]">
+          © {new Date().getFullYear()} <strong>Programmers Squad</strong>.
         </div>
 
-        <div className="flex gap-4">
+        <div className="flex gap-4 text-[12px]">
           <Link href="/privacy">
             <p className="cursor-pointer">Privacy Policy</p>
           </Link>
           <Link href="/terms">
-            <p className="cursor-pointer">Terms and Conditions</p>
+            <p className="cursor-pointer">Terms & Conditions</p>
           </Link>
         </div>
       </section>

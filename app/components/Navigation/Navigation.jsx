@@ -9,6 +9,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
+  NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
 import { NavigationMenuContent } from "@radix-ui/react-navigation-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -30,7 +31,7 @@ export default function Navigation() {
   }
 
   return (
-    <nav className="w-full   sticky flex flex-row justify-center pr-[5%] pl-[4%] top-0 z-50 bg-black bg-cover bg-end bg-no-repeat text-white">
+    <nav className="w-full sticky flex flex-row justify-center pr-[5%] pl-[4%] top-0 z-50 bg-black bg-cover bg-end bg-no-repeat text-white">
       <div className="container  flex items-center flex-row justify-between  ">
         {/* Logo */}
         <div className="w-[20%] max-lg:w-[50%] ">
@@ -52,13 +53,13 @@ export default function Navigation() {
               <NavigationMenuItem className={"group"}>
                 <NavigationMenuTrigger
                   className={
-                    "group-hover:text-gray-400 text-sm bg-transparent hover:bg-transparent lg:text-[14px] xl:text-[14px]	z-[100]"
+                    "group-hover:text-gray-100 text-sm bg-black hover:bg-black lg:text-[14px] xl:text-[14px]	z-[100]"
                   }
                 >
                   Services
                 </NavigationMenuTrigger>
 
-                <NavigationMenuContent className="min-w-[20rem] w-[50rem] bg-white shadow p-4 flex gap-8">
+                <NavigationMenuContent className="min-w-[20rem] w-[50rem] bg-black text-white shadow p-4 flex gap-8">
                   <Capabilities />
                 </NavigationMenuContent>
               </NavigationMenuItem>
@@ -95,6 +96,7 @@ export default function Navigation() {
                 </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>
+            <NavigationMenuViewport className="bg-black border border-purple-500 rounded-3xl shadow-lg" />
           </NavigationMenu>
         </div>
 
@@ -102,7 +104,7 @@ export default function Navigation() {
         <div className="hidden lg:block sm:w-[160px] md:w-[200px] flex flex-row justify-center w-[20%] ">
           <Link href={"/contact/sales"}>
             <WSButton
-              value="Book Intro Call"
+              value="Book a 15-Min Call"
               icon={
                 <ChevronRight className="absolute inset-0 transition-opacity duration-200 opacity-100 group-hover:opacity-0" />
               }

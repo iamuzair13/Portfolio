@@ -35,10 +35,8 @@ export default function Hero() {
 
   return (
     <Fragment>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 3.2, ease: "easeInOut" }}
+      <div
+      
       >
         <section
           className={`relative overflow-hidden max-md:h-[80vh]  bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center p-10  px-[5%] lg:px-12 py-10`}
@@ -62,19 +60,17 @@ export default function Hero() {
 
           <HeroSection />
         </section>
-      </motion.div>
+      </div>
 
       {/* Services */}
       <section className="  flex flex-col items-center justify-center   bg-black ">
         <div className="container  flex justify-center max-lg:p-4 lg:pt-[110px]">
           <div className="upper text-center lg:w-[72%]  space-y-8">
             <h2 className="text-[60px]  max-lg:text-[24px] text-center font-bold leading-tight text-white">
-              Websites aren’t just part of what we do. They’re everything we do.
+              We don’t just build websites. We create experiences that connect and convert.
             </h2>
             <p className="text-[#a5acc0] text-center max-lg:text-[14px] text-[20px] leading-[30px]">
-              We help B2B marketing teams turn outdated, underperforming
-              websites into scalable, high-converting products that engage
-              audiences, generate pipeline, and accelerate growth.
+             We help Businesses turn scattered data and manual processes into intelligent systems that engage customers, automate workflows, and scale effortlessly.
             </p>
           </div>
           <div className="lower">{/* <RobotSection/> */}</div>
@@ -85,7 +81,7 @@ export default function Hero() {
         </div>
       </section>
       {/* Stories */}
-      <section className="  flex flex-row max-lg:flex-col items-center h-[80vh] max-lg:h-[60vh] px-[5%] justify-evenly  bg-black   ">
+      {/* <section className="  flex flex-row max-lg:flex-col items-center h-[80vh] max-lg:h-[60vh] px-[5%] justify-evenly  bg-black   ">
         <div className="lg:left lg:w-1/2">
           <h2 className="text-white text-[60px] max-lg:text-[24px] lg:leading-[70px] ">
             Brands you know.
@@ -106,11 +102,14 @@ export default function Hero() {
                 <ArrowRight className="absolute inset-0 transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
               }
             />
-          </div>
-        </div>
-      </section>
+            </div>
+            </div>
+            </section> */}
       {/* Brands */}
       <section className=" px-[5%] bg-black   ">
+            <section className="  flex flex-row max-lg:flex-col items-center h-[50vh] max-lg:h-[50vh]  justify-evenly bg-black   ">
+              <Experts />
+            </section>
         <div className="w-full flex flex-col lg:flex-row gap-4">
           {/* Left Column */}
           <div className="w-full lg:w-[75%] space-y-4">
@@ -118,7 +117,7 @@ export default function Hero() {
             <div className="flex flex-col lg:flex-row gap-4 ">
               {/* Top Left */}
 
-              <div className="w-full lg:w-[350px]  flex flex-col gap-4 max-lg:h-[320px]">
+              <div className="w-full lg:w-[650px]  flex flex-col gap-4 max-lg:h-[320px]">
                 <div className="bg-[url('/images/Masonary/m-1.webp')] bg-cover bg-center h-full w-full rounded-xl flex flex-col justify-end shadow-md transition-transform duration-300 ease-in-out hover:scale-105 p-4">
                   <Avatar>
                     <AvatarImage
@@ -224,9 +223,6 @@ export default function Hero() {
         </div>
       </section>
       {/* Experts */}
-      <section className="  flex flex-row max-lg:flex-col items-center h-[30vh] max-lg:h-[50vh] px-[5%] justify-evenly bg-black   ">
-        <Experts />
-      </section>
       {/* industries */}
 
       {/* Team */}

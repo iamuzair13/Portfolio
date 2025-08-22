@@ -41,7 +41,7 @@ const cardData = [
     image: "/images/serviceCards/seo.png",
     button: (
       <Button className=" absolute w-15 h-15  right-[-5] bottom-[-5] bg-[#08090c] border border-gray-700 group-hover:border-[#0a49eb]  group-hover:bg-[#0a49eb] hover:bg-[#0a49eb] cursor-pointer">
-        <ArrowUpRight className=" w-5 h-5" />
+        <ArrowUpRight className="w-5 h-5" />
       </Button>
     ),
   },
