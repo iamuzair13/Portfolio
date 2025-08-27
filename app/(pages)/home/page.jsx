@@ -2,10 +2,7 @@
 
 import WSButton from "@/app/UI/WSButton/WSButton";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
-<<<<<<< HEAD
-=======
-import { ArrowRight, ChevronRight } from "lucide-react";
->>>>>>> efbbdb1f069c76e433f2b475fd39b6400fb17163
+
 
 import { Fragment, useEffect, useState } from "react";
 import ServiceCard from "@/app/components/homeComps/ServiceCard";
@@ -83,36 +80,9 @@ export default function Hero() {
           <ServiceCard />
         </div>
       </section>
-<<<<<<< HEAD
      
      
-=======
-      {/* Stories */}
-      {/* <section className="  flex flex-row max-lg:flex-col items-center h-[80vh] max-lg:h-[60vh] px-[5%] justify-evenly  bg-black   ">
-        <div className="lg:left lg:w-1/2">
-          <h2 className="text-white text-[60px] max-lg:text-[24px] lg:leading-[70px] ">
-            Brands you know.
-            <br /> Results you’ll love.
-          </h2>
-        </div>
-        <div className="right flex flex-col max-lg:justify-center max-lg:text-center max-lg:items-center ">
-          <h4 className="text-[#a5acc0] text-[20px] max-lg:text-[16px]  pb-10">
-            Real stories from companies that wanted more—and got it.
-          </h4>
-          <div>
-            <WSButton
-              value="View Client Stories"
-              icon={
-                <ChevronRight className="absolute inset-0 transition-opacity duration-200 opacity-100 group-hover:opacity-0" />
-              }
-              hovericon={
-                <ArrowRight className="absolute inset-0 transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
-              }
-            />
-            </div>
-            </div>
-            </section> */}
->>>>>>> efbbdb1f069c76e433f2b475fd39b6400fb17163
+
       {/* Brands */}
       <section className=" px-[5%] bg-black   ">
             <section className="  flex flex-row max-lg:flex-col items-center h-[50vh] max-lg:h-[50vh]  justify-evenly bg-black   ">
@@ -234,11 +204,8 @@ export default function Hero() {
       {/* industries */}
 
       {/* Team */}
-<<<<<<< HEAD
       <section className="  flex flex-row  max-lg:flex-col items-center py-50 max-lg:py-20 px-[5%] justify-evenly bg-black  max-lg:pt-50 ">
-=======
-      <section className="  flex flex-row  max-lg:flex-col items-center h-[80vh] max-lg:h-[50vh] px-[5%] justify-evenly bg-black  max-lg:pt-50 ">
->>>>>>> efbbdb1f069c76e433f2b475fd39b6400fb17163
+
         {teamData.map((item, index) => {
           if (teamIndex === index) {
             return (
@@ -258,17 +225,13 @@ export default function Hero() {
                     <h4>{item.role}</h4>
                   </div>
                 </div>
-<<<<<<< HEAD
                 <div className="lower h-[220px] text-white">
-=======
-                <div className="lower h-[120px] text-white">
->>>>>>> efbbdb1f069c76e433f2b475fd39b6400fb17163
+
                   <p>{item.description}</p>
                 </div>
                 <div className="text-white space-x-3">
                   <button
                     className="cursor-pointer"
-<<<<<<< HEAD
                     onClick={() =>
                       setTeamIndex((prev) => Math.max(prev - 1, 0))
                     }
@@ -281,14 +244,7 @@ export default function Hero() {
                     }
                   >
                     <FaRegArrowAltCircleRight className=" w-8 h-8 cursor-pointer"/>
-=======
-                    onClick={() => setTeamIndex(2)}
-                  >
-                    <FaRegArrowAltCircleLeft className=" w-8 h-8" />
-                  </button>
-                  <button onClick={() => setTeamIndex(3)}>
-                    <FaRegArrowAltCircleRight className=" w-8 h-8" />
->>>>>>> efbbdb1f069c76e433f2b475fd39b6400fb17163
+
                   </button>
                 </div>
               </div>
@@ -319,11 +275,8 @@ export default function Hero() {
         </div>
       </section>
       {/* Blog */}
-<<<<<<< HEAD
       <section className="  flex flex-col max-lg:flex-col items-center max-lg:pt-20 px-[5%] justify-evenly bg-black   ">
-=======
-      <section className="  flex flex-col max-lg:flex-col items-center lg:h-[30vh] max-lg:h-[100vh] max-lg:pt-70 px-[5%] justify-evenly bg-black   ">
->>>>>>> efbbdb1f069c76e433f2b475fd39b6400fb17163
+
         <div className="lg:left space-y-10">
           <h2 className="text-white text-[60px] text-center max-lg:text-[24px] lg:leading-[70px] ">
             Check out our latest blog insights

@@ -30,10 +30,8 @@ export default function Navigation() {
     setShowContent(true);
   }
 
-<<<<<<< HEAD
   
-=======
->>>>>>> efbbdb1f069c76e433f2b475fd39b6400fb17163
+
   return (
     <nav className="w-full sticky flex flex-row justify-center pr-[5%] pl-[4%] top-0 z-50 bg-black bg-cover bg-end bg-no-repeat text-white">
       <div className="container  flex items-center flex-row justify-between  ">

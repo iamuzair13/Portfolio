@@ -5,11 +5,8 @@ import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 
 const containerStyle = {
   width: "100%",
-<<<<<<< HEAD
   height: "50vh",
-=======
-  height: "80vh",
->>>>>>> efbbdb1f069c76e433f2b475fd39b6400fb17163
+
 };
 
 const center = {
