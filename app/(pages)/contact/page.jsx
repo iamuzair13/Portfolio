@@ -36,11 +36,19 @@ export default function Contact() {
       </section>
 
       {/* Get in touch */}
+<<<<<<< HEAD
       <section className="  flex flex-row max-lg:flex-col items-center lg:py-[50px] px-[5%] justify-evenly text-white bg-black  lg:items-start ">
         
         <div className="right lg:w-3/4 text-center ">
           <h2 className="text-[48px] max-lg:text-[32px] leading-[60px]">Get in touch</h2>
           <h4 className="text-[#a5acc0] text-[24px] max-lg:text-[16px] leading-[36px] max-lg:leading-[24px]">
+=======
+      <section className="  flex flex-row max-lg:flex-col items-center lg:h-[30vh] max-lg:h-[100vh] lg:pt-[50px] px-[5%] justify-evenly text-white bg-black  lg:items-start ">
+        
+        <div className="right lg:w-3/4 text-center ">
+          <h2 className="text-[48px]  leading-[60px]">Get in touch</h2>
+          <h4 className="text-[#a5acc0] text-[24px] leading-[36px]">
+>>>>>>> efbbdb1f069c76e433f2b475fd39b6400fb17163
             Want to get in touch? We'd love to hear from you. Here's how you can
             reach us.
           </h4>
@@ -48,7 +56,11 @@ export default function Contact() {
       </section>
 
       {/* card */}
+<<<<<<< HEAD
       <section className="  flex flex-row max-lg:flex-col gap-6 items-center  max-lg:py-4 px-[5%] justify-evenly text-white bg-black  items-start ">
+=======
+      <section className="  flex flex-row max-lg:flex-col gap-6 items-center   px-[5%] justify-evenly text-white bg-black  items-start ">
+>>>>>>> efbbdb1f069c76e433f2b475fd39b6400fb17163
         {cardData.map((item, index) => {
           return (
             <div
@@ -69,7 +81,11 @@ export default function Contact() {
         })}
       </section>
 
+<<<<<<< HEAD
       <section className="  flex flex-col max-lg:flex-col gap-6 items-center py-4  px-[5%] justify-center text-white bg-black  items-center">
+=======
+      <section className="  flex flex-col max-lg:flex-col gap-6 items-center h-[100vh]  px-[5%] justify-center text-white bg-black  items-center">
+>>>>>>> efbbdb1f069c76e433f2b475fd39b6400fb17163
         <div className=" text-center space-y-8">
           <h2 className="text-[48px] max-lg:text-[32px] max-lg:leading-[42px]  leading-[60px] max-lg:text-center">
             Find us in the Heart of San Diego.
@@ -83,7 +99,11 @@ export default function Contact() {
 
       {/* Map */}
       <section className="  flex flex-row max-lg:flex-col gap-6 items-center lg:h-[100vh]  px-[5%] justify-between text-white bg-black ">
+<<<<<<< HEAD
         <div className="w-2/4 max-lg:w-full">
+=======
+        <div className="w-2/4">
+>>>>>>> efbbdb1f069c76e433f2b475fd39b6400fb17163
           <MyMap />
         </div>
 
@@ -109,8 +129,13 @@ export default function Contact() {
           defaultValue="item-1"
         >
           <AccordionItem value="item-1" className={'cursor-pointer hover:bg-[#08090c] p-4'}>
+<<<<<<< HEAD
             <AccordionTrigger className={'hover:text-blue-600 text-[20px] max-lg:text-[16px] leading-[30px] cursor-pointer'}>Product Information</AccordionTrigger>
             <AccordionContent className="flex flex-col gap-4 text-balance  text-[18px] max-lg:text-[14px] leading-[27px] text-[#a5acc0]">
+=======
+            <AccordionTrigger className={'hover:text-blue-600 text-[20px]  leading-[30px] cursor-pointer'}>Product Information</AccordionTrigger>
+            <AccordionContent className="flex flex-col gap-4 text-balance  text-[18px] leading-[27px] text-[#a5acc0]">
+>>>>>>> efbbdb1f069c76e433f2b475fd39b6400fb17163
               <p>
                 Our flagship product combines cutting-edge technology with sleek
                 design. Built with premium materials, it offers unparalleled
@@ -124,8 +149,13 @@ export default function Contact() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2" className={'cursor-pointer hover:bg-[#08090c] p-4'}>
+<<<<<<< HEAD
             <AccordionTrigger  className={'hover:text-blue-600 text-[20px] max-lg:text-[16px] leading-[30px] cursor-pointer'}>Shipping Details</AccordionTrigger>
             <AccordionContent className="flex flex-col gap-4 text-balance  text-[18px] max-lg:text-[14px] leading-[27px] text-[#a5acc0]">
+=======
+            <AccordionTrigger  className={'hover:text-blue-600 text-[20px]  leading-[30px] cursor-pointer'}>Shipping Details</AccordionTrigger>
+            <AccordionContent className="flex flex-col gap-4 text-balance  text-[18px] leading-[27px] text-[#a5acc0]">
+>>>>>>> efbbdb1f069c76e433f2b475fd39b6400fb17163
               <p>
                 We offer worldwide shipping through trusted courier partners.
                 Standard delivery takes 3-5 business days, while express

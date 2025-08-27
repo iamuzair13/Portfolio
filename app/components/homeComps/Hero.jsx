@@ -6,10 +6,18 @@ import Link from "next/link";
 export default function HeroSection() {
   return (
     <Fragment>
+<<<<<<< HEAD
       <div className="relative w-full  flex flex-col items-center max-lg:pt-24  lg:items-start md:px-4">
         <div className=" text-center md:text-left  absolute  w-full flex flex-col justify-center items-center ">
           <div className=" items-center flex flex-col justify-between ">
             <h1 className="text-white text-[70px] max-lg:text-[30px] font-[700]  tracking-wider drop-shadow-md">
+=======
+      <div className="relative w-full  flex flex-col items-center max-lg:pt-14  lg:items-start md:px-4">
+        <div className=" text-center md:text-left  absolute  w-full flex flex-col justify-center items-center ">
+          <div className=" items-center flex flex-col justify-between ">
+          
+            <h1 className="text-white text-[70px] font-[700]  tracking-wider drop-shadow-md">
+>>>>>>> efbbdb1f069c76e433f2b475fd39b6400fb17163
               Start{" "}
               <span className="bg-gradient-to-b from-gray-200 via-gray-500 to-gray-200 bg-clip-text text-transparent">
                 {" "}
