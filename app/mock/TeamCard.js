@@ -21,11 +21,8 @@ export const teamData = [
     name: " Garrett Scott",
     role: "Head of Demand Generation @ Calendly",
     description:
-<<<<<<< HEAD
       "When we started working with Webstacks, our website was effectively unusable for our marketing team. They worked closely with us to redesign our website, creating a design system that allowed our marketing ",
-=======
-      "When we started working with Webstacks, our website was effectively unusable for our marketing team. They worked closely with us to redesign our website, creating a design system that allowed our marketing team to build pages without tapping our engineering team.Now we're able to focus our energy on building new things that bring value to our customers and prospects.",
->>>>>>> efbbdb1f069c76e433f2b475fd39b6400fb17163
+
     icon: "/Logos/logo-3.svg",
   },
 
