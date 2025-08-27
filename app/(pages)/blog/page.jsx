@@ -38,7 +38,6 @@ export default function Blog() {
 
   return (
     <Fragment>
-<<<<<<< HEAD
       <section className="  flex flex-col max-lg:flex-col items-center py-10 max-lg:pt-[70px] px-[5%] justify-evenly bg-black   ">
         <div className="lg:left lg:w-[70%]">
           <h2 className="text-white text-[60px] text-center max-lg:text-[24px] lg:leading-[70px] ">
@@ -47,16 +46,7 @@ export default function Blog() {
         </div>
         <div className="right flex flex-col max-lg:justify-center max-lg:text-center items-center ">
           <h4 className="text-[#a5acc0] text-[20px] max-lg:text-[16px]  pb-10">
-=======
-      <section className="  flex flex-col max-md:flex-col items-center py-10 max-md:pt-[70px] px-[5%] justify-evenly bg-black   ">
-        <div className="md:left md:w-[70%]">
-          <h2 className="text-white text-[60px] text-center max-md:text-[24px] md:leading-[70px] ">
-            Our Blog
-          </h2>
-        </div>
-        <div className="right flex flex-col max-md:justify-center max-md:text-center items-center ">
-          <h4 className="text-[#a5acc0] text-[20px] max-md:text-[16px]  pb-10">
->>>>>>> efbbdb1f069c76e433f2b475fd39b6400fb17163
+
             Insights, ideas, and inspiration for modern marketers, designers,
             and developers.
           </h4>
@@ -81,11 +71,7 @@ export default function Blog() {
               ) : (
                 <div
                   key={index}
-<<<<<<< HEAD
                   className="w-[300px]   max-lg:w-full  group  flex flex-col items-center justify-between pb-4  cursor-pointer rounded-[20px] overflow-hidden border border-[#08090c]  transition-colors duration-300 ease-in-out hover:border-[#0a49eb] text-white  "
-=======
-                  className="w-[300px] max-lg:w-[45%] max-md:w-full  group  flex flex-col items-center justify-between pb-4  cursor-pointer rounded-[20px] overflow-hidden border border-[#08090c]  transition-colors duration-300 ease-in-out hover:border-[#0a49eb] text-white  "
->>>>>>> efbbdb1f069c76e433f2b475fd39b6400fb17163
                 >
                   <Avatar className=" w-full h-auto transition-transform rounded-none duration-300 ease-in-out group-hover:scale-105">
                     <AvatarImage
@@ -127,38 +113,25 @@ export default function Blog() {
       </section>
 
       {/* Websites */}
-<<<<<<< HEAD
       <section className="  flex flex-row max-lg:flex-col py-10 gap-6 items-center max-lg:pt-[70px] px-[5%] justify-evenly bg-black   ">
         <div className=" bg-blue-600 w-1/2 max-lg:w-full gap-4 p-6 flex max-lg:flex-col    rounded-[20px]  items-center">
           {/* Left Text Content */}
           <div className=" flex flex-col h-[100%] gap-10 max-lg:pt-[50px] ">
             <h1 className={`text-[24px] max-lg:text-[20px] font-bold leading-[30px] text-white `}>
-=======
-      <section className="  flex flex-row max-md:flex-col py-10 gap-6 items-center max-md:pt-[70px] px-[5%] justify-evenly bg-black   ">
-        <div className=" bg-blue-600 w-1/2 gap-4 p-6 flex max-lg:flex-row   grid lg:grid-cols-2 rounded-[20px]  items-center">
-          {/* Left Text Content */}
-          <div className=" flex flex-col justify-between gap-4 max-lg:pt-[50px] ">
-            <h1 className={`text-[24px] font-bold leading-[30px] text-white `}>
->>>>>>> efbbdb1f069c76e433f2b475fd39b6400fb17163
+
               Discover the Best B2B SaaS Websites!
             </h1>
 
             <h4
-<<<<<<< HEAD
               className={`font-normal text-white text-[16px] max-lg:text-[16px] max-lg:text-[16px] leading-[20px] `}
-=======
-              className={`font-normal text-white text-[16px] max-lg:text-[16px] leading-[20px] `}
->>>>>>> efbbdb1f069c76e433f2b475fd39b6400fb17163
+
             >
               See what’s working for industry leading websites—and find
               inspiration to improve yours.
             </h4>
 
-<<<<<<< HEAD
             <Button className="lg text-base bg-[#0f3bbe] flex items-center gap-2 max-lg:text-[10px] lg:text-[14px] w-full max-lg:p-6">
-=======
-            <Button className="lg text-base bg-[#0f3bbe] flex items-center gap-2 lg:text-[14px] w-full max-lg:p-6">
->>>>>>> efbbdb1f069c76e433f2b475fd39b6400fb17163
+
               Download Now
               <ArrowRight className="w-5 h-5 max-lg:w-2 max-lg:h-2 text-white" />
             </Button>
@@ -168,28 +141,18 @@ export default function Blog() {
 
           <div className="overflow-hidden w-full flex flex-col   scrollbar-hide">
             <Image
-<<<<<<< HEAD
               width={300}
               height={200}
               src="/images/Masonary/m-1.webp"
               alt="Scrolling image"
               className="object-contain rounded-[10px]"
-=======
-              width={200}
-              height={200}
-              src="/images/Masonary/m-1.webp"
-              alt="Scrolling image"
-              className="object-contain"
->>>>>>> efbbdb1f069c76e433f2b475fd39b6400fb17163
+
             />
           </div>
         </div>
 
-<<<<<<< HEAD
         <div className=" w-1/2 max-lg:w-full border rounded-[20px]  p-4">
-=======
-        <div className=" w-1/2 border rounded-[20px]  p-4">
->>>>>>> efbbdb1f069c76e433f2b475fd39b6400fb17163
+
           <div className="flex justify-between p-2 w-full">
             <Image
               width={150}
@@ -198,7 +161,7 @@ export default function Blog() {
               alt="Scrolling image"
               className="object-contain"
             />
-<<<<<<< HEAD
+
           </div>
           <h4 className="text-white text-[20px] text-start max-lg:text-[24px] lg:leading-[30px] ">
             Serious about scaling your website? Let’s talk.
@@ -210,8 +173,7 @@ export default function Blog() {
             conversion roadblocks, explore high-impact improvements, and see how
             our team can help you accelerate growth.
           </h4>
-=======
->>>>>>> efbbdb1f069c76e433f2b475fd39b6400fb17163
+
             <div>
               {" "}
               <Button className="lg text-base bg-[#0f3bbe] flex items-center gap-2 lg:text-[14px]  max-lg:p-6">
@@ -219,20 +181,8 @@ export default function Blog() {
                 <ArrowRight className="w-5 h-5 max-lg:w-2 max-lg:h-2 text-white" />
               </Button>
             </div>
-<<<<<<< HEAD
-=======
-          </div>
-          <h4 className="text-white text-[20px] text-start max-md:text-[24px] md:leading-[30px] ">
-            Serious about scaling your website? Let’s talk.
-          </h4>
 
-          <h4 className="text-[#a5acc0] text-[18px] max-md:text-[16px] md:leading-[27px] pb-10">
-            Your website is your biggest growth lever—are you getting the most
-            out of it? Schedule a strategy call with Webstacks to uncover
-            conversion roadblocks, explore high-impact improvements, and see how
-            our team can help you accelerate growth.
-          </h4>
->>>>>>> efbbdb1f069c76e433f2b475fd39b6400fb17163
+
         </div>
       </section>
 
@@ -250,11 +200,9 @@ export default function Blog() {
               ) : (
                 <div
                   key={index}
-<<<<<<< HEAD
+
                   className="w-[300px]  max-lg:w-full  group  flex flex-col items-center justify-between pb-4  cursor-pointer rounded-[20px] overflow-hidden border border-[#08090c]  transition-colors duration-300 ease-in-out hover:border-[#0a49eb] text-white  "
-=======
-                  className="w-[300px] max-lg:w-[45%] max-md:w-full  group  flex flex-col items-center justify-between pb-4  cursor-pointer rounded-[20px] overflow-hidden border border-[#08090c]  transition-colors duration-300 ease-in-out hover:border-[#0a49eb] text-white  "
->>>>>>> efbbdb1f069c76e433f2b475fd39b6400fb17163
+
                 >
                   <Avatar className=" w-full h-auto transition-transform rounded-none duration-300 ease-in-out group-hover:scale-105">
                     <AvatarImage
@@ -308,15 +256,11 @@ export default function Blog() {
       </section>
 
       <section className="  flex flex-row max-lg:flex-col items-start py-10 px-[5%]  justify-evenly bg-black   ">
-<<<<<<< HEAD
+
         <div className="flex w-full flex-col lg:flex-row gap-8">
           {/*  Filters */}
           <div className="w-1/4 max-lg:w-full flex max-lg:flex-row lg:flex-col max-lg:flex-wrap space-y-2">
-=======
-        <div className="flex w-full flex-col md:flex-row gap-8">
-          {/*  Filters */}
-          <div className="w-1/4 space-y-2">
->>>>>>> efbbdb1f069c76e433f2b475fd39b6400fb17163
+
             <h2 className="text-lg font-semibold text-white">Filters</h2>
             {filterOptions.map((filter) => (
               <label
@@ -335,19 +279,13 @@ export default function Blog() {
           </div>
 
           {/*  Filtered Posts */}
-<<<<<<< HEAD
+
           <div className="flex w-3/4 max-lg:w-full border-none   flex-row flex-wrap gap-1 justify-start">
             {filteredPosts.map((card, index) => (
               <div
                 key={index}
                 className="w-[250px]  max-lg:w-full  group  flex flex-col items-center justify-between pb-4  cursor-pointer rounded-[20px] overflow-hidden border border-[#08090c]  transition-colors duration-300 ease-in-out hover:border-[#0a49eb] text-white  "
-=======
-          <div className="flex w-3/4 border-none   flex-row flex-wrap gap-1 justify-start">
-            {filteredPosts.map((card, index) => (
-              <div
-                key={index}
-                className="w-[250px] max-lg:w-[45%] max-md:w-full  group  flex flex-col items-center justify-between pb-4  cursor-pointer rounded-[20px] overflow-hidden border border-[#08090c]  transition-colors duration-300 ease-in-out hover:border-[#0a49eb] text-white  "
->>>>>>> efbbdb1f069c76e433f2b475fd39b6400fb17163
+
               >
                 <Avatar className=" w-full h-auto transition-transform rounded-none duration-300 ease-in-out group-hover:scale-105">
                   <AvatarImage
