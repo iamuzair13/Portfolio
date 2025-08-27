@@ -13,11 +13,7 @@ export default function BlogCard() {
 
             <div
                   key={index}
-<<<<<<< HEAD
                   className="w-[300px] max-lg:w-[45%] max-md:w-full  group  flex flex-col items-center justify-between pb-4  cursor-pointer rounded-[20px] overflow-hidden border border-gray-600  transition-colors duration-300 ease-in-out  hover:border-[#0a49eb] text-white  "
-=======
-                  className="w-[300px] max-lg:w-[45%] max-md:w-full  group  flex flex-col items-center justify-between pb-4  cursor-pointer rounded-[20px] overflow-hidden border border-[#08090c]  transition-colors duration-300 ease-in-out  hover:border-[#0a49eb] text-white  "
->>>>>>> efbbdb1f069c76e433f2b475fd39b6400fb17163
                 >
                   <Avatar className=" w-full h-auto transition-transform rounded-none duration-300 ease-in-out group-hover:scale-105">
                     <AvatarImage
