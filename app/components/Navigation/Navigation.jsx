@@ -52,10 +52,10 @@ export default function Navigation() {
         <div className="hidden lg:flex flex-1 w-[80%] justify-center">
           <NavigationMenu>
             <NavigationMenuList className="  flex flex-row w-full  justify-between items-center xl:gap-15 lg:gap-8 ">
-              <NavigationMenuItem className={"group"}>
+              <NavigationMenuItem className={"group "}>
                 <NavigationMenuTrigger
                   className={
-                    "group-hover:text-gray-100 text-sm bg-black hover:bg-black lg:text-[14px] xl:text-[14px]	z-[100]"
+                    "group-hover:text-white text-sm bg-black hover:bg-black lg:text-[14px] xl:text-[14px]	z-[100]"
                   }
                 >
                   Services
