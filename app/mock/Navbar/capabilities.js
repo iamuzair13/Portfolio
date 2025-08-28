@@ -23,33 +23,38 @@ export const capabilities = [
       items: [
         {
           name: "Web Design",
-          link: "#",
-          icon: (
-            <Monitor className="w-[15px] h-[15px] text-blue-500 " />
-          ),
+          icon: <Monitor className="w-[15px] h-[15px] text-blue-500 " />,
+          title: "Creative Digital Web Design Solutions",
+          desc: "Transforming ideas into visually appealing, user-friendly websites with modern design trends, responsive layouts, and seamless functionality to deliver engaging digital experiences that captivate and convert audiences.",
+          image: "/images/services/design/web.jpg",
+          link: "/services/design/webDesign",
         },
         {
           name: "Design Systems",
-          link: "#",
-          icon: (
-            <LayoutTemplate className="w-[15px] h-[15px] text-blue-500 " />
-          ),
+          icon: <LayoutTemplate className="w-[15px] h-[15px] text-blue-500 " />,
+          title: "Efficient Scalable System Design Solutions",
+          desc: "Crafting robust architectures, optimizing performance, and ensuring seamless scalability to build reliable systems that support complex operations while enhancing security, maintainability, and long-term business growth.",
+          image: "/images/services/design/system-design.jpg",
+          link: "/services/design/systemDesign",
         },
         {
           name: "Illustration Design",
-          link: "#",
-          icon: (
-            <Brush className="w-[15px] h-[15px] text-blue-500 " />
-          ),
+          icon: <Brush className="w-[15px] h-[15px] text-blue-500 " />,
+          title: "Creative Custom Illustration Design Services",
+          desc: "Bringing ideas to life through unique, hand-crafted illustrations tailored to your brand, enhancing storytelling, visual identity, and audience engagement with artistic precision and creative impact.",
+          image: "/images/services/design/illustration.jpg",
+          link: "/services/design/illustrationDesign",
         },
+
         {
           name: "Motion Design",
-          link: "#",
-          icon: (
-            <Move className="w-[15px] h-[15px] text-blue-500 " />
-          ),
+          link: "/services/design/motionDesign",
+          icon: <Move className="w-[15px] h-[15px] text-blue-500 " />,
+          title: "Dynamic Motion Design & Animation",
+          desc: "Creating captivating motion graphics that bring stories to life, combining animation, visual effects, and creative storytelling to engage audiences and elevate brand experiences with impactful visuals.",
+          image: "/images/services/design/motion.jpg",
+          link: "/services/design/motionDesign",
         },
-        
       ],
     },
 
@@ -58,33 +63,36 @@ export const capabilities = [
       items: [
         {
           name: "Frontend Development",
-          link: "#",
-          icon: (
-            <Code className="w-[15px] h-[15px] text-blue-500 " />
-          ),
+          link: "/services/development/frontendDev",
+          icon: <Code className="w-[15px] h-[15px] text-blue-500 " />,
+          title: "Interactive Frontend Development Solutions Expert",
+          desc: "Building responsive, user-friendly web interfaces using modern technologies and frameworks, ensuring seamless performance, engaging user experiences, and visually appealing designs that enhance website functionality and usability.",
+          image: "/images/services/development/front.jpg",
         },
         {
           name: "System Integrations",
-          link: "#",
-          icon: (
-            <Link2 className="w-[15px] h-[15px] text-blue-500 " />
-          ),
+          link: "/services/development/systemIntegration",
+          icon: <Link2 className="w-[15px] h-[15px] text-blue-500 " />,
+          title: "Seamless System Integration Solutions Expert",
+          desc: "Connecting software, applications, and platforms efficiently to work together flawlessly, improving workflow, data consistency, and operational efficiency while ensuring secure, scalable, and reliable system interoperability.",
+          image: "/images/services/development/system-int.jpg",
         },
         {
           name: "Backend Development",
-          link: "#",
-          icon: (
-            <Database className="w-[15px] h-[15px] text-blue-500 " />
-          ),
+          link: "/services/development/backendDev",
+          icon: <Database className="w-[15px] h-[15px] text-blue-500 " />,
+          title: "Robust Backend Development & Integration",
+          desc: "Designing secure, scalable, and efficient server-side solutions, managing databases, APIs, and application logic to ensure seamless functionality, fast performance, and reliable support for web and mobile applications.",
+          image: "/images/services/development/back.jpg",
         },
         {
           name: "OpenAI Integration",
-          link: "#",
-          icon: (
-            <Bug className="w-[15px] h-[15px] text-blue-500 " />
-          ),
+          link: "/services/development/openAiIntegration",
+          icon: <Bug className="w-[15px] h-[15px] text-blue-500 " />,
+          title: "Smart OpenAI Integration Solutions Expert",
+          desc: "Integrating OpenAI’s advanced AI capabilities into applications to automate tasks, enhance user experiences, generate intelligent insights, and create innovative solutions with seamless and efficient AI-powered functionality.",
+          image: "/images/services/development/openai.jpg",
         },
-       
       ],
     },
 
@@ -93,31 +101,35 @@ export const capabilities = [
       items: [
         {
           name: "Site Structure",
-          link: "#",
-          icon: (
-            <Layers className="w-[15px] h-[15px] text-blue-500 " />
-          ),
+          link: "/services/seo/siteStructure",
+          icon: <Layers className="w-[15px] h-[15px] text-blue-500 " />,
+          title: "Optimized Site Structure & Architecture",
+          desc: "Designing a clear, logical site structure that enhances user experience and improves search engine visibility, ensuring all content is easily accessible and well-organized.",
+          image: "/images/services/seo/site-structure.png",
         },
         {
           name: "On-Page SEO",
-          link: "#",
-          icon: (
-            <FileText className="w-[15px] h-[15px] text-blue-500 " />
-          ),
+          link: "/services/seo/onPageSeo",
+          icon: <FileText className="w-[15px] h-[15px] text-blue-500 " />,
+          title: "Comprehensive On-Page SEO Strategies",
+          desc: "Implementing effective on-page SEO techniques, including keyword optimization, meta tags, and content enhancements, to improve search engine rankings and drive organic traffic.",
+          image: "/images/services/seo/On-page-SEO.webp",
         },
         {
           name: "Technical SEO",
-          link: "#",
-          icon: (
-            <Settings className="w-[15px] h-[15px] text-blue-500 " />
-          ),
+          link: "/services/seo/technicalSeo",
+          icon: <Settings className="w-[15px] h-[15px] text-blue-500 " />,
+          title: "Advanced Technical SEO Solutions",
+          desc: "Ensuring your website meets technical SEO standards, including site speed optimization, mobile-friendliness, and secure connections, to enhance visibility and user experience.",
+          image: "/images/services/seo/technical-seo.webp",
         },
         {
           name: "Localization",
-          link: "#",
-          icon: (
-            <Globe className="w-[15px] h-[15px] text-blue-500 " />
-          ),
+          link: "/services/seo/localization",
+          icon: <Globe className="w-[15px] h-[15px] text-blue-500 " />,
+          title: "Effective Localization Strategies",
+          desc: "Implementing localization best practices to optimize your website for different languages and regions, ensuring a seamless user experience and improved search visibility across diverse markets.",
+          image: "/images/services/seo/localization.png",
         },
       ],
     },
@@ -126,32 +138,35 @@ export const capabilities = [
       items: [
         {
           name: "Amazon",
-          link: "#",
-          icon: (
-            <SiAmazon  className="w-[15px] h-[15px] text-blue-500 " />
-          ),
+          link: "/services/ecommerce/amazon",
+          icon: <SiAmazon className="w-[15px] h-[15px] text-blue-500 " />,
+          title: "Innovative Amazon Solutions & Services",
+          desc: "Providing comprehensive Amazon services, from e-commerce store optimization to product listing, marketing strategies, and fulfillment solutions, helping businesses grow sales, reach wider audiences, and maximize profits efficiently.",
+          image: "/images/services/ecommerce/amazon.jpg",
         },
         {
           name: "Shopify",
-          link: "#",
-          icon: (
-            <SiShopify  className="w-[15px] h-[15px] text-blue-500 " />
-          ),
+          link: "/services/ecommerce/shopify",
+          icon: <SiShopify className="w-[15px] h-[15px] text-blue-500 " />,
+          title: "Comprehensive Shopify Store Solutions Expert",
+          desc: "Creating and optimizing Shopify stores with custom designs, seamless integrations, and user-friendly interfaces to enhance customer experience, boost sales, and grow your e-commerce business efficiently.",
+          image: "/images/services/ecommerce/shopify.jpg",
         },
         {
           name: "Walmart",
-          link: "#",
-          icon: (
-            <RiHandbagFill   className="w-[15px] h-[15px] text-blue-500 " />
-            
-          ),
+          link: "/services/ecommerce/walmart",
+          icon: <RiHandbagFill className="w-[15px] h-[15px] text-blue-500 " />,
+          title: "Walmart Business Solutions & Services",
+          desc: "Offering expert solutions for Walmart sellers, including product listing optimization, inventory management, marketing strategies, and sales growth techniques to maximize visibility, efficiency, and revenue on the platform.",
+          image: "/images/services/ecommerce/walmart.jpg",
         },
         {
           name: "TikTok",
-          link: "#",
-          icon: (
-            <SiTiktok  className="w-[15px] h-[15px] text-blue-500 " />
-          ),
+          link: "/services/ecommerce/tiktok",
+          icon: <SiTiktok className="w-[15px] h-[15px] text-blue-500 " />,
+          title: "Creative TikTok Growth & Marketing",
+          desc: "Helping brands and creators grow on TikTok through engaging content strategies, trend-based campaigns, audience targeting, and analytics-driven approaches to maximize reach, engagement, and social impact.",
+          image: "/images/services/ecommerce/tiktok.jpg",
         },
       ],
     },
