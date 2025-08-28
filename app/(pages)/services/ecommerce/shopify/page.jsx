@@ -1,3 +1,5 @@
+"use client";
+
 import { capabilities } from "@/app/mock/Navbar/capabilities";
 import WSButton from "@/app/UI/WSButton/WSButton";
 import { Button } from "@/components/ui/button";

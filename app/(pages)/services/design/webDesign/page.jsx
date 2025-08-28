@@ -1,3 +1,5 @@
+"use client";
+
 import { capabilities } from "@/app/mock/Navbar/capabilities";
 import WSButton from "@/app/UI/WSButton/WSButton";
 import { Button } from "@/components/ui/button";
@@ -13,8 +15,7 @@ export default function WebDesignPage() {
       <section
         className="relative flex flex-col items-center h-[calc(100vh-70px)] py-10 px-[5%] justify-center gap-10 bg-black bg-cover bg-center bg-no-repeat max-lg:pt-[70px]"
         style={{
-          backgroundImage:
-            `url(${capabilities[0].Design.items[0].image})`,
+          backgroundImage: `url(${capabilities[0].Design.items[0].image})`,
         }}
       >
         <div className="absolute inset-0 bg-black/60 z-0"></div>
@@ -69,42 +70,44 @@ export default function WebDesignPage() {
 
       <section className="flex flex-col gap-10 items-center px-[5%] py-20 bg-black max-lg:pt-20">
         {/* Section Items */}
-        {capabilities[0].Design.items.filter(item => item.name !== 'Web Design').map((item, index) => (
-          <div
-            key={index}
-            className={`flex flex-col lg:flex-row ${
-              index % 2 !== 0 ? "lg:flex-row-reverse justify-between " : ""
-            } gap-6 w-full p-6 rounded-[20px] items-center  justify-between `}
-          >
-            <div className={`flex flex-col gap-6   w-full`}>
-              <h4 className="text-[24px] max-lg:text-[20px] font-bold leading-[30px] text-white">
-                {item.title}
-              </h4>
-              <p className="font-normal text-white text-[16px] max-lg:text-[16px] w-[400px] max-lg:w-full leading-[25px]">
-                {item.desc}
-              </p>
-              <Link href={item.link || "#"}>
-                <Button className="bg-[#0f3bbe] flex items-center gap-2 w-full lg:w-1/3 max-lg:p-4 text-[14px] max-lg:text-[12px]">
-                  Learn More
-                  <ArrowRight className="w-5 h-5 max-lg:w-4 max-lg:h-4 text-white" />
-                </Button>
-              </Link>
-            </div>
+        {capabilities[0].Design.items
+          .filter((item) => item.name !== "Web Design")
+          .map((item, index) => (
             <div
-              className={`overflow-hidden flex ${
-                index % 2 == 0 ? "justify-end" : ""
-              } flex  w-full`}
+              key={index}
+              className={`flex flex-col lg:flex-row ${
+                index % 2 !== 0 ? "lg:flex-row-reverse justify-between " : ""
+              } gap-6 w-full p-6 rounded-[20px] items-center  justify-between `}
             >
-              <Image
-                width={500}
-                height={200}
-                src={item.image}
-                alt="Scrolling image"
-                className="object-contain rounded-[10px]"
-              />
+              <div className={`flex flex-col gap-6   w-full`}>
+                <h4 className="text-[24px] max-lg:text-[20px] font-bold leading-[30px] text-white">
+                  {item.title}
+                </h4>
+                <p className="font-normal text-white text-[16px] max-lg:text-[16px] w-[400px] max-lg:w-full leading-[25px]">
+                  {item.desc}
+                </p>
+                <Link href={item.link || "#"}>
+                  <Button className="bg-[#0f3bbe] flex items-center gap-2 w-full lg:w-1/3 max-lg:p-4 text-[14px] max-lg:text-[12px]">
+                    Learn More
+                    <ArrowRight className="w-5 h-5 max-lg:w-4 max-lg:h-4 text-white" />
+                  </Button>
+                </Link>
+              </div>
+              <div
+                className={`overflow-hidden flex ${
+                  index % 2 == 0 ? "justify-end" : ""
+                } flex  w-full`}
+              >
+                <Image
+                  width={500}
+                  height={200}
+                  src={item.image}
+                  alt="Scrolling image"
+                  className="object-contain rounded-[10px]"
+                />
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
       </section>
     </Fragment>
   );
