@@ -34,12 +34,13 @@ const [open, setOpen] = useState(false);
   
 
   return (
-    <nav className="w-full sticky flex flex-row justify-center pr-[5%] pl-[4%] top-0 z-50 bg-black bg-cover bg-end bg-no-repeat text-white">
-      <div className="container  flex items-center flex-row justify-between  ">
+    <nav className="w-full sticky flex flex-row justify-center top-0 z-50 bg-black bg-cover bg-end bg-no-repeat text-white">
+      <div className="grid grid-cols-12 gap-4 w-full items-center py-4 px-[5%] border border-blue-500">
+        {/* <div className="container flex items-center flex-row justify-center"> */}
         {/* Logo */}
-        <div className="w-[20%] max-lg:w-[50%] ">
+        <div className="col-span-3">
           <Link href={"/"}>
-            <Avatar className=" w-full h-24 max-lg:h-16   rounded-none">
+            <Avatar className=" w-1/2 h-24 max-lg:h-16   rounded-none">
               <AvatarImage
                 src="/Logos/ProgrammersSQUAD-final-logof.png"
                 alt="Logo"
@@ -50,72 +51,76 @@ const [open, setOpen] = useState(false);
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex flex-1 w-[80%] justify-center">
-          <NavigationMenu>
-            <NavigationMenuList className="  flex flex-row w-full  justify-between items-center xl:gap-15 lg:gap-8 ">
-              <NavigationMenuItem className={"group "}>
-                <NavigationMenuTrigger
-                  className={
-                    "group-hover:text-white text-sm bg-black hover:bg-black lg:text-[14px] xl:text-[14px]	z-[100]"
-                  }
-                >
-                  Services
-                </NavigationMenuTrigger>
+        <div className="col-span-6">
+          <div className="hidden lg:flex flex-1 justify-center">
+            <NavigationMenu>
+              <NavigationMenuList className="  flex flex-row w-full  justify-between items-center xl:gap-15 lg:gap-8 ">
+                <NavigationMenuItem className={"group "}>
+                  <NavigationMenuTrigger
+                    className={
+                      "group-hover:text-white text-sm bg-black hover:bg-black lg:text-[14px] xl:text-[14px]	z-[100]"
+                    }
+                  >
+                    Services
+                  </NavigationMenuTrigger>
 
-                <NavigationMenuContent className="min-w-[20rem] w-[60rem] bg-black text-white shadow p-4 flex gap-8">
-                  <Capabilities />
-                </NavigationMenuContent>
-              </NavigationMenuItem>
+                  <NavigationMenuContent className="min-w-[20rem] w-[56rem] bg-black text-white shadow p-4 flex gap-8">
+                    <Capabilities />
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
 
-              <NavigationMenuItem className={"group"}>
-                <NavigationMenuLink
-                  className={
-                    "group-hover:text-gray-400 text-sm 	lg:text-[14px] xl:text-[14px]"
-                  }
-                  asChild
-                >
-                  <Link href="/blog">Blog</Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
+                <NavigationMenuItem className={"group"}>
+                  <NavigationMenuLink
+                    className={
+                      "group-hover:text-gray-400 text-sm 	lg:text-[14px] xl:text-[14px]"
+                    }
+                    asChild
+                  >
+                    <Link href="/blog">Blog</Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
 
-              <NavigationMenuItem className={"group"}>
-                <NavigationMenuLink
-                  className={
-                    "group-hover:text-gray-400 text-sm 	lg:text-[14px] xl:text-[14px]"
-                  }
-                  asChild
-                >
-                  <Link href="/contact">About</Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem className={"group"}>
-                <NavigationMenuLink
-                  className={
-                    "group-hover:text-gray-400 text-sm 	lg:text-[14px] xl:text-[14px]"
-                  }
-                  asChild
-                >
-                  <Link href="/contact/sales">Contact</Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-            <NavigationMenuViewport className="bg-black border border-purple-500 rounded-3xl shadow-lg" />
-          </NavigationMenu>
+                <NavigationMenuItem className={"group"}>
+                  <NavigationMenuLink
+                    className={
+                      "group-hover:text-gray-400 text-sm 	lg:text-[14px] xl:text-[14px]"
+                    }
+                    asChild
+                  >
+                    <Link href="/contact">About</Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+                <NavigationMenuItem className={"group"}>
+                  <NavigationMenuLink
+                    className={
+                      "group-hover:text-gray-400 text-sm 	lg:text-[14px] xl:text-[14px]"
+                    }
+                    asChild
+                  >
+                    <Link href="/contact/sales">Contact</Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+              <NavigationMenuViewport className="bg-black border border-purple-500 rounded-3xl shadow-lg" />
+            </NavigationMenu>
+          </div>
         </div>
 
         {/* Desktop Button */}
-        <div className="hidden lg:block sm:w-[160px] md:w-[200px] flex flex-row justify-center w-[20%] ">
-          <Link href={"/contact/sales"}>
-            <WSButton
-              value="Book a 15-Min Call"
-              icon={
-                <ChevronRight className="absolute inset-0 transition-opacity duration-200 opacity-100 group-hover:opacity-0" />
-              }
-              hovericon={
-                <ArrowRight className="absolute inset-0 transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
-              }
-            />
-          </Link>
+        <div className="col-span-3 flex justify-end">
+          <div className="hidden lg:block sm:w-[160px] md:w-[200px] flex flex-row justify-center border">
+            <Link href={"/contact/sales"}>
+              <WSButton
+                value="Book a 15-Min Call"
+                icon={
+                  <ChevronRight className="absolute inset-0 transition-opacity duration-200 opacity-100 group-hover:opacity-0" />
+                }
+                hovericon={
+                  <ArrowRight className="absolute inset-0 transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
+                }
+              />
+            </Link>
+          </div>
         </div>
 
         {/* Mobile Menu */}
