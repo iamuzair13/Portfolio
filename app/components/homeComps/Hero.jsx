@@ -21,7 +21,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div className="relative flex mt-10 w-full flex-row justify-center  ">
+        <div className="relative flex mt-10 mb-20 w-full flex-row justify-center  ">
           <div className="max-md:hidden w-[30%] max-md:p-0 max-md:pt-20 max-lg:w-full justify-between flex  max-lg:gap-2 max-lg:flex-row lg:felx-col max-lg:pt-20 max-lg:p-20 ">
             <motion.img
               initial={{ translateY: 0 }}
@@ -87,7 +87,7 @@ export default function HeroSection() {
           </div>
           <motion.div>
             <motion.div
-              className="relative  w-[100vw]  h-[80vh] max-lg:w-[100%] z-[10] text-center mt-10 flex flex-col  "
+              className=" w-[100vw]  h-[80vh] max-lg:w-[100%] z-[10] text-center mt-10  flex flex-col  "
               initial={{ translateY: 0 }}
               animate={{ translateY: [50, 0, 50] }}
               transition={{
@@ -96,6 +96,9 @@ export default function HeroSection() {
                 repeat: Infinity,
               }}
             >
+              <div className="text-white  w-full h-full absolute z-1000">
+                
+              </div>
               <Robot />
             </motion.div>
           </motion.div>

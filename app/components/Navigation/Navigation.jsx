@@ -19,6 +19,7 @@ import Capabilities from "./capabilities";
 import Company from "./company";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import WSButton from "@/app/UI/WSButton/WSButton";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden"; // Add this import
 
 export default function Navigation() {
   const [showTabs, setShowTabs] = useState(true);
@@ -61,7 +62,7 @@ const [open, setOpen] = useState(false);
                   Services
                 </NavigationMenuTrigger>
 
-                <NavigationMenuContent className="min-w-[20rem] w-[50rem] bg-black text-white shadow p-4 flex gap-8">
+                <NavigationMenuContent className="min-w-[20rem] w-[60rem] bg-black text-white shadow p-4 flex gap-8">
                   <Capabilities />
                 </NavigationMenuContent>
               </NavigationMenuItem>
@@ -130,6 +131,10 @@ const [open, setOpen] = useState(false);
               <Menu />
             </SheetTrigger>
             <SheetContent className={"py-2 w-full"}>
+              {/* Add a visually hidden DialogTitle for accessibility */}
+              <VisuallyHidden>
+                <h2>Mobile Navigation Menu</h2>
+              </VisuallyHidden>
               <Tabs>
                 <TabsList className="w-full border-none shadow-none ">
                   {showTabs && (
@@ -137,7 +142,6 @@ const [open, setOpen] = useState(false);
                       <TabsTrigger
                         value="capabilities"
                         className="w-full flex items-center justify-between px-4 py-2 hover:bg-gray-100 rounded-md border-none shadow-none"
-                        
                       >
                         <span onClick={handleShowTabs}>Services</span>
                         <ChevronRight className="w-4 h-4" />
@@ -177,10 +181,8 @@ const [open, setOpen] = useState(false);
                       Back
                     </Button>
                     <TabsContent value="capabilities">
-                      <Capabilities />
+                      <Capabilities onClose={() => setOpen(false)} />
                     </TabsContent>
-
-                   
                   </div>
                 )}
               </Tabs>

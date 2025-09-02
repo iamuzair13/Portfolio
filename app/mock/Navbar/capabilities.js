@@ -11,6 +11,8 @@ import {
   FileText,
   Settings,
   Globe,
+  Mail,
+  Phone,
 
 } from "lucide-react";
 import { RiHandbagFill } from "react-icons/ri";
@@ -220,4 +222,33 @@ export const capabilities = [
       ],
     },
   },
+  {
+    contact: {
+      title: "Contact Us",
+      items: [
+        {
+          id: 1,
+          category: 'contact',
+          searchParam: 'general',
+          name: "General Inquiries",
+          link: "/contact/sales",
+          icon: <Mail className="w-[15px] h-[15px] text-blue-500 " />,
+          title: "Get in Touch with Our Team",
+          desc: "Have questions or need assistance? Reach out to our team for support.",
+          image: "/images/services/contact/general.webp",
+        },
+        {
+          id: 2,
+          category: 'contact',
+          searchParam: 'support',
+          name: "Customer Support",
+          link: "/contact",
+          icon: <Phone className="w-[15px] h-[15px] text-blue-500 " />,
+          title: "We're Here to Help",
+          desc: "Contact our support team for help with your account or services.",
+          image: "/images/services/contact/support.webp",
+        },
+      ],
+    },
+  }
 ];

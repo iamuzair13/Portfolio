@@ -85,17 +85,21 @@ export default function Robot() {
       }
     };
 
-    const handleTouchMove = (e) => {
-      if (e.touches.length === 1) {
-        const dx = e.touches[0].clientX - startX;
-        const dy = e.touches[0].clientY - startY;
+const handleTouchMove = (e) => {
+  if (e.touches.length === 1) {
+    const dx = e.touches[0].clientX - startX;
+    const dy = e.touches[0].clientY - startY;
 
-        const x = (dx / window.innerWidth) * 2;
-        const y = (dy / window.innerHeight) * 2;
+    // If user swipes more vertically than horizontally, allow scroll
+    if (Math.abs(dy) > Math.abs(dx)) return;
 
-        targetMouse.current = { x, y };
-      }
-    };
+    const x = (dx / window.innerWidth) * 2;
+    const y = (dy / window.innerHeight) * 2;
+
+    targetMouse.current = { x, y };
+  }
+};
+
 
     const handleTouchEnd = () => {
       targetMouse.current = { x: 0, y: 0 }; // ease back to center
@@ -117,9 +121,13 @@ export default function Robot() {
   return (
     <Canvas
       camera={{ position: [0, 2, 6], fov: 50 }}
-      style={{ touchAction: "pan-y" }} // allows vertical scrolling
+      style={{
+        touchAction: "pan-y",
+        pointerEvents: "auto", // allows scroll to pass through
+      }}
       onCreated={({ gl }) => {
         gl.domElement.style.touchAction = "pan-y";
+        gl.domElement.style.pointerEvents = "auto"; // re-enable for 3D interactions
       }}
     >
       <ambientLight intensity={0.7} />

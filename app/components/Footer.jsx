@@ -10,8 +10,12 @@ import { FaInstagramSquare, FaLinkedin } from "react-icons/fa";
 import { CiGlobe } from "react-icons/ci";
 import { footerData } from "../mock/footerData";
 import Link from "next/link";
+import { capabilities } from "../mock/Navbar/capabilities";
+
 
 export default function Footer() {
+    const categories = Object.values(capabilities[0]); // Extract Design, Development, eCommerce, SEO
+  const contact = Object.values(capabilities[1]);
   return (
     <Fragment>
       {/* Get Started Section */}
@@ -24,7 +28,6 @@ export default function Footer() {
             Talk with our experts to start your website transformation today.
           </h4>
           <div className="flex justify-center">
-
             <Link href={"/contact/sales"}>
               <WSButton value="Book a 15-Min Call" icon={<ArrowUpRight />} />
             </Link>
@@ -63,21 +66,64 @@ export default function Footer() {
         </div>
 
         {/* Footer Columns */}
-        {[0, 5, 6].map((index, colIdx) => (
-          <div key={colIdx} className="lg:w-1/4 md:w-1/2 w-full space-y-6">
-            <h4 className="font-semibold text-[16px]">
-              {Object.values(footerData[index])[0].title}
-            </h4>
-            {Object.values(footerData[index])[0].items.map((item, i) => (
-              <p
-                key={i}
-                className="cursor-pointer leading-[30px] text-[14px] hover:text-[#0969dd] transition"
-              >
-                {item.text}
-              </p>
-            ))}
-          </div>
-        ))}
+        <div className="flex flex-row max-lg:flex-row flex-wrap max-lg:px-2 overflow-y-auto max-lg:max-h-[80vh] scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-transparent">
+          {categories.map((category, catIndex) => (
+            <div
+              key={catIndex}
+              className="w-50 lg:border-r border-gray-800 mr-4 last:border-none max-lg:w-[calc(100%/2-1rem)] max-lg:pt-4 max-lg:mb-4"
+            >
+              <h4 className="font-semibold text-base max-lg:text-sm">
+                {category.title}
+              </h4>
+              {category.items.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex flex-row mt-2 justify-between group max-lg:mt-1"
+                >
+                  <div className="flex flex-row gap-2 items-center">
+                    {item.icon}
+                    <Link
+                      href={`/services/${item.category}/${
+                        item.searchParam
+                      }?index=${item.id - 1}`}
+                      className="block text-sm ml-2 py-1 border-b-1 border-transparent group-hover:border-blue-600 max-lg:text-xs"
+                    >
+                      {item.name}
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ))}
+          {contact.map((item, index) => (
+            <div
+              key={index}
+              className="w-50 lg:border-r border-gray-800 mr-4 last:border-none max-lg:w-[calc(100%/2-1rem)] max-lg:pt-4 max-lg:mb-4"
+            >
+              <h4 className="font-semibold text-base max-lg:text-sm">
+                {item.title}
+              </h4>
+              {item.items.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex flex-row mt-2 justify-between group max-lg:mt-1"
+                >
+                  <div className="flex flex-row gap-2 items-center">
+                    {item.icon}
+                    <Link
+                      href={`/services/${item.category}/${
+                        item.searchParam
+                      }?index=${item.id - 1}`}
+                      className="block text-sm ml-2 py-1 border-b-1 border-transparent group-hover:border-blue-600 max-lg:text-xs"
+                    >
+                      {item.name}
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* Logo Strip */}
@@ -91,7 +137,6 @@ export default function Footer() {
           © {new Date().getFullYear()} <strong>Programmers Squad</strong>.
         </div>
         <div className="flex gap-4">
-
           <Link href="/privacy">
             <p className="cursor-pointer">Privacy Policy</p>
           </Link>

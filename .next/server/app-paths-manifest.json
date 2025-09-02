@@ -3,11 +3,6 @@
   "/(pages)/contact/page": "app/(pages)/contact/page.js",
   "/(pages)/contact/sales/page": "app/(pages)/contact/sales/page.js",
   "/(pages)/services/[category]/[service]/page": "app/(pages)/services/[category]/[service]/page.js",
-  "/(pages)/services/design/illustrationDesign/page": "app/(pages)/services/design/illustrationDesign/page.js",
-  "/(pages)/services/design/systemDesign/page": "app/(pages)/services/design/systemDesign/page.js",
-  "/(pages)/services/development/systemIntegration/page": "app/(pages)/services/development/systemIntegration/page.js",
-  "/(pages)/services/ecommerce/walmart/page": "app/(pages)/services/ecommerce/walmart/page.js",
-  "/(pages)/services/seo/onPageSeo/page": "app/(pages)/services/seo/onPageSeo/page.js",
   "/_not-found/page": "app/_not-found/page.js",
   "/page": "app/page.js"
 }

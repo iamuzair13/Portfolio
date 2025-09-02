@@ -22,7 +22,7 @@ export default function Preloader() {
 
   return (
     <>
-      <div className="flex justify-center items-center h-screen bg-black">
+      <div className="flex justify-center max-lg:pb-20 items-center h-screen bg-black">
       <motion.img
         src="/Logos/ProgrammersSQUAD-final-logof.png"
         alt="Animated"
