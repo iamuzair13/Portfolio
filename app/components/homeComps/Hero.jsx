@@ -10,7 +10,6 @@ export default function HeroSection() {
         <div className=" text-center md:text-left  absolute  w-full flex flex-col justify-center items-center ">
           <div className=" items-center flex flex-col justify-between ">
             <h1 className="text-white text-[70px] max-lg:text-[30px] font-[700]  tracking-wider drop-shadow-md">
-
               Start{" "}
               <span className="bg-gradient-to-b from-gray-200 via-gray-500 to-gray-200 bg-clip-text text-transparent">
                 {" "}
@@ -19,12 +18,11 @@ export default function HeroSection() {
               Today
               <span className="text-blue-500"></span>
             </h1>
-
           </div>
         </div>
 
         <div className="relative flex mt-10 w-full flex-row justify-center  ">
-          <div className="w-[30%] max-md:p-0 max-md:pt-20 max-lg:w-full justify-between flex  max-lg:gap-2 max-lg:flex-row lg:felx-col max-lg:pt-20 max-lg:p-20 ">
+          <div className="max-md:hidden w-[30%] max-md:p-0 max-md:pt-20 max-lg:w-full justify-between flex  max-lg:gap-2 max-lg:flex-row lg:felx-col max-lg:pt-20 max-lg:p-20 ">
             <motion.img
               initial={{ translateY: 0 }}
               animate={{ translateY: [-30, 0, -30] }}
@@ -102,7 +100,7 @@ export default function HeroSection() {
             </motion.div>
           </motion.div>
 
-          <div className="w-[30%] max-lg:w-[80%] max-md:p-0  max-lg:w-full justify-between max-md:justify-evenly flex  max-lg:gap-2 max-lg:flex-row max-lg:flex-wrap lg:felx-col  max-lg:p-20 ">
+          <div className=" max-md:hidden w-[30%] max-lg:w-[80%] max-md:p-0  max-lg:w-full justify-between max-md:justify-evenly flex  max-lg:gap-2 max-lg:flex-row max-lg:flex-wrap lg:felx-col  max-lg:p-20 ">
             <motion.img
               initial={{ translateY: 50, rotateZ: 0 }}
               animate={{

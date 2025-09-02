@@ -28,8 +28,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} antialiased`  } >
-        <Preloader/>
+      <body
+        className={`${poppins.className} antialiased`}
+        cz-shortcut-listen="true"
+      >
+        <Preloader />
         <Navigation />
         {children}
         <SpeedInsights />

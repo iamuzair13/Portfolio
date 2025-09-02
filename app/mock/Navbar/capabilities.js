@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { RiHandbagFill } from "react-icons/ri";
 import { SiAmazon, SiShopify, SiTiktok, SiWalmart } from "react-icons/si";
+import id from "zod/v4/locales/id.cjs";
 
 export const capabilities = [
   {
@@ -22,14 +23,20 @@ export const capabilities = [
       title: "Design",
       items: [
         {
+          id: 1,
+          category:'design',
+          searchParam : 'webdesign',
           name: "Web Design",
           icon: <Monitor className="w-[15px] h-[15px] text-blue-500 " />,
           title: "Creative Digital Web Design Solutions",
           desc: "Transforming ideas into visually appealing, user-friendly websites with modern design trends, responsive layouts, and seamless functionality to deliver engaging digital experiences that captivate and convert audiences.",
           image: "/images/services/design/web.jpg",
-          link: "/services/design/webDesign",
+          link: "/services/design/webDesign/",
         },
         {
+          id: 2,
+          category:'design',
+          searchParam : 'systemDesign',
           name: "Design Systems",
           icon: <LayoutTemplate className="w-[15px] h-[15px] text-blue-500 " />,
           title: "Efficient Scalable System Design Solutions",
@@ -38,6 +45,9 @@ export const capabilities = [
           link: "/services/design/systemDesign",
         },
         {
+          id: 3,
+          category:'design',
+          searchParam : 'illustrationDesign',
           name: "Illustration Design",
           icon: <Brush className="w-[15px] h-[15px] text-blue-500 " />,
           title: "Creative Custom Illustration Design Services",
@@ -47,6 +57,9 @@ export const capabilities = [
         },
 
         {
+          id: 4,
+          category:'design',
+          searchParam : 'motionDesign',
           name: "Motion Design",
           link: "/services/design/motionDesign",
           icon: <Move className="w-[15px] h-[15px] text-blue-500 " />,
@@ -62,6 +75,9 @@ export const capabilities = [
       title: "Development",
       items: [
         {
+          id: 1,
+          category:'development',
+          searchParam : 'frontendDev',
           name: "Frontend Development",
           link: "/services/development/frontendDev",
           icon: <Code className="w-[15px] h-[15px] text-blue-500 " />,
@@ -70,6 +86,9 @@ export const capabilities = [
           image: "/images/services/development/front.jpg",
         },
         {
+          id: 2,
+          category:'development',
+          searchParam : 'systemIntegration',
           name: "System Integrations",
           link: "/services/development/systemIntegration",
           icon: <Link2 className="w-[15px] h-[15px] text-blue-500 " />,
@@ -78,6 +97,9 @@ export const capabilities = [
           image: "/images/services/development/system-int.jpg",
         },
         {
+          id: 3,
+          category:'development',
+          searchParam : 'backendDev',
           name: "Backend Development",
           link: "/services/development/backendDev",
           icon: <Database className="w-[15px] h-[15px] text-blue-500 " />,
@@ -86,6 +108,9 @@ export const capabilities = [
           image: "/images/services/development/back.jpg",
         },
         {
+          id: 4,
+          category:'development',
+          searchParam : 'openAiIntegration',
           name: "OpenAI Integration",
           link: "/services/development/openAiIntegration",
           icon: <Bug className="w-[15px] h-[15px] text-blue-500 " />,
@@ -100,6 +125,9 @@ export const capabilities = [
       title: "SEO",
       items: [
         {
+          id: 1,
+          category:'seo',
+          searchParam : 'siteStructure',
           name: "Site Structure",
           link: "/services/seo/siteStructure",
           icon: <Layers className="w-[15px] h-[15px] text-blue-500 " />,
@@ -108,6 +136,9 @@ export const capabilities = [
           image: "/images/services/seo/site-structure.png",
         },
         {
+          id: 2,
+          category:'seo',
+          searchParam : 'onPageSeo',
           name: "On-Page SEO",
           link: "/services/seo/onPageSeo",
           icon: <FileText className="w-[15px] h-[15px] text-blue-500 " />,
@@ -116,6 +147,9 @@ export const capabilities = [
           image: "/images/services/seo/On-page-SEO.webp",
         },
         {
+          id: 3,
+          category:'seo',
+          searchParam : 'technicalSeo',
           name: "Technical SEO",
           link: "/services/seo/technicalSeo",
           icon: <Settings className="w-[15px] h-[15px] text-blue-500 " />,
@@ -124,6 +158,9 @@ export const capabilities = [
           image: "/images/services/seo/technical-seo.webp",
         },
         {
+          id: 4,
+          category:'seo',
+          searchParam : 'localization',
           name: "Localization",
           link: "/services/seo/localization",
           icon: <Globe className="w-[15px] h-[15px] text-blue-500 " />,
@@ -137,6 +174,9 @@ export const capabilities = [
       title: "E-Commerce",
       items: [
         {
+          id: 1,
+          category:'ecommerce',
+          searchParam : 'amazon',
           name: "Amazon",
           link: "/services/ecommerce/amazon",
           icon: <SiAmazon className="w-[15px] h-[15px] text-blue-500 " />,
@@ -145,6 +185,9 @@ export const capabilities = [
           image: "/images/services/ecommerce/amazon.jpg",
         },
         {
+          id: 2,
+          category:'ecommerce',
+          searchParam : 'shopify',
           name: "Shopify",
           link: "/services/ecommerce/shopify",
           icon: <SiShopify className="w-[15px] h-[15px] text-blue-500 " />,
@@ -153,6 +196,9 @@ export const capabilities = [
           image: "/images/services/ecommerce/shopify.jpg",
         },
         {
+          id: 3,
+          category:'ecommerce',
+          searchParam : 'walmart',
           name: "Walmart",
           link: "/services/ecommerce/walmart",
           icon: <RiHandbagFill className="w-[15px] h-[15px] text-blue-500 " />,
@@ -161,6 +207,9 @@ export const capabilities = [
           image: "/images/services/ecommerce/walmart.jpg",
         },
         {
+          id: 4,
+          category:'ecommerce',
+          searchParam : 'tiktok',
           name: "TikTok",
           link: "/services/ecommerce/tiktok",
           icon: <SiTiktok className="w-[15px] h-[15px] text-blue-500 " />,

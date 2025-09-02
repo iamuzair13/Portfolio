@@ -117,19 +117,23 @@ export default function Robot() {
   return (
     <Canvas
       camera={{ position: [0, 2, 6], fov: 50 }}
-      style={{ touchAction: "none" }}
+      style={{ touchAction: "pan-y" }} // allows vertical scrolling
       onCreated={({ gl }) => {
-        gl.domElement.style.touchAction = "auto"; // 👈 allow scroll
+        gl.domElement.style.touchAction = "pan-y";
       }}
     >
       <ambientLight intensity={0.7} />
       <directionalLight position={[2, 3, 5]} intensity={8} />
-      
+
       {/* 🔹 Run smoother inside Canvas */}
       <MouseSmoother targetMouse={targetMouse} setMouse={setMouse} />
-      
+
       <RobotModel mouse={mouse} />
-      <OrbitControls enableZoom={false} enableRotate={false} enablePan={false} />
+      <OrbitControls
+        enableZoom={false}
+        enableRotate={false}
+        enablePan={false}
+      />
     </Canvas>
   );
 }

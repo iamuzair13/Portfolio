@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import Link from "next/link";
 import { Menu, ChevronRight, ArrowRight } from "lucide-react";
 import {
@@ -16,7 +16,6 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import Capabilities from "./capabilities";
-import Solutions from "./solutions";
 import Company from "./company";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import WSButton from "@/app/UI/WSButton/WSButton";
@@ -24,6 +23,7 @@ import WSButton from "@/app/UI/WSButton/WSButton";
 export default function Navigation() {
   const [showTabs, setShowTabs] = useState(true);
   const [showContent, setShowContent] = useState(false);
+const [open, setOpen] = useState(false);
 
   function handleShowTabs() {
     setShowTabs(false);
@@ -84,7 +84,7 @@ export default function Navigation() {
                   }
                   asChild
                 >
-                  <Link href="/blog">About</Link>
+                  <Link href="/contact">About</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem className={"group"}>
@@ -94,7 +94,7 @@ export default function Navigation() {
                   }
                   asChild
                 >
-                  <Link href="/contact">Contact</Link>
+                  <Link href="/contact/sales">Contact</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>
@@ -119,11 +119,12 @@ export default function Navigation() {
 
         {/* Mobile Menu */}
         <div className="lg:hidden px-4">
-          <Sheet>
+          <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger
               onClick={() => {
                 setShowTabs(true);
                 setShowContent(false);
+                setOpen(true);
               }}
             >
               <Menu />
@@ -136,19 +137,29 @@ export default function Navigation() {
                       <TabsTrigger
                         value="capabilities"
                         className="w-full flex items-center justify-between px-4 py-2 hover:bg-gray-100 rounded-md border-none shadow-none"
+                        
                       >
                         <span onClick={handleShowTabs}>Services</span>
                         <ChevronRight className="w-4 h-4" />
                       </TabsTrigger>
 
-                      <div className="w-full flex items-center justify-between px-4 py-2 hover:bg-gray-100 rounded-md cursor-pointer">
+                      <div
+                        className="w-full flex items-center justify-between px-4 py-2 hover:bg-gray-100 rounded-md cursor-pointer"
+                        onClick={() => setOpen(false)}
+                      >
                         <Link href="/blog">Blog</Link>
                       </div>
-                      <div className="w-full flex items-center justify-between px-4 py-2 hover:bg-gray-100 rounded-md cursor-pointer">
-                        <Link href="/blog">About</Link>
+                      <div
+                        className="w-full flex items-center justify-between px-4 py-2 hover:bg-gray-100 rounded-md cursor-pointer"
+                        onClick={() => setOpen(false)}
+                      >
+                        <Link href="/contact">About</Link>
                       </div>
-                      <div className="w-full flex items-center justify-between px-4 py-2 hover:bg-gray-100 rounded-md cursor-pointer">
-                        <Link href="/contact">Contact</Link>
+                      <div
+                        className="w-full flex items-center justify-between px-4 py-2 hover:bg-gray-100 rounded-md cursor-pointer"
+                        onClick={() => setOpen(false)}
+                      >
+                        <Link href="/contact/sales">Contact</Link>
                       </div>
                     </div>
                   )}
@@ -168,12 +179,8 @@ export default function Navigation() {
                     <TabsContent value="capabilities">
                       <Capabilities />
                     </TabsContent>
-                    <TabsContent value="solutions">
-                      <Solutions />
-                    </TabsContent>
-                    <TabsContent value="company">
-                      <Company />
-                    </TabsContent>
+
+                   
                   </div>
                 )}
               </Tabs>

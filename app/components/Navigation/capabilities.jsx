@@ -1,100 +1,41 @@
 import { capabilities } from "@/app/mock/Navbar/capabilities";
-import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { Fragment } from "react";
 
-
 export default function Capabilities() {
+  const categories = Object.values(capabilities[0]); // Extract Design, Development, eCommerce, SEO
+
   return (
     <Fragment>
-      <div className="flex flex-row max-lg:flex-col    max-lg:px-2">
-        <div className="w-45 lg:border-r-1 border-gray-800 mr-4 ">
-          <h4 className="font-semibold ">{capabilities[0].Design.title}</h4>
-          {capabilities[0].Design.items.map((item, index) => (
-            <div
-              key={index}
-              className="flex flex-row  mt-2 justify-between group "
-            >
-
-              <div className="flex flex-row gap-2 align-center  items-center ">
-                {item.icon}
-
-                <Link
-                  href={item.link}
-                  key={index}
-                  className="block text-sm  ml-2 py-1   border-b-1 border-transparent group-hover:border-blue-600"
-                >
-                  {item.name}
-                </Link>
+      <div className="flex flex-row max-lg:flex-col max-lg:px-2 overflow-y-auto max-lg:max-h-[70vh] scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-transparent">
+        {categories.map((category, catIndex) => (
+          <div
+            key={catIndex}
+            className="w-50 lg:border-r border-gray-800 mr-4 last:border-none max-lg:w-full max-lg:mb-4"
+          >
+            <h4 className="font-semibold text-base max-lg:text-sm">
+              {category.title}
+            </h4>
+            {category.items.map((item, index) => (
+              <div
+                key={index}
+                className="flex flex-row mt-2 justify-between group max-lg:mt-1"
+              >
+                <div className="flex flex-row gap-2 items-center">
+                  {item.icon}
+                  <Link
+                    href={`/services/${item.category}/${
+                      item.searchParam
+                    }?index=${item.id - 1}`}
+                    className="block text-sm ml-2 py-1 border-b-1 border-transparent group-hover:border-blue-600 max-lg:text-xs"
+                  >
+                    {item.name}
+                  </Link>
+                </div>
               </div>
-              {/* <ArrowRight className="hidden group-hover:block w-[15px] h-[15px] text-gray-500 group-hover:text-blue-600 group-hover:text-blue-600" /> */}
-            </div>
-          ))}
-        </div>
-        <div className="w-55 lg:lg:border-r-1 border-gray-800 mr-4 ">
-          <h4 className="font-semibold">{capabilities[0].Development.title}</h4>
-          {capabilities[0].Development.items.map((item, index) => (
-            <div
-              key={index}
-              className="flex flex-row mt-2 justify-between group w-50 "
-            >
-
-              <div className="flex flex-row gap-2 align-center  items-center ">
-                {item.icon}
-
-                <Link
-                  href={item.link}
-                  key={index}
-                  className="block text-sm ml-2 py-1    border-b-1 border-transparent group-hover:border-blue-600"
-
-                >
-                  {item.name}
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
-        <div className="w-40  lg:border-r-1 border-gray-800">
-
-          <h4 className="font-semibold">{capabilities[0].eCommerce.title}</h4>
-          {capabilities[0].eCommerce.items.map((item, index) => (
-            <div className="flex flex-row mt-2 justify-between group items-center ">
-              <div className="flex flex-row gap-2 align-center  items-center ">
-                {item.icon}
-
-                <Link
-                  href={item.link}
-                  key={index}
-                  className="block text-sm ml-2 py-1    border-b-1 border-transparent group-hover:border-blue-600"
-
-                >
-                  {item.name}
-                </Link>
-              </div>
-            </div>
-          ))}
-
-        </div>
-        <div className="ml-4">
-          <h4 className="font-semibold w-40 ">{capabilities[0].SEO.title}</h4>
-          {capabilities[0].SEO.items.map((item, index) => (
-            <div className="flex flex-row mt-2 justify-between group items-center ">
-              <div className="flex flex-row gap-2 align-center  items-center ">
-                {item.icon}
-
-                <Link
-                  href={item.link}
-                  key={index}
-                  className="block text-sm ml-2 py-1    border-b-1 border-transparent group-hover:border-blue-600"
-
-                >
-                  {item.name}
-                </Link>
-              </div>
-            </div>
-          ))}
-
-        </div>
+            ))}
+          </div>
+        ))}
       </div>
     </Fragment>
   );
