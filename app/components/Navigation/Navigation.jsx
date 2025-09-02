@@ -35,7 +35,7 @@ const [open, setOpen] = useState(false);
 
   return (
     <nav className="w-full sticky flex flex-row justify-center top-0 z-50 bg-black bg-cover bg-end bg-no-repeat text-white">
-      <div className="grid grid-cols-12 gap-4 w-full items-center py-4 px-[5%] border border-blue-500">
+      <div className="grid grid-cols-12 gap-4 w-full items-center py-4 px-[5%]">
         {/* <div className="container flex items-center flex-row justify-center"> */}
         {/* Logo */}
         <div className="col-span-3">
@@ -108,7 +108,7 @@ const [open, setOpen] = useState(false);
 
         {/* Desktop Button */}
         <div className="col-span-3 flex justify-end">
-          <div className="hidden lg:block sm:w-[160px] md:w-[200px] flex flex-row justify-center border">
+          <div className="hidden lg:block sm:w-[160px] md:w-[200px] flex flex-row justify-center ">
             <Link href={"/contact/sales"}>
               <WSButton
                 value="Book a 15-Min Call"
