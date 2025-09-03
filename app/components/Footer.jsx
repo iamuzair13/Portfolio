@@ -20,7 +20,7 @@ export default function Footer() {
     <Fragment>
       {/* Get Started Section */}
       <section className="flex flex-col items-center justify-center  bg-black px-[5%] py-16 lg:py-20">
-        <h2 className="text-white text-[40px] md:text-[50px] lg:text-[60px] text-center leading-tight">
+        <h2 className="text-white text-[40px] max-lg:text-[24px] lg:text-[60px] text-center leading-tight">
           Let's get started.
         </h2>
         <div className="mt-6 text-center">

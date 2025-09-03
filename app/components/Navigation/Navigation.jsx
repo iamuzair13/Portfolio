@@ -35,12 +35,12 @@ const [open, setOpen] = useState(false);
 
   return (
     <nav className="w-full sticky flex flex-row justify-center top-0 z-50 bg-black bg-cover bg-end bg-no-repeat text-white">
-      <div className="grid grid-cols-12 gap-4 w-full items-center py-4 px-[5%]">
+      <div className="grid grid-cols-12 gap-4 w-full max-lg:flex max-lg:flex-row max-lg:justify-between items-center py-4 px-[5%]">
         {/* <div className="container flex items-center flex-row justify-center"> */}
         {/* Logo */}
         <div className="col-span-3">
           <Link href={"/"}>
-            <Avatar className=" w-1/2 h-24 max-lg:h-16   rounded-none">
+            <Avatar className=" w-1/2 max-lg:w-[150px] h-24 max-lg:h-16 rounded-none">
               <AvatarImage
                 src="/Logos/ProgrammersSQUAD-final-logof.png"
                 alt="Logo"

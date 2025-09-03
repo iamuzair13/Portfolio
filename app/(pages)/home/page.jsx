@@ -66,10 +66,10 @@ export default function Hero() {
       <section className="  flex flex-col items-center justify-center   bg-black ">
         <div className="container  flex justify-center max-lg:p-4 lg:pt-[110px]">
           <div className="upper text-center lg:w-[72%]  space-y-8">
-            <h2 className="text-[60px]  max-lg:text-[24px] text-center font-bold leading-tight text-white">
+            <h2 className="text-[60px]  max-lg:text-[16px] text-center font-bold leading-tight text-white">
               We don’t just build websites. We create experiences that connect and convert.
             </h2>
-            <p className="text-[#a5acc0] text-center max-lg:text-[14px] text-[20px] leading-[30px]">
+            <p className="text-[#a5acc0] text-center max-lg:text-[14px] text-[20px] leading-[30px] max-lg:leading-[25px]">
              We help Businesses turn scattered data and manual processes into intelligent systems that engage customers, automate workflows, and scale effortlessly.
             </p>
           </div>
