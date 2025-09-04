@@ -127,7 +127,7 @@ export default function Footer() {
       </section>
 
       {/* Logo Strip */}
-      <section className="px-[5%] bg-black text-white">
+      <section className="relative px-[5%] bg-black text-white">
         <img src={"/Logos/e (1).png"} className="w-full object-contain" />
       </section>
 

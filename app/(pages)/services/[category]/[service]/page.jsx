@@ -23,6 +23,8 @@ export default function ServicePage() {
   const selectedCategory = capabilities[0][normalizedCategory];
   const selectedService = selectedCategory?.items[index];
 
+  
+
   // Move conditional logic here
   if (!selectedCategory || !selectedService) {
     return (
@@ -90,8 +92,8 @@ export default function ServicePage() {
             </h4>
 
             <p className="text-[#a5acc0] text-[20px] max-lg:text-[16px] lg:w-[50%]">
-              Our team of experienced designers and developers work closely
-              with you to create a website that not only looks great but also
+              Our team of experienced designers and developers work closely with
+              you to create a website that not only looks great but also
               performs exceptionally well, driving traffic and conversions.
             </p>
           </div>
@@ -117,7 +119,7 @@ export default function ServicePage() {
                   {item.desc}
                 </p>
 
-                <Link href={item.link}>
+                <Link href={`/services/${category}/${item.name}?index=${item.id-1}`}>
                   <Button className="bg-[#0f3bbe] flex items-center gap-2 w-full lg:w-1/3 max-lg:p-4 cursor-pointer text-[14px] max-lg:text-[12px]">
                     Learn More
                   </Button>

@@ -1,5 +1,6 @@
 {
-  "/(pages)/privacy/page": "app/(pages)/privacy/page.js",
-  "/(pages)/terms/page": "app/(pages)/terms/page.js",
+  "/(pages)/blog/page": "app/(pages)/blog/page.js",
+  "/(pages)/services/[category]/[service]/page": "app/(pages)/services/[category]/[service]/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/page": "app/page.js"
 }

@@ -40,7 +40,7 @@ const [open, setOpen] = useState(false);
         {/* Logo */}
         <div className="col-span-3">
           <Link href={"/"}>
-            <Avatar className=" w-1/2 max-lg:w-[150px] h-24 max-lg:h-16 rounded-none">
+            <Avatar className=" w-full max-lg:w-[150px] h-24 max-lg:h-16 rounded-none">
               <AvatarImage
                 src="/Logos/ProgrammersSQUAD-final-logof.png"
                 alt="Logo"
