@@ -27,11 +27,15 @@ export async function GET() {
 export async function POST(request) {
   try {
     await connectDB();
-    const payload = await request.json();
-    const newBlog = new blog(payload);
-    const result = await newBlog.save();
-    return NextResponse.json({ result });
+    const body = await request.json();
+    const contact = new Contact(body);
+    await contact.save();
+    return NextResponse.json({ success: true, message: "Contact saved!" });
   } catch (error) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    console.log("API Error:", error); // Add this line
+    return NextResponse.json(
+      { success: false, message: error.message },
+      { status: 500 }
+    );
   }
 }
