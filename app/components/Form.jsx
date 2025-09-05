@@ -81,7 +81,7 @@ export default function Form() {
                   <FormControl>
                     <Select onValueChange={field.onChange} value={field.value}>
                       <SelectTrigger className="w-full lg:min-h-[60px]">
-                        <SelectValue placeholder="Select your budget" />
+                        <SelectValue placeholder="Enter your budget" />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="$0 - $500">$0 - $500</SelectItem>
