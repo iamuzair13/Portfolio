@@ -85,7 +85,7 @@ export const capabilities = [
           icon: <Code className="w-[15px] h-[15px] text-blue-500 " />,
           title: "Interactive Frontend Development Solutions Expert",
           desc: "Building responsive, user-friendly web interfaces using modern technologies and frameworks, ensuring seamless performance, engaging user experiences, and visually appealing designs that enhance website functionality and usability.",
-          image: "/images/services/development/front.jpg",
+          image: "/images/services/development/Backend-Development.png",
         },
         {
           id: 2,
@@ -96,7 +96,7 @@ export const capabilities = [
           icon: <Link2 className="w-[15px] h-[15px] text-blue-500 " />,
           title: "Seamless System Integration Solutions Expert",
           desc: "Connecting software, applications, and platforms efficiently to work together flawlessly, improving workflow, data consistency, and operational efficiency while ensuring secure, scalable, and reliable system interoperability.",
-          image: "/images/services/development/system-int.jpg",
+          image: "/images/services/development/System-Integrations.jpeg",
         },
         {
           id: 3,
@@ -107,7 +107,7 @@ export const capabilities = [
           icon: <Database className="w-[15px] h-[15px] text-blue-500 " />,
           title: "Robust Backend Development & Integration",
           desc: "Designing secure, scalable, and efficient server-side solutions, managing databases, APIs, and application logic to ensure seamless functionality, fast performance, and reliable support for web and mobile applications.",
-          image: "/images/services/development/back.jpg",
+          image: "/images/services/development/Backend-Development.png",
         },
         {
           id: 4,
@@ -118,7 +118,7 @@ export const capabilities = [
           icon: <Bug className="w-[15px] h-[15px] text-blue-500 " />,
           title: "Smart OpenAI Integration Solutions Expert",
           desc: "Integrating OpenAI’s advanced AI capabilities into applications to automate tasks, enhance user experiences, generate intelligent insights, and create innovative solutions with seamless and efficient AI-powered functionality.",
-          image: "/images/services/development/openai.jpg",
+          image: "/images/services/development/OpenAI-Integrationimage.png",
         },
       ],
     },
@@ -146,7 +146,7 @@ export const capabilities = [
           icon: <FileText className="w-[15px] h-[15px] text-blue-500 " />,
           title: "Comprehensive On-Page SEO Strategies",
           desc: "Implementing effective on-page SEO techniques, including keyword optimization, meta tags, and content enhancements, to improve search engine rankings and drive organic traffic.",
-          image: "/images/services/seo/On-page-SEO.webp",
+          image: "/images/services/seo/On-page-SEO.png",
         },
         {
           id: 3,
@@ -157,7 +157,7 @@ export const capabilities = [
           icon: <Settings className="w-[15px] h-[15px] text-blue-500 " />,
           title: "Advanced Technical SEO Solutions",
           desc: "Ensuring your website meets technical SEO standards, including site speed optimization, mobile-friendliness, and secure connections, to enhance visibility and user experience.",
-          image: "/images/services/seo/technical-seo.webp",
+          image: "/images/services/seo/Technical-SEO.png",
         },
         {
           id: 4,
@@ -168,7 +168,7 @@ export const capabilities = [
           icon: <Globe className="w-[15px] h-[15px] text-blue-500 " />,
           title: "Effective Localization Strategies",
           desc: "Implementing localization best practices to optimize your website for different languages and regions, ensuring a seamless user experience and improved search visibility across diverse markets.",
-          image: "/images/services/seo/localization.png",
+          image: "/images/services/seo/Localization.png",
         },
       ],
     },
@@ -184,7 +184,7 @@ export const capabilities = [
           icon: <SiAmazon className="w-[15px] h-[15px] text-blue-500 " />,
           title: "Innovative Amazon Solutions & Services",
           desc: "Providing comprehensive Amazon services, from e-commerce store optimization to product listing, marketing strategies, and fulfillment solutions, helping businesses grow sales, reach wider audiences, and maximize profits efficiently.",
-          image: "/images/services/ecommerce/amazon.jpg",
+          image: "/images/services/ecommerce/amazon-images-for-website.png",
         },
         {
           id: 2,
@@ -195,7 +195,7 @@ export const capabilities = [
           icon: <SiShopify className="w-[15px] h-[15px] text-blue-500 " />,
           title: "Comprehensive Shopify Store Solutions Expert",
           desc: "Creating and optimizing Shopify stores with custom designs, seamless integrations, and user-friendly interfaces to enhance customer experience, boost sales, and grow your e-commerce business efficiently.",
-          image: "/images/services/ecommerce/shopify.jpg",
+          image: "/images/services/ecommerce/Shopify.png",
         },
         {
           id: 3,
@@ -206,7 +206,7 @@ export const capabilities = [
           icon: <RiHandbagFill className="w-[15px] h-[15px] text-blue-500 " />,
           title: "Walmart Business Solutions & Services",
           desc: "Offering expert solutions for Walmart sellers, including product listing optimization, inventory management, marketing strategies, and sales growth techniques to maximize visibility, efficiency, and revenue on the platform.",
-          image: "/images/services/ecommerce/walmart.jpg",
+          image: "/images/services/ecommerce/Walmart.png",
         },
         {
           id: 4,
@@ -217,7 +217,7 @@ export const capabilities = [
           icon: <SiTiktok className="w-[15px] h-[15px] text-blue-500 " />,
           title: "Creative TikTok Growth & Marketing",
           desc: "Helping brands and creators grow on TikTok through engaging content strategies, trend-based campaigns, audience targeting, and analytics-driven approaches to maximize reach, engagement, and social impact.",
-          image: "/images/services/ecommerce/tiktok.jpg",
+          image: "/images/services/ecommerce/tiktok.png",
         },
       ],
     },
