@@ -1,141 +1,242 @@
 "use client";
-import { Button } from "@/components/ui/button";
-import { PlusIcon } from "lucide-react";
-import { Fragment, useState } from "react";
-
-export default function AddBlog() {
-  const [author, setAuthor] = useState("");
-  const [title, setTitle] = useState("");
-  const [descText, setDescText] = useState("");
-  const [category, setCategory] = useState("");
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    const payload = { author, title, text: descText, category };
-
-    try {
-      const res = await fetch("/API/blogs", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-
-      const data = await res.json();
-      console.log(data);
-
-      if (data.success) {
-        alert("Blog added successfully!");
-        setAuthor("");
-        setTitle("");
-        setDescText("");
-        setCategory("");
-      } else {
-        alert("Error adding blog");
-      }
-    } catch (error) {
-      console.error("Error:", error);
+import { useState } from "react";
+export default function BlogPostForm() {
+  const [formData, setFormData] = useState({
+    title: "",
+    slug: "",
+    content: "",
+    excerpt: "",
+    category: "",
+    tags: "",
+    seoTitle: "",
+    seoDescription: "",
+    keywords: "",
+    author: "",
+    publishedAt: "",
+    blogImage: null,
+  });
+  const [loading, setLoading] = useState(false);
+  const handleChange = (e) => {
+    const { name, value, files } = e.target;
+    if (files) {
+      setFormData({ ...formData, [name]: files[0] });
+    } else {
+      setFormData({ ...formData, [name]: value });
     }
   };
-
+  const handleSubmit = async (e) => {
+    setLoading(true);
+    e.preventDefault();
+    try {
+      const data = new FormData();
+      Object.entries(formData).forEach(([key, value]) => {
+        if (value !== null && value !== undefined) {
+          data.append(key, value);
+        }
+        console.log(data);
+      });
+      const res = await fetch("/API/blogs", { method: "POST", body: data });
+      const result = await res.json();
+      alert(result.message);
+      setFormData({
+        title: "",
+        slug: "",
+        content: "",
+        excerpt: "",
+        category: "",
+        tags: "",
+        seoTitle: "",
+        seoDescription: "",
+        keywords: "",
+        author: "",
+        publishedAt: "",
+        blogImage: null,
+      });
+    } catch (err) {
+      alert("Something went wrong ❌");
+    }
+    setLoading(false);
+  };
   return (
-    <Fragment>
-      <section className="  flex flex-col max-md:flex-col items-center  max-md:pt-[70px] px-[5%] justify-evenly bg-black   ">
-        <div className="md:left md:w-[70%]">
-          <h2 className="text-white text-[60px] text-center max-md:text-[24px] md:leading-[70px] ">
-            Publish What You Explore
-          </h2>
-        </div>
-        <div className="right flex flex-col max-md:justify-center max-md:text-center items-center ">
-          <h4 className="text-[#a5acc0] text-[20px] max-md:text-[16px]  pb-10">
-            Talk with our experts to start your website transformation today.
-          </h4>
-        </div>
-
-        {/* input fields */}
-        <div className="w-full">
-          <form className="" method="POST" onSubmit={handleSubmit}>
-            <div className="flex flex-col flex-wrap w-full justify-center items-center space-y-4 space-x-2">
-              <div className="flex flex-col  w-[40%]">
-                <label
-                  htmlFor="author"
-                  className="text-[#a5acc0] text-[16px] max-md:text-[14px]"
-                >
-                  Name
-                </label>
-                <input
-                  id="author"
-                  name="author"
-                  value={author}
-                  type="text"
-                  onChange={(e) => setAuthor(e.target.value)}
-                  placeholder="Enter author name"
-                  className="border rounded-md px-3 py-2  text-[#a5acc0] focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  required
-                />
-              </div>
-              <div className="flex flex-col  w-[40%]">
-                <label
-                  htmlFor="title"
-                  className="text-[#a5acc0] text-[16px] max-md:text-[14px]"
-                >
-                  Title
-                </label>
-                <input
-                  id="title"
-                  name="title"
-                  value={title}
-                  type="text"
-                  onChange={(e) => setTitle(e.target.value)}
-                  placeholder="Enter title"
-                  className="border rounded-md px-3 py-2  text-[#a5acc0] focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  required
-                />
-              </div>
-              <div className="flex flex-col  w-[40%]">
-                <label
-                  htmlFor="descText"
-                  className="text-[#a5acc0] text-[16px] max-md:text-[14px]"
-                >
-                  Description Text
-                </label>
-                <input
-                  id="descText"
-                  name="descText"
-                  value={descText}
-                  type="text"
-                  onChange={(e) => setDescText(e.target.value)}
-                  placeholder="Enter Description Text"
-                  className="border rounded-md px-3 py-2  text-[#a5acc0] focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  required
-                />
-              </div>
-              <div className="flex flex-col  w-[40%]">
-                <label
-                  htmlFor="category"
-                  className="text-[#a5acc0] text-[16px] max-md:text-[14px]"
-                >
-                  Enter Category
-                </label>
-                <input
-                  id="category"
-                  name="category"
-                  value={category}
-                  type="text"
-                  onChange={(e) => setCategory(e.target.value)}
-                  placeholder="Enter category"
-                  className="border rounded-md px-3 py-2  text-[#a5acc0] focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  required
-                />
-              </div>
-              <Button type="submit" className="w-[250px] cursor-pointer text-base bg-[#0f3bbe] flex items-center gap-2 lg:text-[14px]  max-lg:p-6">
-                Add
-                <PlusIcon className="w-5 h-5 max-lg:w-2 max-lg:h-2 text-white" />
-              </Button>
-            </div>
-          </form>
-        </div>
-      </section>
-    </Fragment>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#f8fafc] via-[#e0e7ef] to-[#c7d2fe] py-8 px-2">
+      {" "}
+      <form
+        onSubmit={handleSubmit}
+        className="w-full max-w-2xl bg-white rounded-2xl shadow-xl p-6 md:p-10 space-y-6"
+      >
+        {" "}
+        <h2 className="text-3xl font-bold text-[#0f3bbe] mb-4 text-center">
+          {" "}
+          Create Blog Post{" "}
+        </h2>{" "}
+        {/* Title */}{" "}
+        <div>
+          {" "}
+          <label className="block font-semibold text-[#0f3bbe] mb-1">
+            Title
+          </label>{" "}
+          <input
+            type="text"
+            name="title"
+            value={formData.title}
+            onChange={handleChange}
+            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0f3bbe] outline-none"
+            placeholder="Enter blog title"
+            required
+          />{" "}
+        </div>{" "}
+        {/* Slug */}{" "}
+        <div>
+          {" "}
+          <label className="block font-semibold text-[#0f3bbe] mb-1">
+            Slug / URL
+          </label>{" "}
+          <input
+            type="text"
+            name="slug"
+            value={formData.slug}
+            onChange={handleChange}
+            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0f3bbe] outline-none"
+            placeholder="auto-generated or custom-slug"
+          />{" "}
+        </div>{" "}
+        {/* Blog Image */}{" "}
+        <div>
+          {" "}
+          <label className="block font-semibold text-[#0f3bbe] mb-1">
+            Featured Image
+          </label>{" "}
+          <input
+            type="file"
+            name="blogImage"
+            accept="image/*"
+            onChange={handleChange}
+            className="w-full file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:bg-[#0f3bbe] file:text-white"
+          />{" "}
+        </div>{" "}
+        {/* Excerpt */}{" "}
+        <div>
+          {" "}
+          <label className="block font-semibold text-[#0f3bbe] mb-1">
+            Excerpt / Meta Description
+          </label>{" "}
+          <textarea
+            name="excerpt"
+            value={formData.excerpt}
+            onChange={handleChange}
+            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0f3bbe] outline-none"
+            placeholder="Short description (SEO-friendly, ~160 chars)"
+          />{" "}
+        </div>{" "}
+        {/* Content */}{" "}
+        <div>
+          {" "}
+          <label className="block font-semibold text-[#0f3bbe] mb-1">
+            Content
+          </label>{" "}
+          <textarea
+            name="content"
+            value={formData.content}
+            onChange={handleChange}
+            rows="6"
+            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0f3bbe] outline-none"
+            placeholder="Write your blog content here..."
+          />{" "}
+        </div>{" "}
+        {/* Category & Tags */}{" "}
+        <div className="flex flex-col md:flex-row gap-4">
+          {" "}
+          <div className="flex-1">
+            {" "}
+            <label className="block font-semibold text-[#0f3bbe] mb-1">
+              Category
+            </label>{" "}
+            <input
+              type="text"
+              name="category"
+              value={formData.category}
+              onChange={handleChange}
+              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0f3bbe] outline-none"
+              placeholder="e.g. Technology"
+            />{" "}
+          </div>{" "}
+          <div className="flex-1">
+            {" "}
+            <label className="block font-semibold text-[#0f3bbe] mb-1">
+              Tags (comma separated)
+            </label>{" "}
+            <input
+              type="text"
+              name="tags"
+              value={formData.tags}
+              onChange={handleChange}
+              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0f3bbe] outline-none"
+              placeholder="e.g. nextjs, seo, webdev"
+            />{" "}
+          </div>{" "}
+        </div>{" "}
+        {/* SEO */}{" "}
+        <div className="border-t pt-4">
+          {" "}
+          <h3 className="text-lg font-semibold text-[#0f3bbe] mb-2">
+            SEO Settings
+          </h3>{" "}
+          <div className="flex flex-col md:flex-row gap-4">
+            {" "}
+            <div className="flex-1">
+              {" "}
+              <label className="block font-semibold text-[#0f3bbe] mb-1">
+                SEO Title
+              </label>{" "}
+              <input
+                type="text"
+                name="seoTitle"
+                value={formData.seoTitle}
+                onChange={handleChange}
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0f3bbe] outline-none"
+                placeholder="Custom SEO title (optional)"
+              />{" "}
+            </div>{" "}
+            <div className="flex-1">
+              {" "}
+              <label className="block font-semibold text-[#0f3bbe] mb-1">
+                Focus Keywords
+              </label>{" "}
+              <input
+                type="text"
+                name="keywords"
+                value={formData.keywords}
+                onChange={handleChange}
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0f3bbe] outline-none"
+                placeholder="keyword1, keyword2"
+              />{" "}
+            </div>{" "}
+          </div>{" "}
+          <div className="flex flex-col md:flex-row gap-4 mt-4">
+            {" "}
+            <div className="flex-1">
+              {" "}
+              <label className="block font-semibold text-[#0f3bbe] mb-1">
+                SEO Description
+              </label>{" "}
+              <textarea
+                name="seoDescription"
+                value={formData.seoDescription}
+                onChange={handleChange}
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0f3bbe] outline-none"
+                placeholder="Custom SEO description"
+              />{" "}
+            </div>{" "}
+          </div>{" "}
+        </div>{" "}
+        <button
+          type="submit"
+          className="w-full bg-[#0f3bbe] text-white p-3 rounded-xl font-semibold hover:bg-[#1e4bb8] transition"
+        >
+          {" "}
+          Save Blog Post{" "}
+        </button>{" "}
+      </form>{" "}
+    </div>
   );
 }

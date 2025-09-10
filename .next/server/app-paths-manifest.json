@@ -2,6 +2,7 @@
   "/(pages)/blog/page": "app/(pages)/blog/page.js",
   "/(pages)/publish/page": "app/(pages)/publish/page.js",
   "/(pages)/services/[category]/[service]/page": "app/(pages)/services/[category]/[service]/page.js",
+  "/API/blogs/route": "app/API/blogs/route.js",
   "/_not-found/page": "app/_not-found/page.js",
   "/page": "app/page.js"
 }
