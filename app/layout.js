@@ -9,10 +9,10 @@ import { Poppins } from "next/font/google";
 import Preloader from "./components/Preloader";
 
 const poppins = Poppins({
-  variable:'--font-poppins',
-  weight: ["400", "500", "600", "700"],
-  subsets:['latin']
-})
+  variable: "--font-poppins",
+  weight: ["400", "500", "700"],
+  subsets: ["latin"],
+});
 
 
 

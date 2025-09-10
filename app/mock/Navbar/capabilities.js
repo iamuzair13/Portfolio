@@ -32,7 +32,7 @@ export const capabilities = [
           icon: <Monitor className="w-[15px] h-[15px] text-blue-500 " />,
           title: "Creative Digital Web Design Solutions",
           desc: "Transforming ideas into visually appealing, user-friendly websites with modern design trends, responsive layouts, and seamless functionality to deliver engaging digital experiences that captivate and convert audiences.",
-          image: "/images/services/design/Web-Design.png",
+          image: "/images/services/design/webdesign.png",
           link: "/services/design/webDesign/",
         },
         {
@@ -43,7 +43,7 @@ export const capabilities = [
           icon: <LayoutTemplate className="w-[15px] h-[15px] text-blue-500 " />,
           title: "Efficient Scalable System Design Solutions",
           desc: "Crafting robust architectures, optimizing performance, and ensuring seamless scalability to build reliable systems that support complex operations while enhancing security, maintainability, and long-term business growth.",
-          image: "/images/services/design/Design-Systems.png",
+          image: "/images/services/design/system-design.png",
           link: "/services/design/systemDesign",
         },
         {
@@ -67,7 +67,7 @@ export const capabilities = [
           icon: <Move className="w-[15px] h-[15px] text-blue-500 " />,
           title: "Dynamic Motion Design & Animation",
           desc: "Creating captivating motion graphics that bring stories to life, combining animation, visual effects, and creative storytelling to engage audiences and elevate brand experiences with impactful visuals.",
-          image: "/images/services/design/Motion-Design.png",
+          image: "/images/services/design/Motion.jpg",
           link: "/services/design/motionDesign",
         },
       ],
@@ -85,7 +85,7 @@ export const capabilities = [
           icon: <Code className="w-[15px] h-[15px] text-blue-500 " />,
           title: "Interactive Frontend Development Solutions Expert",
           desc: "Building responsive, user-friendly web interfaces using modern technologies and frameworks, ensuring seamless performance, engaging user experiences, and visually appealing designs that enhance website functionality and usability.",
-          image: "/images/services/development/Backend-Development.png",
+          image: "/images/services/development/Frontenddevelopment.png",
         },
         {
           id: 2,
@@ -96,7 +96,7 @@ export const capabilities = [
           icon: <Link2 className="w-[15px] h-[15px] text-blue-500 " />,
           title: "Seamless System Integration Solutions Expert",
           desc: "Connecting software, applications, and platforms efficiently to work together flawlessly, improving workflow, data consistency, and operational efficiency while ensuring secure, scalable, and reliable system interoperability.",
-          image: "/images/services/development/System-Integrations.jpeg",
+          image: "/images/services/development/SystemIntegrations.png",
         },
         {
           id: 3,
@@ -107,7 +107,7 @@ export const capabilities = [
           icon: <Database className="w-[15px] h-[15px] text-blue-500 " />,
           title: "Robust Backend Development & Integration",
           desc: "Designing secure, scalable, and efficient server-side solutions, managing databases, APIs, and application logic to ensure seamless functionality, fast performance, and reliable support for web and mobile applications.",
-          image: "/images/services/development/Backend-Development.png",
+          image: "/images/services/development/backend.png",
         },
         {
           id: 4,
@@ -118,7 +118,7 @@ export const capabilities = [
           icon: <Bug className="w-[15px] h-[15px] text-blue-500 " />,
           title: "Smart OpenAI Integration Solutions Expert",
           desc: "Integrating OpenAI’s advanced AI capabilities into applications to automate tasks, enhance user experiences, generate intelligent insights, and create innovative solutions with seamless and efficient AI-powered functionality.",
-          image: "/images/services/development/OpenAI-Integrationimage.png",
+          image: "/images/services/development/OpenAIIntegration13.png",
         },
       ],
     },
@@ -135,7 +135,7 @@ export const capabilities = [
           icon: <Layers className="w-[15px] h-[15px] text-blue-500 " />,
           title: "Optimized Site Structure & Architecture",
           desc: "Designing a clear, logical site structure that enhances user experience and improves search engine visibility, ensuring all content is easily accessible and well-organized.",
-          image: "/images/services/seo/site-structure.png",
+          image: "/images/services/seo/SiteStructure.png",
         },
         {
           id: 2,
@@ -157,7 +157,7 @@ export const capabilities = [
           icon: <Settings className="w-[15px] h-[15px] text-blue-500 " />,
           title: "Advanced Technical SEO Solutions",
           desc: "Ensuring your website meets technical SEO standards, including site speed optimization, mobile-friendliness, and secure connections, to enhance visibility and user experience.",
-          image: "/images/services/seo/Technical-SEO.png",
+          image: "/images/services/seo/TechnicalSEO.png",
         },
         {
           id: 4,
@@ -184,7 +184,7 @@ export const capabilities = [
           icon: <SiAmazon className="w-[15px] h-[15px] text-blue-500 " />,
           title: "Innovative Amazon Solutions & Services",
           desc: "Providing comprehensive Amazon services, from e-commerce store optimization to product listing, marketing strategies, and fulfillment solutions, helping businesses grow sales, reach wider audiences, and maximize profits efficiently.",
-          image: "/images/services/ecommerce/amazon-images-for-website.png",
+          image: "/images/services/ecommerce/Amazon.png",
         },
         {
           id: 2,
@@ -217,7 +217,7 @@ export const capabilities = [
           icon: <SiTiktok className="w-[15px] h-[15px] text-blue-500 " />,
           title: "Creative TikTok Growth & Marketing",
           desc: "Helping brands and creators grow on TikTok through engaging content strategies, trend-based campaigns, audience targeting, and analytics-driven approaches to maximize reach, engagement, and social impact.",
-          image: "/images/services/ecommerce/tiktok.png",
+          image: "/images/services/ecommerce/TikTok.png",
         },
       ],
     },
