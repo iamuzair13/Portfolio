@@ -1,62 +1,82 @@
 "use client";
 import { useState } from "react";
+import { boolean } from "zod";
 export default function BlogPostForm() {
-  const [formData, setFormData] = useState({
-    title: "",
-    slug: "",
-    content: "",
-    excerpt: "",
-    category: "",
-    tags: "",
-    seoTitle: "",
-    seoDescription: "",
-    keywords: "",
-    author: "",
-    publishedAt: "",
-    blogImage: null,
-  });
-  const [loading, setLoading] = useState(false);
-  const handleChange = (e) => {
-    const { name, value, files } = e.target;
-    if (files) {
-      setFormData({ ...formData, [name]: files[0] });
-    } else {
-      setFormData({ ...formData, [name]: value });
-    }
-  };
-  const handleSubmit = async (e) => {
-    setLoading(true);
-    e.preventDefault();
-    try {
-      const data = new FormData();
-      Object.entries(formData).forEach(([key, value]) => {
-        if (value !== null && value !== undefined) {
-          data.append(key, value);
-        }
-        console.log(data);
-      });
-      const res = await fetch("/API/blogs", { method: "POST", body: data });
-      const result = await res.json();
-      alert(result.message);
-      setFormData({
-        title: "",
-        slug: "",
-        content: "",
-        excerpt: "",
-        category: "",
-        tags: "",
-        seoTitle: "",
-        seoDescription: "",
-        keywords: "",
-        author: "",
-        publishedAt: "",
-        blogImage: null,
-      });
-    } catch (err) {
-      alert("Something went wrong ❌");
-    }
-    setLoading(false);
-  };
+  
+const [formData, setFormData] = useState({
+  title: "",
+  slug: "",
+  content: "",
+  excerpt: "",
+  category: "",
+  tags: "",
+  seoTitle: "",
+  seoDescription: "",
+  keywords: "",
+  latest: false,
+  author: "",
+  publishedAt: new Date().getDate(),
+  blogImage: null,
+});
+
+const [loading, setLoading] = useState(false);
+
+const handleChange = (e) => {
+  const { name, value, files, type, checked } = e.target;
+
+  if (type === "file" && files?.length > 0) {
+    setFormData((prev) => ({ ...prev, [name]: files[0] }));
+  } else if (type === "checkbox") {
+    setFormData((prev) => ({ ...prev, [name]: checked }));
+  } else {
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  }
+};
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setLoading(true);
+
+  try {
+    const data = new FormData();
+    Object.entries(formData).forEach(([key, value]) => {
+      if (value !== null && value !== undefined) {
+        data.append(key, value);
+      }
+    });
+
+    const res = await fetch("/API/blogs", {
+      method: "POST",
+      body: data,
+    });
+
+    const result = await res.json();
+    alert(result.message);
+
+    // reset form
+    setFormData({
+      title: "",
+      slug: "",
+      content: "",
+      excerpt: "",
+      category: "",
+      tags: "",
+      seoTitle: "",
+      seoDescription: "",
+      keywords: "",
+      author: "",
+      latest: false,
+      publishedAt: new Date().getDate(),
+      blogImage: null,
+    });
+  } catch (err) {
+    console.error("Error submitting blog:", err);
+    alert("Something went wrong ❌");
+  }
+
+  setLoading(false);
+};
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#f8fafc] via-[#e0e7ef] to-[#c7d2fe] py-8 px-2">
       {" "}
@@ -100,6 +120,21 @@ export default function BlogPostForm() {
             placeholder="auto-generated or custom-slug"
           />{" "}
         </div>{" "}
+        <div>
+          {" "}
+          <label className="block font-semibold text-[#0f3bbe] mb-1">
+            Author
+          </label>{" "}
+          <input
+            type="text"
+            name="author"
+            value={formData.author}
+            onChange={handleChange}
+            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0f3bbe] outline-none"
+            placeholder="Enter blog author"
+            required
+          />{" "}
+        </div>
         {/* Blog Image */}{" "}
         <div>
           {" "}
@@ -174,6 +209,22 @@ export default function BlogPostForm() {
               placeholder="e.g. nextjs, seo, webdev"
             />{" "}
           </div>{" "}
+        </div>{" "}
+        <div className="flex flex-col md:flex-row gap-4">
+          <div>
+            <label className="block font-semibold text-[#0f3bbe] mb-1">
+              Mark as Latest
+            </label>
+            <input
+              type="checkbox"
+              name="latest"
+              checked={formData.latest}
+              onChange={(e) =>
+                setFormData({ ...formData, latest: e.target.checked })
+              }
+              className="w-4 h-4"
+            />
+          </div>
         </div>{" "}
         {/* SEO */}{" "}
         <div className="border-t pt-4">

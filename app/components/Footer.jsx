@@ -10,12 +10,11 @@ import { FaInstagramSquare, FaLinkedin } from "react-icons/fa";
 import { CiGlobe } from "react-icons/ci";
 import { footerData } from "../mock/footerData";
 import Link from "next/link";
-import { capabilities } from "../mock/Navbar/capabilities";
 
 
 export default function Footer() {
-    const categories = Object.values(capabilities[0]); // Extract Design, Development, eCommerce, SEO
-  const contact = Object.values(capabilities[1]);
+    const categories = Object.values(footerData[0]); // Extract Design, Development, eCommerce, SEO
+  const contact = Object.values(footerData[1]);
   return (
     <Fragment>
       {/* Get Started Section */}

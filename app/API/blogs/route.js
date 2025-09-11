@@ -2,6 +2,10 @@ import { dbConnection } from "@/lib/utils";
 import mongoose from "mongoose";
 import { NextResponse } from "next/server";
 
+import path from "path";
+import { promises as fs } from "fs";
+
+
 // Define schema
 const blogSchema = new mongoose.Schema({
   title: String,
@@ -14,7 +18,8 @@ const blogSchema = new mongoose.Schema({
   seoDescription: String,
   keywords: String,
   author: String,
-  publishedAt: Date,
+  latest: Boolean,
+  publishedAt: String,
   blogImage: String, // store file name or URL
 });
 
@@ -28,6 +33,21 @@ async function connectDB() {
   }
 }
 
+export async function GET(request) {
+  try {
+    await connectDB();
+
+    const blogs = await Blog.find({});
+    return NextResponse.json({ success: true, data: blogs });
+  } catch (error) {
+    console.error("API error:", error);
+    return NextResponse.json(
+      { success: false, message: error.message },
+      { status: 500 }
+    );
+  }
+}
+
 export async function POST(request) {
   try {
     await connectDB();
@@ -36,25 +56,47 @@ export async function POST(request) {
     const formData = await request.formData();
 
     // Extract fields
-    const blogData = {
-      title: formData.get("title"),
-      slug: formData.get("slug"),
-      content: formData.get("content"),
-      excerpt: formData.get("excerpt"),
-      category: formData.get("category"),
-      tags: formData.get("tags"),
-      seoTitle: formData.get("seoTitle"),
-      seoDescription: formData.get("seoDescription"),
-      keywords: formData.get("keywords"),
-      author: formData.get("author"),
-      publishedAt: formData.get("publishedAt")
-        ? new Date(formData.get("publishedAt"))
-        : null,
-      blogImage: formData.get("blogImage")?.name || null, // just file name for now
-    };
+const blogData = {
+  title: formData.get("title"),
+  slug: formData.get("slug"),
+  content: formData.get("content"),
+  excerpt: formData.get("excerpt"),
+  category: formData.get("category"),
+  tags: formData.get("tags"),
+  seoTitle: formData.get("seoTitle"),
+  seoDescription: formData.get("seoDescription"),
+  keywords: formData.get("keywords"),
+  author: formData.get("author"),
+  latest: formData.get("latest") === "true" || formData.get("latest") === "on",
+  publishedAt: formData.get("publishedAt")
+    ? new Date(formData.get("publishedAt"))
+    : null,
+  blogImage: formData.get("blogImage")?.name || null,
+};
+
+
+    // Handle file upload
+    const file = formData.get("blogImage");
+    let filePath = null;
+
+    if (file && file.name) {
+      const bytes = await file.arrayBuffer();
+      const buffer = Buffer.from(bytes);
+
+      const uploadDir = path.join(process.cwd(), "public", "uploads", "blogs");
+      await fs.mkdir(uploadDir, { recursive: true });
+
+      // 🔥 Sanitize filename
+      const originalName = file.name.toLowerCase().replace(/\s+/g, "-"); // spaces -> hyphens
+      const safeName = originalName.replace(/[^a-z0-9.\-]/g, ""); //
+
+      const fileName = `${Date.now()}-${safeName}`;
+      filePath = `/uploads/blogs/${fileName}`;
+      await fs.writeFile(path.join(uploadDir, fileName), buffer);
+    }
 
     // Save to DB
-    const blog = new Blog(blogData);
+    const blog = new Blog({ ...blogData, blogImage: filePath });
     await blog.save();
 
     return NextResponse.json({ success: true, message: "Blog saved!" });
