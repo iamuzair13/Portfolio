@@ -29,6 +29,7 @@ export default function Blogs() {
 
   return (
     <Fragment>
+      <Link href={`/singleBlog`}>
       <section className="  flex flex-col max-lg:flex-col items-center py-10 max-lg:pt-[70px] px-[5%] justify-evenly bg-black   ">
         <div className="lg:left lg:w-[70%]">
           <h2 className="text-white text-[60px] text-center max-lg:text-[24px] lg:leading-[70px] ">
@@ -66,7 +67,7 @@ export default function Blogs() {
                   <div className="px-4 pt-6 flex flex-col gap-4">
                     <div className=" space-y-2 border pb-2 border-transparent border-b-[#08090c]">
                       <h2 className="lg:text-[24px]   font-[600]">
-                        {item.title}
+                        {item.title.charAt(0).toUpperCase() + item.title.slice(1)}
                       </h2>
                       {item.content.length > 100 ? (
                         <p className="lg:text-[12px]  font-[400] ">
@@ -99,6 +100,7 @@ export default function Blogs() {
           <p>No blogs found</p>
         )}
       </section>
+      </Link>
     </Fragment>
   );
 }

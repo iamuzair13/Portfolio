@@ -5,14 +5,9 @@ import Navigation from "./components/Navigation/Navigation";
 import Footer from "./components/Footer";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
-import { Poppins } from "next/font/google";
 import Preloader from "./components/Preloader";
 
-const poppins = Poppins({
-  variable: "--font-poppins",
-  weight: ["400", "500", "700"],
-  subsets: ["latin"],
-});
+// app/layout.js or wherever you set global styles
 
 
 
@@ -29,7 +24,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${poppins.className} antialiased`}
+        className={`antialiased`}
         cz-shortcut-listen="true"
       >
         <Preloader />

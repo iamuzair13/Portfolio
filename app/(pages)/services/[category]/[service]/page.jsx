@@ -8,6 +8,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useParams, useSearchParams } from "next/navigation";
 import { Fragment } from "react";
+import { vi } from "zod/v4/locales";
+import { motion } from "framer-motion";
 
 
 export default function ServicePage() {
@@ -57,26 +59,45 @@ export default function ServicePage() {
       >
         <div className="absolute inset-0 bg-black/60 z-0"></div>
         <div className="w-full lg:w-[70%]  z-1">
-          <h2 className="text-white text-[60px] text-center max-lg:text-[28px] lg:leading-[70px]">
+          <motion.h2
+            initial={{ opacity: 0, y: -50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-white text-[60px] text-center max-lg:text-[28px] lg:leading-[70px]"
+          >
             {selectedService.title}
-          </h2>
+          </motion.h2>
         </div>
         <div className="w-full flex flex-col items-center max-lg:text-center  z-1">
-          <h4 className="text-[#a5acc0] text-[20px] max-lg:text-[16px] w-[50%] max-lg:w-full text-center pb-10">
+          <motion.h4
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: false }}
+            className="text-[#a5acc0] text-[20px] max-lg:text-[16px] w-[50%] max-lg:w-full text-center pb-10"
+          >
             {selectedService.desc}
-          </h4>
+          </motion.h4>
         </div>
-        <Link href={"/contact/sales"}>
-          <WSButton
-            value="Book a 15-Min Call"
-            icon={
-              <ChevronRight className="absolute inset-0 transition-opacity duration-200 opacity-100 group-hover:opacity-0" />
-            }
-            hovericon={
-              <ArrowRight className="absolute inset-0 transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
-            }
-          />
-        </Link>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          viewport={{ once: false }}
+          className="z-1"
+        >
+          <Link href={"/contact/sales"}>
+            <WSButton
+              value="Book a 15-Min Call"
+              icon={
+                <ChevronRight className="absolute inset-0 transition-opacity duration-200 opacity-100 group-hover:opacity-0" />
+              }
+              hovericon={
+                <ArrowRight className="absolute inset-0 transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
+              }
+            />
+          </Link>
+        </motion.div>
       </section>
 
       <section className="flex flex-col items-center px-[5%] py-30 bg-black max-lg:pt-20">
@@ -112,31 +133,61 @@ export default function ServicePage() {
               } gap-6 w-full p-6 rounded-[20px] items-center  justify-between `}
             >
               <div className={`flex flex-col gap-6   w-full`}>
-                <h4 className="text-[24px] max-lg:text-[20px] font-bold leading-[30px] text-white">
+                <motion.h4
+                  initial={{ opacity: 0, y: -50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  viewport={{ once: false }}
+                  className="text-[24px] max-lg:text-[20px] font-bold leading-[30px] text-white"
+                >
                   {item.title}
-                </h4>
-                <p className="font-normal text-white text-[16px] max-lg:text-[16px] w-[400px] max-lg:w-full leading-[25px]">
+                </motion.h4>
+                <motion.p
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  viewport={{ once: false }}
+                  className="font-normal text-white text-[16px] max-lg:text-[16px] w-[400px] max-lg:w-full leading-[25px]"
+                >
                   {item.desc}
-                </p>
+                </motion.p>
 
-                <Link href={`/services/${category}/${item.name}?index=${item.id-1}`}>
-                  <Button className="bg-[#0f3bbe] flex items-center gap-2 w-full lg:w-1/3 max-lg:p-4 cursor-pointer text-[14px] max-lg:text-[12px]">
-                    Learn More
-                  </Button>
-                </Link>
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  viewport={{ once: false }}
+                  className="w-full lg:w-1/3"
+                >
+                  <Link
+                    href={`/services/${category}/${item.name}?index=${
+                      item.id - 1
+                    }`}
+                  >
+                    <Button className="bg-[#0f3bbe] flex items-center gap-2 w-full lg:w-1/3 max-lg:p-4 cursor-pointer text-[14px] max-lg:text-[12px]">
+                      Learn More
+                    </Button>
+                  </Link>
+                </motion.div>
               </div>
               <div
                 className={`overflow-hidden flex ${
                   index % 2 == 0 ? "justify-end" : ""
                 } flex  w-full`}
               >
-                <Image
-                  width={500}
-                  height={200}
-                  src={item.image}
-                  alt="Scrolling image"
-                  className="object-contain rounded-[10px]"
-                />
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: 0.6 }}
+                >
+                  <Image
+                    width={500}
+                    height={200}
+                    src={item.image}
+                    alt="Scrolling image"
+                    className="object-contain rounded-[10px]"
+                  />
+                </motion.div>
               </div>
             </div>
           ))}

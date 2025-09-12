@@ -15,7 +15,7 @@ const [formData, setFormData] = useState({
   keywords: "",
   latest: false,
   author: "",
-  publishedAt: new Date().getDate(),
+  publishedAt: new Date().toISOString(), // store clean ISO datetime
   blogImage: null,
 });
 
@@ -66,7 +66,7 @@ const handleSubmit = async (e) => {
       keywords: "",
       author: "",
       latest: false,
-      publishedAt: new Date().getDate(),
+      publishedAt: new Date().toISOString(),
       blogImage: null,
     });
   } catch (err) {

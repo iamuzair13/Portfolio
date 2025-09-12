@@ -13,7 +13,7 @@ export default function HeroSection() {
               Start{" "}
               <span className="bg-gradient-to-b from-gray-200 via-gray-500 to-gray-200 bg-clip-text text-transparent">
                 {" "}
-                Building{" "}
+                Executing{" "}
               </span>{" "}
               Today
               <span className="text-blue-500"></span>

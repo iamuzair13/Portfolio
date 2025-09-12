@@ -3,10 +3,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-
   // Allow fast refresh from localhost + your local network IP
   experimental: {
-    allowedDevOrigins: ["http://localhost:3000", "http://192.168.137.1:3000"],
+    allowedDevOrigins: ["http://192.168.137.1"], // add your LAN IP here
   },
 
   webpack(config) {
