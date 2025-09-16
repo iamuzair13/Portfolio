@@ -3,9 +3,8 @@ import { useParams, useSearchParams } from "next/navigation";
 import { capabilities } from "@/app/mock/Navbar/capabilities";
 import Image from "next/image";
 import Link from "next/link";
-import { Fragment, use, useEffect, useState } from "react";
+import { Fragment,  Suspense,  useEffect, useState } from "react";
 
-export const dynamic = "force-dynamic";
 
 export default function singleBlog() {
   const [blog, setBlog] = useState({});
@@ -45,6 +44,8 @@ export default function singleBlog() {
 
   return (
     <Fragment>
+      <Suspense fallback={<div>Loading...</div>}>
+
       <section className="flex flex-col lg:flex-row items-start py-10 lg:pt-[70px] px-[5%] justify-between bg-black gap-10">
         {/* Left Sidebar */}
         <aside className="w-full lg:w-1/4 flex flex-col gap-6 text-white ">
@@ -140,6 +141,7 @@ export default function singleBlog() {
           </article>
         </div>
       </section>
+      </Suspense>
     </Fragment>
   );
 }
