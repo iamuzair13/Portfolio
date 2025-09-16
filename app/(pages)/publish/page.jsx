@@ -45,11 +45,13 @@ const handleSubmit = async (e) => {
       }
     });
 
-    const res = await fetch("/API/blogs", {
+    const res = await fetch("/api/blogs", {
       method: "POST",
       body: data,
     });
 
+  
+    
     const result = await res.json();
     alert(result.message);
 
@@ -69,6 +71,8 @@ const handleSubmit = async (e) => {
       publishedAt: new Date().toISOString(),
       blogImage: null,
     });
+
+    
   } catch (err) {
     console.error("Error submitting blog:", err);
     alert("Something went wrong ❌");

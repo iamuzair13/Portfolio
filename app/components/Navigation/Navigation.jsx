@@ -76,7 +76,7 @@ const [open, setOpen] = useState(false);
                     }
                     asChild
                   >
-                    <Link href="/blog">Blog</Link>
+                    <Link href="/blogs">Blog</Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
 
@@ -156,7 +156,7 @@ const [open, setOpen] = useState(false);
                         className="w-full flex items-center justify-between px-4 py-2 hover:bg-gray-100 rounded-md cursor-pointer"
                         onClick={() => setOpen(false)}
                       >
-                        <Link href="/blog">Blog</Link>
+                        <Link href="/blogs">Blog</Link>
                       </div>
                       <div
                         className="w-full flex items-center justify-between px-4 py-2 hover:bg-gray-100 rounded-md cursor-pointer"

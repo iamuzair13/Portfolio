@@ -12,10 +12,13 @@ export default function Blogs() {
 
     async function fetchBlogs() {
       try {
-        const response = await fetch("/API/blogs");
+        const response = await fetch("/api/blogs");
         const blogData = await response.json();
         if (blogData.success) {
           setBlogs(blogData.data);
+          console.log("Fetched blogs:", blogData.data);
+          
+          
         } else {
           console.error("Failed to fetch blogs:", blogData.message);
         }
@@ -29,7 +32,6 @@ export default function Blogs() {
 
   return (
     <Fragment>
-      <Link href={`/singleBlog`}>
       <section className="  flex flex-col max-lg:flex-col items-center py-10 max-lg:pt-[70px] px-[5%] justify-evenly bg-black   ">
         <div className="lg:left lg:w-[70%]">
           <h2 className="text-white text-[60px] text-center max-lg:text-[24px] lg:leading-[70px] ">
@@ -49,14 +51,15 @@ export default function Blogs() {
       </section>
       <section className="  flex flex-col max-md:flex-col items-center  max-md:pt-[70px] px-[5%] justify-evenly bg-black   ">
         {blogs.length > 0 ? (
-          <div className="flex flex-row flex-wrap gap-2 px-[5%] justify-evenly">
+
+          <div className="flex flex-row flex-wrap gap-x-3 gap-y-8 px-[5%] justify-start  items-center  ">
             {blogs.map((item, index) => {
               return (
-                <div
-                  key={index}
-                  className="w-[300px] max-lg:w-[45%] max-md:w-full  group  flex flex-col items-center justify-between pb-4  cursor-pointer rounded-[20px] overflow-hidden border border-gray-800  transition-colors duration-300 ease-in-out hover:border-[#0a49eb] text-white  "
-                >
-                  <Avatar className=" w-full h-auto transition-transform rounded-none duration-300 ease-in-out group-hover:scale-105">
+                <Link key={index} href={`/singleBlog?id=${item._id}`} >
+                  <div
+                    className="w-[350px] max-lg:w-[45%] max-md:w-full  group  flex flex-col items-center justify-between pb-4  cursor-pointer rounded-[20px] overflow-hidden border border-gray-800  transition-colors duration-300 ease-in-out hover:border-[#0a49eb] text-white  "
+                  >
+                    <Avatar className=" w-full h-auto transition-transform rounded-none duration-300 ease-in-out group-hover:scale-105">
                     <AvatarImage
                       src={`${item.blogImage}`}
                       alt="Service Card 1"
@@ -83,6 +86,7 @@ export default function Blogs() {
                     <div className="flex flex-row gap-x-2 justify-start  w-full items-center">
                       <div className="">
                         <h4>{item.author}</h4>
+                        
                         <p className="text-gray-400 text-[12px]">{item.publishedAt}</p>
                       </div>
                     </div>
@@ -93,14 +97,15 @@ export default function Blogs() {
                     </div>
                   </div>
                 </div>
+                </Link>
               );
             })}
+            
           </div>
         ) : (
           <p>No blogs found</p>
         )}
       </section>
-      </Link>
     </Fragment>
   );
 }
