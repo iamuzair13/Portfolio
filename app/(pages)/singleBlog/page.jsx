@@ -1,20 +1,17 @@
 "use client";
-
-import { useSearchParams } from "next/navigation";
+import { useParams, useSearchParams } from "next/navigation";
 import { capabilities } from "@/app/mock/Navbar/capabilities";
 import Image from "next/image";
 import Link from "next/link";
 import { Fragment, use, useEffect, useState } from "react";
 
-export default function SingleBlogPage() {
+export default function SingleBlogPage({ params }) {
 const [blog, setBlog] = useState({});
 const [recentPosts, setRecentPosts] = useState([]);
 
 const categories = Object.values(capabilities[0]); 
 const searchParams = useSearchParams();
 const blogId = searchParams.get("id");
-
-
 
 useEffect(() => {
   const fetchBlog = async () => {
@@ -27,7 +24,7 @@ useEffect(() => {
 
       if (response.ok) {
         setBlog(singleBlog);
-        console.log("Fetched blog:", singleBlog);
+        // console.log("Fetched blog:", singleBlog);
       } else {
         console.error(
           "Failed to fetch blog:",
