@@ -13,6 +13,7 @@ export default function singleBlog() {
   const categories = Object.values(capabilities[0]);
   const searchParams = useSearchParams();
   const blogId = searchParams.get("id");
+  console.log("Blog ID from URL:", blogId);
 
   useEffect(() => {
     const fetchBlog = async () => {
@@ -43,7 +44,6 @@ export default function singleBlog() {
   }, [blogId]);
 
   return (
-    <Fragment>
       <Suspense fallback={<div>Loading...</div>}>
 
       <section className="flex flex-col lg:flex-row items-start py-10 lg:pt-[70px] px-[5%] justify-between bg-black gap-10">
@@ -142,6 +142,5 @@ export default function singleBlog() {
         </div>
       </section>
       </Suspense>
-    </Fragment>
   );
 }
