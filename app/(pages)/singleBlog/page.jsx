@@ -4,9 +4,7 @@ import { capabilities } from "@/app/mock/Navbar/capabilities";
 import Image from "next/image";
 import Link from "next/link";
 import { Fragment,  Suspense,  useEffect, useState } from "react";
-
-
-export default function singleBlog() {
+ const Blog =() => {
   const [blog, setBlog] = useState({});
   const [recentPosts, setRecentPosts] = useState([]);
 
@@ -44,7 +42,7 @@ export default function singleBlog() {
   }, [blogId]);
 
   return (
-      <Suspense fallback={<div>Loading...</div>}>
+   <Fragment> 
 
       <section className="flex flex-col lg:flex-row items-start py-10 lg:pt-[70px] px-[5%] justify-between bg-black gap-10">
         {/* Left Sidebar */}
@@ -141,6 +139,14 @@ export default function singleBlog() {
           </article>
         </div>
       </section>
-      </Suspense>
+      </Fragment>
+  );
+}
+export default function singleBlog() {
+
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Blog />
+    </Suspense>
   );
 }
