@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Fragment, use, useEffect, useState } from "react";
 
+export const dynamic = "force-dynamic";
+
 export default function BlogClient() {
   const [blog, setBlog] = useState({});
   const [recentPosts, setRecentPosts] = useState([]);

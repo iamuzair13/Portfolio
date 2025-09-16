@@ -1,4 +1,4 @@
-// export const dynamic = "force-dynamic";
+
 
 import BlogClient from "@/app/components/BlogClient";
 
