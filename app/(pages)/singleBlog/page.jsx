@@ -1,12 +1,12 @@
 "use client";
 
+import { useSearchParams } from "next/navigation";
 import { capabilities } from "@/app/mock/Navbar/capabilities";
 import Image from "next/image";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 import { Fragment, use, useEffect, useState } from "react";
 
-export default function SingleBlogPage({ params }) {
+export default function SingleBlogPage() {
 const [blog, setBlog] = useState({});
 const [recentPosts, setRecentPosts] = useState([]);
 
