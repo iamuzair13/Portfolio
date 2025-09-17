@@ -1,9 +1,9 @@
 import { dbConnection } from "@/lib/utils";
 import mongoose from "mongoose";
 import { NextResponse } from "next/server";
-
 import path from "path";
 import { promises as fs } from "fs";
+import { put } from "@vercel/blob";
 
 
 // Define schema
@@ -77,6 +77,14 @@ const blogData = {
 
     // Handle file upload
     const file = formData.get("blogImage");
+    const blob = await put(`Programmers-Squad-Assets/${file.name}`, file, {
+      access: "public",
+      token: process.env.BLOB_READ_WRITE_TOKEN_READ_WRITE_TOKEN,
+    });
+
+    console.log("Uploaded file to Vercel Blob:", blob);
+    
+
     let filePath = null;
 
     if (file && file.name) {
@@ -96,7 +104,8 @@ const blogData = {
     }
 
     // Save to DB
-    const blog = new Blog({ ...blogData, blogImage: filePath });
+    const blog = new Blog({ ...blogData, blogImage: filePath, blogImage: blob.url });
+    console.log("Blog data to save:", blog);
     await blog.save();
 
     return NextResponse.json({ success: true, message: "Blog saved!" });
