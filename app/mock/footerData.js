@@ -22,7 +22,7 @@ import id from "zod/v4/locales/id.cjs";
 export const footerData = [
   {
     Design: {
-      title: "Design",
+      title: "Development",
       items: [
         {
           id: 1,
@@ -86,7 +86,7 @@ export const footerData = [
 
   
     SEO: {
-      title: "SEO",
+      title: "E-Commerce",
       items: [
         {
           id: 1,
