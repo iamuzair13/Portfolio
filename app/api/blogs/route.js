@@ -80,6 +80,7 @@ const blogData = {
     const blob = await put(`Programmers-Squad-Assets/${file.name}`, file, {
       access: "public",
       token: process.env.BLOB_READ_WRITE_TOKEN_READ_WRITE_TOKEN,
+      addRandomSuffix: true,
     });
 
     console.log("Uploaded file to Vercel Blob:", blob);
