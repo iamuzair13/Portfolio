@@ -87,12 +87,10 @@ import { Fragment,  Suspense,  useEffect, useState } from "react";
         <div className="flex-1">
           {/* Hero Image */}
           <div className="relative w-full h-[600px] rounded-2xl overflow-hidden shadow-lg mb-8">
-            <Image
+            <img
               src={blog.blogImage || "/blog-placeholder.jpg"}
               alt="Blog Placeholder"
-              fill
               className="object-cover"
-              priority
             />
           </div>
 
@@ -112,7 +110,7 @@ import { Fragment,  Suspense,  useEffect, useState } from "react";
 
           {/* Blog Body */}
           <article className="prose prose-invert max-w-none text-[#d1d5db] leading-relaxed space-y-6">
-            <p>
+            
               {(() => {
                 if (!blog?.content) {
                   return (
@@ -135,7 +133,6 @@ import { Fragment,  Suspense,  useEffect, useState } from "react";
 
                 return chunks.map((part, index) => <p key={index}>{part}</p>);
               })()}
-            </p>
           </article>
         </div>
       </section>
@@ -145,8 +142,9 @@ import { Fragment,  Suspense,  useEffect, useState } from "react";
 export default function singleBlog() {
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<h2>Loading...</h2>}>
       <Blog />
     </Suspense>
   );
 }
+``

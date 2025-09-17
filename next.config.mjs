@@ -7,9 +7,19 @@ const nextConfig = {
   experimental: {
     allowedDevOrigins: ["http://192.168.137.1"],
     serverActions: {
-    bodySizeLimit: '10mb', // ✅ increase to 10 MB // add your LAN IP here
+      bodySizeLimit: "10mb", // ✅ increase to 10 MB // add your LAN IP here
+    },
+
+    images: {
+      remotePatterns: [
+        {
+          protocol: "https",
+          hostname: "ed1buvjh8n0navjl.public.blob.vercel-storage.com",
+          pathname: "/**",
+        },
+      ],
+    },
   },
-},
 
   webpack(config) {
     config.module.rules.push({
