@@ -87,21 +87,21 @@ const blogData = {
 
     let filePath = null;
 
-    if (file && file.name) {
-      const bytes = await file.arrayBuffer();
-      const buffer = Buffer.from(bytes);
+    // if (file && file.name) {
+    //   const bytes = await file.arrayBuffer();
+    //   const buffer = Buffer.from(bytes);
 
-      const uploadDir = path.join(process.cwd(), "public", "uploads", "blogs");
-      await fs.mkdir(uploadDir, { recursive: true });
+    //   const uploadDir = path.join(process.cwd(), "public", "uploads", "blogs");
+    //   await fs.mkdir(uploadDir, { recursive: true });
 
-      // 🔥 Sanitize filename
-      const originalName = file.name.toLowerCase().replace(/\s+/g, "-"); // spaces -> hyphens
-      const safeName = originalName.replace(/[^a-z0-9.\-]/g, ""); //
+    //   // 🔥 Sanitize filename
+    //   const originalName = file.name.toLowerCase().replace(/\s+/g, "-"); // spaces -> hyphens
+    //   const safeName = originalName.replace(/[^a-z0-9.\-]/g, ""); //
 
-      const fileName = `${Date.now()}-${safeName}`;
-      filePath = `/uploads/blogs/${fileName}`;
-      await fs.writeFile(path.join(uploadDir, fileName), buffer);
-    }
+    //   const fileName = `${Date.now()}-${safeName}`;
+    //   filePath = `/uploads/blogs/${fileName}`;
+    //   await fs.writeFile(path.join(uploadDir, fileName), buffer);
+    // }
 
     // Save to DB
     const blog = new Blog({ ...blogData, blogImage: filePath, blogImage: blob.url });
